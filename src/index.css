@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@theme {
+  --font-Lato: Lato, sans-serif;
+  --color-secondary: #00e5ff;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
