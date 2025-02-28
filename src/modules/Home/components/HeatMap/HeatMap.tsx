@@ -7,12 +7,12 @@ const HeatMap = () => {
       }}
     >
       <div className="flex flex-col items-center pt-[40px] md:pt-[80px]">
-        <h1 className="text-[40px] font-Lato">Project Heat Map</h1>
+        <h1 className="text-[40px] font-Lato font-bold">Project Heat Map</h1>
         <div className="flex item-center gap-2 mt-4">
           <h3 className="text-[20px] font-light">Headquarters</h3>
           <h3 className="text-[20px] font-semibold">- Dallas, TX</h3>
         </div>
-        <h6 className="text-secondary">
+        <h6 className="text-secondary text-[11px]">
           (Local Presence in every region of the US)
         </h6>
       </div>

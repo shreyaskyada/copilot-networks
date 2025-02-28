@@ -1,13 +1,13 @@
 const Footer = () => {
   return (
     <div
-      className="relative h-[120vh] sm:h-[120vh] md:h-[100vh] lg:h-[85vh]  bg-[#002235] text-white font-Lato bg-no-repeat bg-cover bg-bottom"
+      className="relative h-[120vh] sm:h-[120vh] md:h-[100vh] lg:h-[100vh]  bg-[#002235] text-white font-Lato bg-no-repeat bg-cover bg-bottom"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.44),rgba(0,0,0,0.44)),url(footer.png)",
       }}
     >
-      <div className="flex flex-col pt-[130px] z-50">
+      <div className="flex flex-col pt-[60px] lg:pt-[130px] z-50">
         <div className="flex text-[20px] sm:text-[30px] md:text-[40px] gap-1 md:gap-[12px] mx-auto w-[90%] sm:w-[50%] md:w-full items-center justify-center md:leading-[54px] font-Lato flex-wrap">
           We value <span className="border-b-2 font-bold">Partnerships</span>{" "}
           over
@@ -60,7 +60,7 @@ const Footer = () => {
 
         <hr className="hidden md:block"></hr>
         {/* Main footer content */}
-        <div className="relative z-10 mx-auto px-10 py-8">
+        <div className="relative z-10 mx-auto px-10 md:px-0 py-8">
           <div className="flex flex-col lg:flex-row justify-between gap-8 ">
             {/* Company info */}
             <div className="space-y-4 hidden md:block">
@@ -194,7 +194,7 @@ const Footer = () => {
         </div>
         <div className="w-full border-t-[0.5px] border-[#A8A8A8]"></div>
         {/* Copyright */}
-        <div className="relative z-10 container mx-auto px-6 py-4 text-sm text-white hidden md:block">
+        <div className="relative z-10 mx-auto py-4 text-sm text-white hidden md:block">
           <p>© {new Date().getFullYear()} Copilot Networks</p>
         </div>
       </div>
