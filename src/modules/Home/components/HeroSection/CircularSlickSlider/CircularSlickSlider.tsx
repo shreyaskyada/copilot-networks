@@ -7,6 +7,7 @@ interface TabItem {
   title: string;
   description: string;
   icon: React.ReactNode | React.ReactElement;
+  images: string[];
 }
 
 interface CircularSliderProps {
@@ -33,12 +34,15 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
   // };
 
   const handleTabClick = (index: number) => {
-    let steps = index - activeIndex;
-    if (steps < 0) {
-      steps += tabs.length; // Ensure forward movement only
-    }
+    const totalTabs = tabs.length;
+    const forwardSteps = (index - activeIndex + totalTabs) % totalTabs;
+    const backwardSteps = (activeIndex - index + totalTabs) % totalTabs;
+
+    const shortestSteps =
+      forwardSteps <= backwardSteps ? forwardSteps : -backwardSteps;
+
     setActiveIndex(index);
-    setRotation(rotation - steps * (360 / tabs.length)); // Always rotate clockwise
+    setRotation(rotation - shortestSteps * (360 / totalTabs));
     triggerFade();
   };
 
@@ -141,26 +145,32 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
         </div>
 
         <div
-          className={`flex gap-4 relative bg-white rounded-md transition-opacity duration-300 ${
+          className={`flex gap-4 relative h-96 rounded-md transition-opacity duration-300 ${
             fade ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="flex flex-col h-fit translate-y-[68px] -translate-x-[125px]">
+          <div className="flex flex-1 flex-col h-fit translate-y-[68px] -translate-x-[125px]">
             <p className={"text-[50px] text-left font-bold"}>
               {tabs[activeIndex].title}
             </p>
-            {/* {isActiveIndex && ( */}
             <p className={"text-[28px]"}>{tabs[activeIndex].description}</p>
-            {/* -147px 52px */}
-            {/* )} */}
           </div>
-          <div className="relative flex items-center pr-[120px]">
-            <img src="/telecom/1.png" />
+          <div className="relative flex items-center xl:pr-[120px] flex-1">
+            <img
+              src={tabs[activeIndex].images[0]}
+              className="w-full max-w-[280px] h-auto object-contain rounded-lg"
+              alt="Primary Image"
+            />
             <div className="relative flex flex-col gap-5 -left-8">
-              <img src="/telecom/2.png" className="w-[200px]" />
               <img
-                src="/telecom/3.png"
-                className="w-[230px] relative -left-[30px]"
+                src={tabs[activeIndex].images[1]}
+                className="max-w-[200px] h-auto object-contain rounded-lg"
+                alt="Secondary Image"
+              />
+              <img
+                src={tabs[activeIndex].images[2]}
+                className="w-full max-w-[250px] h-auto object-contain relative -left-[30px] rounded-lg"
+                alt="Tertiary Image"
               />
             </div>
           </div>
