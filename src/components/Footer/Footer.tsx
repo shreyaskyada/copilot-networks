@@ -1,29 +1,29 @@
 const Footer = () => {
   return (
     <div
-      className="relative h-[140vh] md:h-[90vh] bg-[#002235] text-white font-Lato bg-no-repeat  bg-cover"
+      className="relative h-[120vh] sm:h-[120vh] md:h-[100vh] lg:h-[85vh]  bg-[#002235] text-white font-Lato bg-no-repeat bg-cover bg-bottom"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.44),rgba(0,0,0,0.44)),url(footer.png)",
       }}
     >
-      <div className="flex flex-col pt-20 z-50">
-        <div className="flex text-[20px] md:text-[40px] gap-1 md:gap-4  mx-auto w-full items-center justify-center md:leading-[54px] font-Lato flex-wrap">
+      <div className="flex flex-col pt-[130px] z-50">
+        <div className="flex text-[20px] sm:text-[30px] md:text-[40px] gap-1 md:gap-[12px] mx-auto w-[90%] sm:w-[50%] md:w-full items-center justify-center md:leading-[54px] font-Lato flex-wrap">
           We value <span className="border-b-2 font-bold">Partnerships</span>{" "}
           over
           <span className="border-b-2 font-bold">Purchase Orders</span>
         </div>
-        <div className="flex flex-col items-center mt-20">
+        <div className="flex flex-col items-center mt-10">
           <button className="bg-white p-4 text-black rounded-full">
             Become a Partner
           </button>
         </div>
       </div>
-      <div className="absolute bottom-10 w-full  text-white overflow-hidden px-0 md:px-20">
+      <div className="absolute bottom-10 w-full text-white overflow-hidden px-0 sm:px-6 md:px-10">
         {/* Background image with network effect */}
         <hr className="block md:hidden"></hr>
         {/* Social media links */}
-        <div className="relative z-10 container mx-auto px-6 pt-8 pb-4 flex justify-start md:justify-end items-center border-b border-gray-700/30">
+        <div className="relative z-10  px-10 md:px-0 mt-4 mb-4  flex justify-start md:justify-end items-center">
           <div className="flex items-center gap-2">
             <span className="mr-2">Follow us</span>
             <a
@@ -60,8 +60,8 @@ const Footer = () => {
 
         <hr className="hidden md:block"></hr>
         {/* Main footer content */}
-        <div className="relative z-10 container mx-auto px-6 py-8">
-          <div className="flex flex-col md:flex-row justify-between gap-8">
+        <div className="relative z-10 mx-auto px-10 py-8">
+          <div className="flex flex-col lg:flex-row justify-between gap-8 ">
             {/* Company info */}
             <div className="space-y-4 hidden md:block">
               <div className="flex items-center">
@@ -85,14 +85,14 @@ const Footer = () => {
             </div>
 
             {/* Legal */}
-            <div className="flex flex-col md:flex-row gap-8 md:gap-18">
+            <div className="flex flex-col md:flex-row gap-10 md:gap-10 lg:gap-16">
               <div>
                 <h3 className="text-lg font-medium mb-4">Legal</h3>
-                <ul className="space-y-2">
+                <ul className="flex flex-col gap-4">
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors"
+                      className="hover:text-blue-400 transition-colors text-[13px]"
                     >
                       Terms Of Service
                     </a>
@@ -100,7 +100,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors"
+                      className="hover:text-blue-400 transition-colors text-[13px]"
                     >
                       Privacy Policy
                     </a>
@@ -108,7 +108,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors"
+                      className="hover:text-blue-400 transition-colors text-[13px]"
                     >
                       Cookie Policy
                     </a>
@@ -119,11 +119,11 @@ const Footer = () => {
               {/* Resources */}
               <div className="hidden md:block">
                 <h3 className="text-lg font-medium mb-4">Resources</h3>
-                <ul className="space-y-2">
+                <ul className="flex flex-col gap-4">
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors"
+                      className="hover:text-blue-400 transition-colors text-[13px]"
                     >
                       Blog
                     </a>
@@ -131,7 +131,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors"
+                      className="hover:text-blue-400 transition-colors text-[13px]"
                     >
                       Internet For All
                     </a>
@@ -139,7 +139,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors"
+                      className="hover:text-blue-400 transition-colors text-[13px]"
                     >
                       Videos
                     </a>
@@ -150,7 +150,7 @@ const Footer = () => {
               {/* Need Help */}
               <div>
                 <h3 className="text-lg font-medium mb-4">Need Help?</h3>
-                <ul className="space-y-2">
+                <ul className="flex flex-col gap-4 text-[13px]">
                   <li>
                     <span>Call Us - </span>
                     <a href="tel:4694226200" className="hover:underline">
@@ -169,6 +169,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
+
             <div className="space-y-4 md:hidden">
               <div className="flex items-center">
                 <h2 className="text-2xl font-bold">
@@ -191,9 +192,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
+        <div className="w-full border-t-[0.5px] border-[#A8A8A8]"></div>
         {/* Copyright */}
-        <div className="relative z-10 container mx-auto px-6 py-4 text-sm text-white">
+        <div className="relative z-10 container mx-auto px-6 py-4 text-sm text-white hidden md:block">
           <p>© {new Date().getFullYear()} Copilot Networks</p>
         </div>
       </div>

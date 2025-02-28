@@ -1,7 +1,7 @@
 const HeatMap = () => {
   return (
     <div
-      className="relative h-[100vh] md:h-[100vh] bg-[#002235] text-white font-Lato bg-no-repeat  bg-[length:100%] md:bg-[length:840px] bg-[position:top_38%_left_40%] md:bg-[position:top_68%_left_50%]"
+      className="relative h-[110vh] md:h-[100vh] bg-[#002235] text-white font-Lato bg-no-repeat  bg-[length:100%] sm:bg-[length:500px] md:bg-[length:600px] lg:bg-[length:620px] xl:bg-[length:820px] bg-[position:top_38%_left_40%]  md:bg-[position:top_60%_left_50%] lg:bg-[position:top_52%_left_50%] xl:bg-[position:top_68%_left_50%]"
       style={{
         backgroundImage: "url('/heatMap.png')",
       }}
@@ -16,7 +16,7 @@ const HeatMap = () => {
           (Local Presence in every region of the US)
         </h6>
       </div>
-      <div className="absolute flex flex-col md:flex-row justify-between w-full bottom-[8%] md:bottom-[16%] px-10 md:px-20 gap-6 ">
+      <div className="absolute flex flex-col sm:flex-row justify-between w-full bottom-[8%] md:bottom-[8%] xl:bottom-[16%] px-10 md:px-20 gap-6 ">
         <div className="w-[180px]">
           <div className="flex flex-row gap-4 items-center justify-between w-full">
             <div className="text-[40px] font-extrabold text-secondary">160</div>
