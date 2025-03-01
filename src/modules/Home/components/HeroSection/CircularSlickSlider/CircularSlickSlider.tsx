@@ -32,9 +32,9 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
     }
     return [
       ...tabs,
-      tabs[tabLength - 1],
-      tabs[tabLength - 2],
       tabs[tabLength - 3],
+      tabs[tabLength - 2],
+      tabs[tabLength - 1],
     ];
   }, [tabs, isMd]);
 
@@ -136,7 +136,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
 
   return (
     <div className="flex h-full w-full max-w-screen max-md:overflow-hidden md:items-center md:-translate-y-[40px] max-md:pb-10">
-      <div className="relative w-full flex items-center gap-8 flex-1 flex-col md:flex-row md:justify-center">
+      <div className="relative w-full flex items-center gap-10 flex-1 flex-col md:flex-row md:justify-center">
         {/* Left section */}
         <div className="relative w-screen md:h-[60vh] min-w-96 flex-1 flex flex-col md:w-full md:flex-row">
           <div
@@ -212,7 +212,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
                         role="button"
                         onClick={() => handleTabClick(index)}
                         className={clsx(
-                          "max-md:-rotate-90 bottom-0 -translate-y-[50%] md:translate-x-[30px] translate-x-[10px] w-[80px] md:w-[190px] flex items-center max-md:justify-center"
+                          "max-md:-rotate-90 bottom-0 -translate-y-[50%] md:translate-x-[30px] translate-x-[10px] w-[80px] md:w-[190px] flex items-center max-md:justify-center cursor-pointer"
                         )}
                       >
                         <div className="flex gap-0 md:gap-6 items-center">
@@ -244,7 +244,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
             </div>
           </div>
           <div
-            className="flex flex-col h-fit relative max-md:-translate-y-[10px] max-md:items-center w-fit md:-translate-x-[90px] max-md:mx-auto"
+            className="flex flex-col h-fit relative max-md:-translate-y-[10px] max-md:items-center w-fit md:-translate-x-[40px] max-md:mx-auto"
             style={{
               ...(!isMd && { top: `${getTop()}px` }),
             }}
