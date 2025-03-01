@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div
-      className="relative h-[120vh] sm:h-[120vh] md:h-[100vh] lg:h-[100vh]  bg-[#002235] text-white font-Lato bg-no-repeat bg-cover bg-bottom"
+      className="relative min-h-[120vh] sm:h-[120vh] md:h-[100vh] lg:h-[100vh]  bg-[#002235] text-white font-Lato bg-no-repeat bg-cover bg-bottom"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.44),rgba(0,0,0,0.44)),url(footer.png)",
@@ -19,7 +19,7 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <div className="absolute bottom-10 w-full text-white overflow-hidden px-0 sm:px-6 md:px-10">
+      <div className="relative max-md:mt-[100px] md:absolute bottom-10 w-full text-white overflow-hidden px-0 sm:px-6 md:px-10">
         {/* Background image with network effect */}
         <hr className="block md:hidden"></hr>
         {/* Social media links */}
