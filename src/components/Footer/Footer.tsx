@@ -14,7 +14,7 @@ const Footer = () => {
           <span className="border-b-2 font-bold">Purchase Orders</span>
         </div>
         <div className="flex flex-col items-center mt-10">
-          <button className="bg-white p-4 text-black rounded-full">
+          <button className="bg-white p-4 text-black rounded-full cursor-pointer">
             Become a Partner
           </button>
         </div>

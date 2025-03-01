@@ -26,7 +26,7 @@ const partners = [
 
 const TrustedBy = () => {
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
+    <section className="py-16 px-4 bg-[#F3F7F9]">
       <h2 className="text-4xl font-Lato text-center text-slate-800 mb-16">
         Trusted by:
       </h2>

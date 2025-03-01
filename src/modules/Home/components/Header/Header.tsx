@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown, Search } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,6 +15,10 @@ const Header = () => {
 
   const toggleSubmenu = (submenu: string) => {
     setActiveSubmenu(activeSubmenu === submenu ? null : submenu);
+  };
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
   };
 
   const menuItems = [
@@ -38,7 +43,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
+              <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
             </a>
           </div>
           <div className="flex items-center gap-[60px]">
@@ -47,7 +52,7 @@ const Header = () => {
               {menuItems.map((item) => (
                 <div key={item.name} className="relative group">
                   {item.submenu ? (
-                    <button className="flex items-center text-gray-700 hover:text-blue-600 font-medium">
+                    <button className="flex items-center text-gray-700 hover:text-blue-600 font-medium cursor-pointer">
                       {item.name}
                       <ChevronDown className="ml-1 h-4 w-4" />
                     </button>
@@ -78,10 +83,30 @@ const Header = () => {
             </nav>
 
             {/* Search Icon */}
-            <div className="hidden md:flex items-center">
-              <button className="text-gray-700 hover:text-blue-600">
+            <div className="hidden md:flex items-center relative">
+              <button
+                className="text-gray-700 hover:text-blue-600 cursor-pointer"
+                onClick={toggleSearch}
+              >
                 <Search className="h-5 w-5" />
               </button>
+
+              {/* Desktop Search Dropdown */}
+              {isSearchOpen && (
+                <div className="absolute right-0 top-10 w-64 bg-white rounded-md shadow-lg p-4 z-20">
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <Search className="h-4 w-4 text-gray-500" />
+                    </div>
+                    <input
+                      type="text"
+                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      placeholder="Search"
+                      autoFocus
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
