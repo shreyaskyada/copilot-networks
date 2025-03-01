@@ -1,3 +1,5 @@
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-constant-binary-expression */
 import { testimonials } from "./data";
 import { ITestimonial } from "./types";
 import useTestimonial from "./useTestimonial";
@@ -8,8 +10,8 @@ const Testimonial = () => {
 
   return (
     <div className="container mx-auto p-4 py-8 md:py-20">
-      <div className="w-[90%] md:w-[96%] lg:w-[80%] mx-auto">
-        <h1 className="text-3xl md:text-[40px] font-Lato font-medium my-6 md:my-10 mb-16 leading-[55px]">
+      <div className="w-[90%] md:w-[90%] lg:w-[80%] mx-auto">
+        <h1 className="text-[24px] md:text-[40px] font-Lato font-medium my-6 md:my-10 md:mb-16 leading-[32px] md:leading-[55px] w-[70%]">
           What partnership means to us
         </h1>
       </div>
@@ -21,6 +23,7 @@ const Testimonial = () => {
               <div
                 key={testimonial.id}
                 className={`rounded-[32px] overflow-hidden bg-[#F3F7F9] border border-[#CFE1E8] font-Lato relative ${
+                  false &&
                   isMobile &&
                   !showAllMobile &&
                   index === column.length - 1 &&
@@ -88,13 +91,13 @@ const Testimonial = () => {
         ))}
 
         {/* Overlay blur effect */}
-        {isMobile && !showAllMobile && testimonials.length > 2 && (
+        {false && isMobile && !showAllMobile && testimonials.length > 2 && (
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
         )}
       </div>
 
       {/* Show More button (only visible on mobile when not all testimonials are shown) */}
-      {isMobile && !showAllMobile && testimonials.length > 2 && (
+      {false && isMobile && !showAllMobile && testimonials.length > 2 && (
         <div className="w-[90%] mx-auto mt-4 flex justify-center relative z-10">
           <button
             onClick={() => setShowAllMobile(true)}
