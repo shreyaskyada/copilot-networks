@@ -44,7 +44,7 @@ const HeatMap = () => {
               <ul className="list-disc">
                 <div className="flex flex-row gap-8 tracking-[2px]">
                   <li>AutoCAD</li>
-                  <li>sPIDA CALC</li>
+                  <li>SPIDA CALC</li>
                   <li>3-GIS</li>
                 </div>
               </ul>
@@ -52,7 +52,6 @@ const HeatMap = () => {
                 <div className="flex flex-row gap-8 tracking-[2px]">
                   <li>GE SMALL WORLD</li>
                   <li>QGIS</li>
-                  <li>Milk</li>
                 </div>
               </ul>
               <ul className="list-disc">
