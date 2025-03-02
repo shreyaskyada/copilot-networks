@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import { useBreakpoint } from "../../../../../hooks/useBreakpoint";
+import ArrowIcon from "../../../../../assets/ArrowIcon";
 
 interface TabItem {
   id: number;
@@ -85,19 +86,19 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
     return () => window.removeEventListener("resize", calculateRadius);
   }, []);
 
-  // const handleNext = () => {
-  //   const newIndex = (activeIndex + 1) % tabs.length;
-  //   setActiveIndex(newIndex);
-  //   setRotation(rotation - 360 / tabs.length);
-  //   triggerFade();
-  // };
+  const handleNext = () => {
+    const newIndex = (activeIndex + 1) % newTabs.length;
+    setActiveIndex(newIndex);
+    setRotation(rotation - 360 / newTabs.length);
+    triggerFade();
+  };
 
-  // const handlePrev = () => {
-  //   const newIndex = (activeIndex - 1 + tabs.length) % tabs.length;
-  //   setActiveIndex(newIndex);
-  //   setRotation(rotation + 360 / tabs.length);
-  //   triggerFade();
-  // };
+  const handlePrev = () => {
+    const newIndex = (activeIndex - 1 + newTabs.length) % newTabs.length;
+    setActiveIndex(newIndex);
+    setRotation(rotation + 360 / newTabs.length);
+    triggerFade();
+  };
 
   const handleTabClick = (index: number) => {
     const totalTabs = newTabs.length;
@@ -137,13 +138,24 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
   return (
     <div className="flex h-full w-full max-w-screen max-md:overflow-hidden md:items-center md:-translate-y-[40px] max-md:pb-10">
       <div className="relative w-full flex items-center gap-10 flex-1 flex-col md:flex-row md:justify-center">
+        {/* Arrow */}
+        <div className="flex md:flex-col gap-8 absolute left-[50%] top-[20px] md:top-[50%] md:-translate-y-[50%] -translate-x-[50%] md:left-5 cursor-pointer z-[60]">
+          <ArrowIcon
+            className="hover:scale-125 max-md:-rotate-90"
+            onClick={() => handlePrev()}
+          />
+          <ArrowIcon
+            className="rotate-90 md:rotate-180 hover:scale-125"
+            onClick={() => handleNext()}
+          />
+        </div>
         {/* Left section */}
         <div className="relative w-screen md:h-[60vh] min-w-96 flex-1 flex flex-col md:w-full md:flex-row">
           <div
             style={{ height: `${titlePadding}px` }}
             className="md:hidden"
           ></div>
-          {/* <div className="w-[30vh] rotate-90 overflow-hidden"> */}
+
           <div
             className="absolute md:relative md:w-[30vh] max-md:rotate-90 max-w-md:overflow-hidden w-[100vw] left-0 z-50"
             ref={circularDivRef}
@@ -258,7 +270,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
             </p>
             <p
               className={
-                "text-[16px] md:text-[28px] md:w-[calc(100%+66px)] max-md:text-center"
+                "text-[16px] md:text-[28px] max-md:px-[50px] md:w-[calc(100%+66px)] max-md:text-center"
               }
             >
               {newTabs[activeIndex].description}
@@ -268,7 +280,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
 
         {/* Right section */}
         <div
-          className={`flex relative h-[40vh] md:h-[50vh] rounded-[15px] transition-opacity duration-300 flex-1 max-md:pl-8 ${
+          className={`flex relative h-[40vh] md:h-[60vh] md:max-w-[40vw] rounded-[15px] transition-opacity duration-300 flex-1 max-md:pl-8 ${
             fade ? "opacity-100" : "opacity-0"
           }`}
         >
