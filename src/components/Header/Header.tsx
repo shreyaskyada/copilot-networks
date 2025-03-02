@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  // const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -17,22 +17,22 @@ const Header = () => {
     setActiveSubmenu(activeSubmenu === submenu ? null : submenu);
   };
 
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-  };
+  // const toggleSearch = () => {
+  //   setIsSearchOpen(!isSearchOpen);
+  // };
 
   const menuItems = [
-    {
-      name: "Services",
-      submenu: [
-        { name: "Web Development", href: "/services/web-development" },
-        { name: "Mobile Apps", href: "/services/mobile-apps" },
-        { name: "Cloud Solutions", href: "/services/cloud-solutions" },
-        { name: "Consulting", href: "/services/consulting" },
-      ],
-    },
+    // {
+    //   name: "Services",
+    //   submenu: [
+    //     { name: "Web Development", href: "/services/web-development" },
+    //     { name: "Mobile Apps", href: "/services/mobile-apps" },
+    //     { name: "Cloud Solutions", href: "/services/cloud-solutions" },
+    //     { name: "Consulting", href: "/services/consulting" },
+    //   ],
+    // },
 
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "Testimonials", href: "#testimonials", submenu: [] },
     { name: "Contact Us", href: "/contact" },
   ];
 
@@ -65,8 +65,8 @@ const Header = () => {
                     </a>
                   )}
 
-                  {item.submenu && (
-                    <div className="invisible absolute left-0 z-10 mt-2 w-48 origin-top-left transform rounded-md bg-white py-2 opacity-0 shadow-lg transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                  {/* {item.submenu && (
+                    <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left">
                       {item.submenu.map((subItem) => (
                         <a
                           key={subItem.name}
@@ -77,23 +77,23 @@ const Header = () => {
                         </a>
                       ))}
                     </div>
-                  )}
+                  )} */}
                 </div>
               ))}
             </nav>
 
             {/* Search Icon */}
-            <div className="relative hidden items-center md:flex">
-              <button
-                className="cursor-pointer text-gray-700 hover:text-blue-600"
+            <div className="hidden md:flex items-center relative">
+              {/* <button
+                className="text-gray-700 hover:text-blue-600 cursor-pointer"
                 onClick={toggleSearch}
               >
                 <Search className="h-5 w-5" />
-              </button>
+              </button> */}
 
               {/* Desktop Search Dropdown */}
-              {isSearchOpen && (
-                <div className="absolute top-10 right-0 z-20 w-64 rounded-md bg-white p-4 shadow-lg">
+              {/* {isSearchOpen && (
+                <div className="absolute right-0 top-10 w-64 bg-white rounded-md shadow-lg p-4 z-20">
                   <div className="relative">
                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                       <Search className="h-4 w-4 text-gray-500" />
@@ -106,7 +106,7 @@ const Header = () => {
                     />
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
 
@@ -146,8 +146,8 @@ const Header = () => {
                           }`}
                         />
                       </button>
-                      {activeSubmenu === item.name && (
-                        <div className="mt-2 space-y-2 border-l-2 border-gray-200 pl-4">
+                      {/* {activeSubmenu === item.name && (
+                        <div className="mt-2 pl-4 space-y-2 border-l-2 border-gray-200">
                           {item.submenu.map((subItem) => (
                             <a
                               key={subItem.name}
@@ -158,7 +158,7 @@ const Header = () => {
                             </a>
                           ))}
                         </div>
-                      )}
+                      )} */}
                     </div>
                   ) : (
                     <a
@@ -170,7 +170,8 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <div className="pt-4 pb-2">
+              {/* TODO: Search bar */}
+              {/* <div className="pt-4 pb-2">
                 <div className="flex items-center">
                   <div className="relative w-full">
                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -183,7 +184,7 @@ const Header = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         )}
