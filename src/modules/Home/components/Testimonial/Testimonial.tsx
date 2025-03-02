@@ -10,38 +10,38 @@ const Testimonial = () => {
 
   return (
     <div className="container mx-auto p-4 py-8 md:py-20">
-      <div className="w-[90%] md:w-[90%] lg:w-[80%] mx-auto">
-        <h1 className="text-[24px] md:text-[40px] font-Lato font-medium my-6 md:my-10 md:mb-16 leading-[32px] md:leading-[55px] w-[70%]">
+      <div className="mx-auto w-[90%] max-w-6xl">
+        <h1 className="font-Lato my-6 w-[70%] text-[24px] leading-[32px] font-medium md:my-10 md:mb-16 md:text-[40px] md:leading-[55px]">
           What partnership means to us
         </h1>
       </div>
 
-      <div className="relative flex flex-col md:flex-row gap-4 w-[90%] md:w-[90%] lg:w-[80%] mx-auto">
+      <div className="relative mx-auto flex w-[90%] max-w-6xl flex-col gap-4 md:flex-row">
         {columns.map((column, colIndex) => (
-          <div key={`col-${colIndex}`} className="flex-1 flex flex-col gap-4">
+          <div key={`col-${colIndex}`} className="flex flex-1 flex-col gap-4">
             {column.map((testimonial: ITestimonial, index) => (
               <div
                 key={testimonial.id}
-                className={`rounded-[32px] overflow-hidden bg-[#F3F7F9] border border-[#CFE1E8] font-Lato relative ${
+                className={`font-Lato relative overflow-hidden rounded-[32px] border border-[#CFE1E8] bg-[#F3F7F9] ${
                   false &&
                   isMobile &&
                   !showAllMobile &&
                   index === column.length - 1 &&
                   testimonial.id === 2
-                    ? "after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-32 after:bg-gradient-to-t after:from-white after:to-transparent"
+                    ? "after:absolute after:right-0 after:bottom-0 after:left-0 after:h-32 after:bg-gradient-to-t after:from-white after:to-transparent after:content-['']"
                     : ""
                 }`}
               >
                 {/* Header with logo and title/subtitle */}
-                <div className="p-[26px] flex items-start gap-4">
+                <div className="flex items-start gap-4 p-[26px]">
                   {/* Logo on the left */}
-                  <div className="w-12 h-12 bg-gray-200 flex items-center justify-center rounded-full">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-200">
                     <img src={testimonial.logo} alt={testimonial.title} />
                   </div>
 
                   {/* Title and subtitle in column on the right */}
                   <div className="flex-1">
-                    <h3 className="font-bold text-lg text-[#013D55]">
+                    <h3 className="text-lg font-bold text-[#013D55]">
                       {testimonial.title}
                     </h3>
                     <p className="text-sm text-[#6AA5BD]">
@@ -51,13 +51,13 @@ const Testimonial = () => {
                 </div>
 
                 {/* Year */}
-                <div className="px-[26px] text-sm text-[#6AA5BD] font-bold">
+                <div className="px-[26px] text-sm font-bold text-[#6AA5BD]">
                   {testimonial.year}
                 </div>
 
                 {/* Description */}
                 <div className="px-[26px] pt-2 pb-4">
-                  <p className="text-[#013D55] text-lg md:text-[20px] leading-[28px] md:leading-[32px]">
+                  <p className="text-lg leading-[28px] text-[#013D55] md:text-[20px] md:leading-[32px]">
                     {testimonial.description}
                   </p>
                 </div>
@@ -88,16 +88,16 @@ const Testimonial = () => {
 
         {/* Overlay blur effect */}
         {false && isMobile && !showAllMobile && testimonials.length > 2 && (
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+          <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-32 bg-gradient-to-t from-white to-transparent" />
         )}
       </div>
 
       {/* Show More button (only visible on mobile when not all testimonials are shown) */}
       {false && isMobile && !showAllMobile && testimonials.length > 2 && (
-        <div className="w-[90%] mx-auto mt-4 flex justify-center relative z-10">
+        <div className="relative z-10 mx-auto mt-4 flex w-[90%] justify-center">
           <button
             onClick={() => setShowAllMobile(true)}
-            className="bg-[#013D55] text-white py-3 px-6 rounded-full font-medium hover:bg-[#025475] transition-colors shadow-lg"
+            className="rounded-full bg-[#013D55] px-6 py-3 font-medium text-white shadow-lg transition-colors hover:bg-[#025475]"
           >
             Show More
           </button>

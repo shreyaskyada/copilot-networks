@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div
-      className="font-Lato relative min-h-[120vh] bg-[#002235] bg-cover bg-bottom bg-no-repeat text-white sm:h-[120vh] md:h-[100vh] lg:h-[100vh]"
+      className="font-Lato relative min-h-[800px] bg-[#002235] bg-cover bg-bottom bg-no-repeat text-white"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.44),rgba(0,0,0,0.44)),url(footer.png)",
