@@ -36,11 +36,7 @@ const Testimonial = () => {
                 <div className="p-[26px] flex items-start gap-4">
                   {/* Logo on the left */}
                   <div className="w-12 h-12 bg-gray-200 flex items-center justify-center rounded-full">
-                    <span className="text-sm text-gray-600">
-                      {testimonial.logo
-                        ? testimonial.logo.substring(0, 2)
-                        : testimonial.title.substring(0, 2)}
-                    </span>
+                    <img src={testimonial.logo} alt={testimonial.title} />
                   </div>
 
                   {/* Title and subtitle in column on the right */}
