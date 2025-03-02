@@ -1,5 +1,3 @@
-import React from "react";
-
 const Map = () => {
   return (
     <div className="relative h-[400px] bg-[#011929] sm:h-[600px] md:h-[600px]">

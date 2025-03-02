@@ -1,4 +1,3 @@
-import React from "react";
 import Map from "./components/Map/Map";
 import Locations from "./components/Locations/Locations";
 import ContactUsForm from "./components/ContactUsForm/ContactUsForm";

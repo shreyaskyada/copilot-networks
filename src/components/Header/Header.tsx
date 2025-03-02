@@ -50,7 +50,7 @@ const Header = () => {
           <div className="flex items-center gap-[60px]">
             {/* Desktop Navigation */}
             <nav className="hidden items-center space-x-[60px] md:flex">
-              {menuItems.map((item) => (
+              {menuItems.map((item: any) => (
                 <div key={item.name} className="group relative">
                   {item?.submenu ? (
                     <button className="flex cursor-pointer items-center font-medium text-gray-700 hover:text-blue-600">
@@ -132,7 +132,7 @@ const Header = () => {
         {isMenuOpen && (
           <div className="border-t border-gray-200 py-4 md:hidden">
             <div className="space-y-1">
-              {menuItems.map((item) => (
+              {menuItems.map((item: any) => (
                 <div key={item.name} className="py-2">
                   {item.submenu ? (
                     <div>

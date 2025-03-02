@@ -10,7 +10,7 @@ const useContactUsForm = () => {
     message: "",
   });
 
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<any>({
     name: "",
     email: "",
     industry: "",
