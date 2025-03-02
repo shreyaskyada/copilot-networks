@@ -1,4 +1,4 @@
-import Header from "./components/Header/Header";
+import Header from "../../components/Header/Header";
 import HeatMap from "./components/HeatMap/HeatMap";
 import TrustedBy from "./components/TrustedBy/TrustedBy";
 import Footer from "../../components/Footer/Footer";
