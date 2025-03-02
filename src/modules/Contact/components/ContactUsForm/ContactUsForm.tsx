@@ -38,9 +38,7 @@ export default function ContactForm() {
 
   return (
     <div className="mx-auto mt-[160px] mb-[200px] flex w-[90%] max-w-6xl flex-col items-center gap-8 overflow-hidden rounded-lg bg-white md:flex-row md:gap-0">
-      <style jsx global>
-        {phoneInputCustomStyles}
-      </style>
+      <style>{phoneInputCustomStyles}</style>
       {/* Left side - Image */}
       <div className="relative h-[400px] md:h-auto md:w-1/2">
         <img
