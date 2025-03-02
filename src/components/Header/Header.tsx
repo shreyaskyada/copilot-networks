@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { NavLink } from "react-router";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,7 +33,7 @@ const Header = () => {
     //   ],
     // },
 
-    { name: "Testimonials", href: "#testimonials", submenu: [] },
+    { name: "Testimonials", href: "#testimonials" },
     { name: "Contact Us", href: "/contact" },
   ];
 
@@ -51,18 +52,20 @@ const Header = () => {
             <nav className="hidden items-center space-x-[60px] md:flex">
               {menuItems.map((item) => (
                 <div key={item.name} className="group relative">
-                  {item.submenu ? (
+                  {item?.submenu ? (
                     <button className="flex cursor-pointer items-center font-medium text-gray-700 hover:text-blue-600">
                       {item.name}
                       <ChevronDown className="ml-1 h-4 w-4" />
                     </button>
                   ) : (
-                    <a
-                      href={item.href}
-                      className="font-medium text-gray-700 hover:text-blue-600"
+                    <NavLink
+                      to={item.href}
+                      className={({ isActive }) =>
+                        `font-medium hover:text-blue-600 ${isActive ? "font-bold text-[#1e2e4a]" : "text-black"}`
+                      }
                     >
                       {item.name}
-                    </a>
+                    </NavLink>
                   )}
 
                   {/* {item.submenu && (
@@ -83,7 +86,7 @@ const Header = () => {
             </nav>
 
             {/* Search Icon */}
-            <div className="hidden md:flex items-center relative">
+            <div className="relative hidden items-center md:flex">
               {/* <button
                 className="text-gray-700 hover:text-blue-600 cursor-pointer"
                 onClick={toggleSearch}
