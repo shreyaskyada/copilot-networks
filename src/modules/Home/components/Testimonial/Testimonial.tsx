@@ -1,22 +1,28 @@
 /* eslint-disable no-constant-condition */
 /* eslint-disable no-constant-binary-expression */
+import Slider from "react-slick";
 import { testimonials } from "./data";
 import { ITestimonial } from "./types";
 import useTestimonial from "./useTestimonial";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Testimonial = () => {
-  const { columns, isMobile, showAllMobile, setShowAllMobile } =
+  const { columns, isMobile, showAllMobile, setShowAllMobile, slickSettings } =
     useTestimonial();
 
   return (
-    <div className="container mx-auto p-4 py-8 md:py-20">
+    <div
+      className="container mx-auto overflow-hidden p-4 px-0 py-8 md:py-20"
+      id="testimonials"
+    >
       <div className="mx-auto w-[90%] max-w-6xl">
-        <h1 className="font-Lato my-6 w-[70%] text-[24px] leading-[32px] font-medium md:my-10 md:mb-16 md:text-[40px] md:leading-[55px]">
+        <h1 className="font-Lato my-10 w-[90%] px-[30px] text-[24px] leading-[32px] font-medium md:my-10 md:mb-16 md:px-[10px] md:text-[40px] md:leading-[55px]">
           What partnership means to us
         </h1>
       </div>
 
-      <div className="relative mx-auto flex w-[90%] max-w-6xl flex-col gap-4 md:flex-row">
+      <div className="relative mx-auto hidden w-[90%] max-w-6xl flex-col gap-4 sm:flex md:flex-row">
         {columns.map((column, colIndex) => (
           <div key={`col-${colIndex}`} className="flex flex-1 flex-col gap-4">
             {column.map((testimonial: ITestimonial, index) => (
@@ -86,6 +92,74 @@ const Testimonial = () => {
           </div>
         ))}
 
+        {/* Overlay blur effect */}
+        {false && isMobile && !showAllMobile && testimonials.length > 2 && (
+          <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-32 bg-gradient-to-t from-white to-transparent" />
+        )}
+      </div>
+
+      <div className="relative flex w-[100%] max-w-6xl flex-col pb-10 sm:flex md:hidden">
+        <Slider {...slickSettings}>
+          {testimonials.map((testimonial: ITestimonial) => (
+            <div className="w-full px-2">
+              <div
+                key={testimonial.id}
+                className={`font-Lato relative h-[428px] overflow-hidden rounded-[32px] border border-[#CFE1E8] bg-[#F3F7F9]`}
+              >
+                {/* Header with logo and title/subtitle */}
+                <div className="flex items-start gap-4 p-[26px]">
+                  {/* Logo on the left */}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-200">
+                    <img src={testimonial.logo} alt={testimonial.title} />
+                  </div>
+
+                  {/* Title and subtitle in column on the right */}
+                  <div className="flex-1">
+                    <h3 className="text-[17px] font-bold text-[#013D55]">
+                      {testimonial.title}
+                    </h3>
+                    <p className="text-[17px] text-[#6AA5BD]">
+                      {testimonial.subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Year */}
+                <div className="px-[26px] text-sm font-bold text-[#6AA5BD]">
+                  {testimonial.year}
+                </div>
+
+                {/* Description */}
+                <div className="px-[26px] pt-2 pb-4">
+                  <p className="line-clamp-7 text-[15px] leading-[28px] text-[#013D55] sm:text-lg md:text-[20px] md:leading-[32px]">
+                    {testimonial.description}
+                  </p>
+                </div>
+                <div className="absolute right-0 bottom-0 left-0">
+                  {/* Mileage */}
+                  <div className="px-[26px] pb-2">
+                    <p className="text-sm font-bold text-[#6AA5BD]">
+                      MILEAGE:{" "}
+                      <span className="font-normal text-[#6AA5BD]">
+                        {testimonial.mileage}
+                      </span>
+                    </p>
+                  </div>
+
+                  {/* Scope */}
+                  <div className="px-[26px] pb-4">
+                    <p className="text-sm font-bold text-[#6AA5BD]">
+                      SCOPE:{" "}
+                      <span className="font-normal text-[#6AA5BD]">
+                        {testimonial.scope}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
         {/* Overlay blur effect */}
         {false && isMobile && !showAllMobile && testimonials.length > 2 && (
           <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-32 bg-gradient-to-t from-white to-transparent" />

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ITestimonial } from "./types";
 import { testimonials } from "./data";
+import { Settings } from "react-slick";
 
 const useTestimonial = () => {
   const [columnCount, setColumnCount] = useState(3);
@@ -48,7 +49,7 @@ const useTestimonial = () => {
   // Organize testimonials into columns
   const organizeIntoColumns = (
     testimonials: ITestimonial[],
-    columnCount: number
+    columnCount: number,
   ) => {
     const columns: ITestimonial[][] = Array(columnCount)
       .fill(null)
@@ -62,6 +63,16 @@ const useTestimonial = () => {
     return columns;
   };
 
+  const slickSettings: Settings = {
+    className: "center",
+    centerMode: true,
+    infinite: false,
+    centerPadding: "40px",
+    slidesToShow: 1,
+    speed: 500,
+    dots: true,
+  };
+
   const visibleTestimonials = getVisibleTestimonials();
   const columns = organizeIntoColumns(visibleTestimonials, columnCount);
 
@@ -70,6 +81,7 @@ const useTestimonial = () => {
     isMobile,
     showAllMobile,
     setShowAllMobile,
+    slickSettings,
   };
 };
 

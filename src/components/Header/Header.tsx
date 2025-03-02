@@ -32,14 +32,14 @@ const Header = () => {
       ],
     },
 
-    { name: "Testimonials", href: "/testimonials" },
+    { name: "Testimonials", href: "#testimonials" },
     { name: "Contact Us", href: "/contact" },
   ];
 
   return (
-    <header className="bg-white border-b-[#6AA5BD] border-b-[1px]">
+    <header className="border-b-[1px] border-b-[#6AA5BD] bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
@@ -48,25 +48,25 @@ const Header = () => {
           </div>
           <div className="flex items-center gap-[60px]">
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-[60px]">
+            <nav className="hidden items-center space-x-[60px] md:flex">
               {menuItems.map((item) => (
-                <div key={item.name} className="relative group">
+                <div key={item.name} className="group relative">
                   {item.submenu ? (
-                    <button className="flex items-center text-gray-700 hover:text-blue-600 font-medium cursor-pointer">
+                    <button className="flex cursor-pointer items-center font-medium text-gray-700 hover:text-blue-600">
                       {item.name}
                       <ChevronDown className="ml-1 h-4 w-4" />
                     </button>
                   ) : (
                     <a
                       href={item.href}
-                      className="text-gray-700 hover:text-blue-600 font-medium"
+                      className="font-medium text-gray-700 hover:text-blue-600"
                     >
                       {item.name}
                     </a>
                   )}
 
                   {item.submenu && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left">
+                    <div className="invisible absolute left-0 z-10 mt-2 w-48 origin-top-left transform rounded-md bg-white py-2 opacity-0 shadow-lg transition-all duration-300 group-hover:visible group-hover:opacity-100">
                       {item.submenu.map((subItem) => (
                         <a
                           key={subItem.name}
@@ -83,9 +83,9 @@ const Header = () => {
             </nav>
 
             {/* Search Icon */}
-            <div className="hidden md:flex items-center relative">
+            <div className="relative hidden items-center md:flex">
               <button
-                className="text-gray-700 hover:text-blue-600 cursor-pointer"
+                className="cursor-pointer text-gray-700 hover:text-blue-600"
                 onClick={toggleSearch}
               >
                 <Search className="h-5 w-5" />
@@ -93,14 +93,14 @@ const Header = () => {
 
               {/* Desktop Search Dropdown */}
               {isSearchOpen && (
-                <div className="absolute right-0 top-10 w-64 bg-white rounded-md shadow-lg p-4 z-20">
+                <div className="absolute top-10 right-0 z-20 w-64 rounded-md bg-white p-4 shadow-lg">
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                       <Search className="h-4 w-4 text-gray-500" />
                     </div>
                     <input
                       type="text"
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full rounded-md border border-gray-300 bg-white py-2 pr-3 pl-10 leading-5 placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500 focus:outline-none sm:text-sm"
                       placeholder="Search"
                       autoFocus
                     />
@@ -111,7 +111,7 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="flex items-center md:hidden">
             <button
               onClick={toggleMenu}
               className="text-gray-700 hover:text-blue-600 focus:outline-none"
@@ -127,7 +127,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="border-t border-gray-200 py-4 md:hidden">
             <div className="space-y-1">
               {menuItems.map((item) => (
                 <div key={item.name} className="py-2">
@@ -135,19 +135,19 @@ const Header = () => {
                     <div>
                       <button
                         onClick={() => toggleSubmenu(item.name)}
-                        className="flex items-center justify-between w-full text-gray-700 hover:text-blue-600 font-medium"
+                        className="flex w-full items-center justify-between font-medium text-gray-700 hover:text-blue-600"
                       >
                         {item.name}
                         <ChevronDown
                           className={`h-4 w-4 transition-transform duration-200 ${
                             activeSubmenu === item.name
-                              ? "transform rotate-180"
+                              ? "rotate-180 transform"
                               : ""
                           }`}
                         />
                       </button>
                       {activeSubmenu === item.name && (
-                        <div className="mt-2 pl-4 space-y-2 border-l-2 border-gray-200">
+                        <div className="mt-2 space-y-2 border-l-2 border-gray-200 pl-4">
                           {item.submenu.map((subItem) => (
                             <a
                               key={subItem.name}
@@ -163,7 +163,7 @@ const Header = () => {
                   ) : (
                     <a
                       href={item.href}
-                      className="block text-gray-700 hover:text-blue-600 font-medium"
+                      className="block font-medium text-gray-700 hover:text-blue-600"
                     >
                       {item.name}
                     </a>
@@ -173,12 +173,12 @@ const Header = () => {
               <div className="pt-4 pb-2">
                 <div className="flex items-center">
                   <div className="relative w-full">
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                       <Search className="h-4 w-4 text-gray-500" />
                     </div>
                     <input
                       type="text"
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full rounded-md border border-gray-300 bg-white py-2 pr-3 pl-10 leading-5 placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500 focus:outline-none sm:text-sm"
                       placeholder="Search"
                     />
                   </div>

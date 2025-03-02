@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div
-      className="font-Lato relative h-[900px] bg-[#002235] bg-cover bg-bottom bg-no-repeat text-white sm:h-[800px]"
+      className="font-Lato relative h-[920px] bg-[#002235] bg-cover bg-bottom bg-no-repeat text-white md:h-[780px]"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.44),rgba(0,0,0,0.44)),url(footer.png)",
@@ -171,7 +171,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="space-y-4 md:hidden">
+              <div className="mt-8 space-y-4 md:hidden">
                 <div className="flex items-center">
                   <h2 className="text-2xl font-bold">
                     <img
