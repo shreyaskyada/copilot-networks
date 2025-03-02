@@ -1,34 +1,34 @@
 const Footer = () => {
   return (
     <div
-      className="relative min-h-[120vh] sm:h-[120vh] md:h-[100vh] lg:h-[100vh]  bg-[#002235] text-white font-Lato bg-no-repeat bg-cover bg-bottom"
+      className="font-Lato relative min-h-[120vh] bg-[#002235] bg-cover bg-bottom bg-no-repeat text-white sm:h-[120vh] md:h-[100vh] lg:h-[100vh]"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.44),rgba(0,0,0,0.44)),url(footer.png)",
       }}
     >
-      <div className="flex flex-col pt-[60px] lg:pt-[130px] z-50">
-        <div className="flex text-[20px] sm:text-[30px] md:text-[40px] gap-1 md:gap-[12px] mx-auto w-[90%] sm:w-[50%] md:w-full items-center justify-center md:leading-[54px] font-Lato flex-wrap">
+      <div className="z-50 flex flex-col pt-[60px] lg:pt-[130px]">
+        <div className="font-Lato mx-auto flex w-[90%] flex-wrap items-center justify-center gap-1 text-[20px] sm:w-[50%] sm:text-[30px] md:w-full md:gap-[12px] md:text-[40px] md:leading-[54px]">
           We value <span className="border-b-2 font-bold">Partnerships</span>{" "}
           over
           <span className="border-b-2 font-bold">Purchase Orders</span>
         </div>
-        <div className="flex flex-col items-center mt-10">
-          <button className="bg-white p-4 text-black rounded-full cursor-pointer">
+        <div className="mt-10 flex flex-col items-center">
+          <button className="cursor-pointer rounded-full bg-white p-4 text-black">
             Become a Partner
           </button>
         </div>
       </div>
-      <div className="relative max-md:mt-[100px] md:absolute bottom-10 w-full text-white overflow-hidden px-0 sm:px-6 md:px-10">
+      <div className="relative bottom-10 w-full overflow-hidden px-0 text-white max-md:mt-[100px] sm:px-6 md:absolute md:px-10">
         {/* Background image with network effect */}
         <hr className="block md:hidden"></hr>
         {/* Social media links */}
-        <div className="relative z-10  px-10 md:px-0 mt-4 mb-4  flex justify-start md:justify-end items-center">
+        <div className="relative z-10 mt-4 mb-4 flex items-center justify-start px-10 md:justify-end md:px-0">
           <div className="flex items-center gap-2">
             <span className="mr-2">Follow us</span>
             <a
               href="#"
-              className="p-1 rounded-full hover:bg-gray-800/50 transition-colors"
+              className="rounded-full p-1 transition-colors hover:bg-gray-800/50"
             >
               <img
                 src="/social/youtube.svg"
@@ -39,19 +39,19 @@ const Footer = () => {
             </a>
             <a
               href="#"
-              className="p-1 rounded-full hover:bg-gray-800/50 transition-colors"
+              className="rounded-full p-1 transition-colors hover:bg-gray-800/50"
             >
               <img src="/social/facebook.svg" alt="Facebook" />
             </a>
             <a
               href="#"
-              className="p-1 rounded-full hover:bg-gray-800/50 transition-colors"
+              className="rounded-full p-1 transition-colors hover:bg-gray-800/50"
             >
               <img src="/social/linkedin.svg" alt="linkedin" />
             </a>
             <a
               href="#"
-              className="p-1 rounded-full hover:bg-gray-800/50 transition-colors"
+              className="rounded-full p-1 transition-colors hover:bg-gray-800/50"
             >
               <img src="/social/instagram.svg" alt="Instagram" />
             </a>
@@ -60,10 +60,10 @@ const Footer = () => {
 
         <hr className="hidden md:block"></hr>
         {/* Main footer content */}
-        <div className="relative z-10 mx-auto px-10 md:px-0 py-8">
-          <div className="flex flex-col lg:flex-row justify-between gap-8 ">
+        <div className="relative z-10 mx-auto px-10 py-8 md:px-0">
+          <div className="flex flex-col justify-between gap-8 lg:flex-row">
             {/* Company info */}
-            <div className="space-y-4 hidden md:block">
+            <div className="hidden space-y-4 md:block">
               <div className="flex items-center">
                 <h2 className="text-2xl font-bold">
                   <img
@@ -73,7 +73,7 @@ const Footer = () => {
                   />
                 </h2>
               </div>
-              <div className="text-sm text-white ">
+              <div className="text-sm text-white">
                 <p className="leading-[25px]">
                   Copilot Networks, a Unit of{" "}
                   <a href="#" className="underline">
@@ -85,14 +85,14 @@ const Footer = () => {
             </div>
 
             {/* Legal */}
-            <div className="flex flex-col md:flex-row gap-10 md:gap-10 lg:gap-16">
+            <div className="flex flex-col gap-10 md:flex-row md:gap-10 lg:gap-16">
               <div>
-                <h3 className="text-lg font-medium mb-4">Legal</h3>
+                <h3 className="mb-4 text-lg font-medium">Legal</h3>
                 <ul className="flex flex-col gap-4">
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors text-[13px]"
+                      className="text-[13px] transition-colors hover:text-blue-400"
                     >
                       Terms Of Service
                     </a>
@@ -100,7 +100,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors text-[13px]"
+                      className="text-[13px] transition-colors hover:text-blue-400"
                     >
                       Privacy Policy
                     </a>
@@ -108,7 +108,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors text-[13px]"
+                      className="text-[13px] transition-colors hover:text-blue-400"
                     >
                       Cookie Policy
                     </a>
@@ -118,12 +118,12 @@ const Footer = () => {
 
               {/* Resources */}
               <div className="hidden md:block">
-                <h3 className="text-lg font-medium mb-4">Resources</h3>
+                <h3 className="mb-4 text-lg font-medium">Resources</h3>
                 <ul className="flex flex-col gap-4">
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors text-[13px]"
+                      className="text-[13px] transition-colors hover:text-blue-400"
                     >
                       Blog
                     </a>
@@ -131,7 +131,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors text-[13px]"
+                      className="text-[13px] transition-colors hover:text-blue-400"
                     >
                       Internet For All
                     </a>
@@ -139,7 +139,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#"
-                      className="hover:text-blue-400 transition-colors text-[13px]"
+                      className="text-[13px] transition-colors hover:text-blue-400"
                     >
                       Videos
                     </a>
@@ -149,7 +149,7 @@ const Footer = () => {
 
               {/* Need Help */}
               <div>
-                <h3 className="text-lg font-medium mb-4">Need Help?</h3>
+                <h3 className="mb-4 text-lg font-medium">Need Help?</h3>
                 <ul className="flex flex-col gap-4 text-[13px]">
                   <li>
                     <span>Call Us - </span>
@@ -161,7 +161,7 @@ const Footer = () => {
                     <span>General Enquiries - </span>
                     <a
                       href="mailto:Sales@Copilotnet.Com"
-                      className=" hover:underline"
+                      className="hover:underline"
                     >
                       Sales@Copilotnet.Com
                     </a>
@@ -180,7 +180,7 @@ const Footer = () => {
                   />
                 </h2>
               </div>
-              <div className="text-sm text-white ">
+              <div className="text-sm text-white">
                 <p className="leading-[25px]">
                   Copilot Networks, a Unit of{" "}
                   <a href="#" className="underline">
@@ -194,7 +194,7 @@ const Footer = () => {
         </div>
         <div className="w-full border-t-[0.5px] border-[#A8A8A8]"></div>
         {/* Copyright */}
-        <div className="relative z-10 mx-auto py-4 text-sm text-white hidden md:block">
+        <div className="relative z-10 mx-auto hidden py-4 text-sm text-white md:block">
           <p>© {new Date().getFullYear()} Copilot Networks</p>
         </div>
       </div>
