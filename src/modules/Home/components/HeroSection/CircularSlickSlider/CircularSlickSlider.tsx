@@ -251,7 +251,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                                 !isMd &&
                                   tab.id === 1 &&
                                   isActiveIndex &&
-                                  "scale-[150%]",
+                                  "scale-[130%] 2xl:scale-[150%]",
                                 !isMd &&
                                   tab.id === 2 &&
                                   isActiveIndex &&
@@ -291,7 +291,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
 
           {/* Title and Description Section - No animation */}
           <div
-            className="relative flex h-fit w-fit flex-col max-md:mx-auto max-md:-translate-y-[10px] max-md:items-center md:-translate-x-[40px]"
+            className="relative flex h-fit w-fit flex-col max-md:mx-auto max-md:-translate-y-[10px] max-md:items-center xl:-translate-x-[30px]"
             style={{
               ...(!isMd && { top: `${getTop()}px` }),
             }}
