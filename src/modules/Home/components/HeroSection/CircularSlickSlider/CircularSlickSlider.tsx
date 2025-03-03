@@ -41,8 +41,6 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
     ];
   }, [tabs, isMd]);
 
-  console.log("radius", radius);
-
   useEffect(() => {
     const calculateRadius = () => {
       if (divRef.current) {
