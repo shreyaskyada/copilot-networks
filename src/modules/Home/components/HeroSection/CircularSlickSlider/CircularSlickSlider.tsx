@@ -14,9 +14,10 @@ interface TabItem {
 
 interface CircularSliderProps {
   tabs: TabItem[];
+  setActiveTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
+const CircularSlider: React.FC<CircularSliderProps> = ({ tabs, setActiveTab }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [titlePadding, setTitlePadding] = useState(0);
   const [radius, setRadius] = useState(0);
@@ -40,8 +41,6 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
       tabs[tabLength - 1],
     ];
   }, [tabs, isMd]);
-
-  console.log("radius", radius);
 
   useEffect(() => {
     const calculateRadius = () => {
@@ -74,6 +73,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
   const handleNext = () => {
     const newIndex = (activeIndex + 1) % newTabs.length;
     setActiveIndex(newIndex);
+    setActiveTab(newTabs[newIndex].id);
     setRotation(rotation - 360 / newTabs.length);
     triggerFade();
   };
@@ -81,6 +81,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
   const handlePrev = () => {
     const newIndex = (activeIndex - 1 + newTabs.length) % newTabs.length;
     setActiveIndex(newIndex);
+    setActiveTab(newTabs[newIndex].id);
     setRotation(rotation + 360 / newTabs.length);
     triggerFade();
   };
@@ -94,6 +95,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
       forwardSteps <= backwardSteps ? forwardSteps : -backwardSteps;
 
     setActiveIndex(index);
+    setActiveTab(newTabs[index].id);
     setRotation(rotation - shortestSteps * (360 / totalTabs));
     triggerFade();
   };
@@ -186,6 +188,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
                     className={clsx(
                       "relative size-[0] -translate-x-1/2 -translate-y-1/2 transition-none duration-300",
                     )}
+                    key={index}
                     style={{
                       left: `calc(50% + ${x}px)`,
                       top: `calc(50% + ${y}px)`,

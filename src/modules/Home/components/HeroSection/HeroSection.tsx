@@ -3,6 +3,7 @@ import EnergyUtilitiesSVG from "../../../../assets/EnergyUtilitiesSVG";
 import EnterpriseRetailSVG from "../../../../assets/EnterpriseRetailSVG";
 import TelecomSVG from "../../../../assets/TelecomSVG";
 import CircularSlickSlider from "./CircularSlickSlider/CircularSlickSlider";
+import { HeroSectionProps } from "./types";
 
 const tabs = [
   {
@@ -47,10 +48,10 @@ const tabs = [
   },
 ];
 
-const HeroSection = () => {
+const HeroSection: React.FC<HeroSectionProps> = ({setActiveTab}) => {
   return (
     <div className="min-h-[calc(100vh-130px)] bg-white flex w-full md:items-center">
-      <CircularSlickSlider tabs={[...tabs, ...tabs]} />
+      <CircularSlickSlider tabs={[...tabs, ...tabs]} setActiveTab={setActiveTab} />
     </div>
   );
 };

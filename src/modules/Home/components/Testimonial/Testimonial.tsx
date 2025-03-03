@@ -27,7 +27,7 @@ const Testimonial = () => {
           <div key={`col-${colIndex}`} className="flex flex-1 flex-col gap-4">
             {column.map((testimonial: ITestimonial, index) => (
               <div
-                key={testimonial.id}
+                key={testimonial.id + index}
                 className={`font-Lato relative overflow-hidden rounded-[32px] border border-[#CFE1E8] bg-[#F3F7F9] ${
                   false &&
                   isMobile &&
@@ -100,8 +100,8 @@ const Testimonial = () => {
 
       <div className="relative flex w-[100%] max-w-6xl flex-col pb-10 sm:flex md:hidden">
         <Slider {...slickSettings}>
-          {testimonials.map((testimonial: ITestimonial) => (
-            <div className="w-full px-2">
+          {testimonials.map((testimonial: ITestimonial, index) => (
+            <div className="w-full px-2" key={index}>
               <div
                 key={testimonial.id}
                 className={`font-Lato relative h-[428px] overflow-hidden rounded-[32px] border border-[#CFE1E8] bg-[#F3F7F9]`}
