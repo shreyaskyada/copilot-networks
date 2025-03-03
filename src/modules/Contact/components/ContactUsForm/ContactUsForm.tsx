@@ -1,6 +1,9 @@
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import useContactUsForm from "./useContactUsForm";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const industries = [
   "Technology",
@@ -26,6 +29,11 @@ const services = [
   "Custom Software Development",
 ];
 
+const sliderImages = [
+  { src: "/contact/USOffice.png", alt: "USA Office" },
+  { src: "/contact/INOffice.png", alt: "India Office" },
+];
+
 export default function ContactForm() {
   const {
     handleChange,
@@ -36,20 +44,34 @@ export default function ContactForm() {
     setFormData,
   } = useContactUsForm();
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+  };
+
   return (
-    <div className="mx-auto mt-[160px] mb-[200px] flex w-[90%] max-w-6xl flex-col items-center gap-8 overflow-hidden rounded-lg bg-white md:flex-row md:gap-0">
-      <style>{phoneInputCustomStyles}</style>
+    <div className="mx-auto mt-[40px] mb-[200px] flex w-[90%] max-w-6xl flex-col items-center gap-8 overflow-hidden rounded-lg bg-white md:mt-[160px] md:gap-0 lg:flex-row">
       {/* Left side - Image */}
-      <div className="relative h-[400px] md:h-auto md:w-1/2">
-        <img
-          src="/contact/USOffice.png"
-          alt="USA Office"
-          className="object-cover"
-        />
+      <div className="relative w-full py-10 md:h-auto lg:w-1/2">
+        <Slider {...settings}>
+          {sliderImages.map((image, index) => (
+            <div key={index} className="p-2">
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="h-full w-full rounded-lg shadow-lg"
+              />
+            </div>
+          ))}
+        </Slider>
       </div>
 
       {/* Right side - Form */}
-      <div className="w-full p-4 sm:p-8 md:w-1/2">
+      <div className="w-full p-4 sm:p-8 lg:w-1/2">
         <h1 className="font-Lato mb-8 text-left text-4xl font-bold">
           Get in touch
         </h1>
@@ -227,6 +249,7 @@ export default function ContactForm() {
               Send
             </button>
           </div>
+          <style>{phoneInputCustomStyles}</style>
         </form>
       </div>
     </div>

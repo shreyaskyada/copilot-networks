@@ -1,3 +1,7 @@
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const LocationsData = [
   {
     country: "USA",
@@ -23,22 +27,50 @@ const LocationsData = [
 ];
 
 const Locations = () => {
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: false,
+    centerPadding: "40px",
+    slidesToShow: 1,
+    speed: 500,
+    dots: true,
+  };
+
   return (
-    <div>
-      <div className="mx-auto my-20 grid w-[90%] max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-20 md:grid-cols-2 lg:grid-cols-4">
-        {LocationsData.map(({ address, country, location }) => {
-          return (
-            <div className="space-y-2">
-              <div className="text-[20px] font-bold uppercase">{country}</div>
-              <div className="text-[15px] text-[#77A3BA]">{location}</div>
-              <div className="ml-4">
-                <ul className="list-disc">
-                  <li className="text-[16px]">{address}</li>
-                </ul>
+    <div className="mx-auto my-20 w-[90%] max-w-6xl">
+      {/* Show Slider in Mobile View */}
+      <div className="block sm:hidden">
+        <Slider {...settings}>
+          {LocationsData.map(({ address, country, location }, index) => (
+            <div key={index} className="p-4">
+              <div className="h-[180px] space-y-2 rounded-xl bg-white p-5 shadow-lg">
+                <div className="text-[20px] font-bold uppercase">{country}</div>
+                <div className="text-[15px] text-[#77A3BA]">{location}</div>
+                <div className="ml-4">
+                  <ul className="list-disc">
+                    <li className="text-[16px]">{address}</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          );
-        })}
+          ))}
+        </Slider>
+      </div>
+
+      {/* Show Grid in Larger Screens */}
+      <div className="hidden grid-cols-1 gap-10 sm:grid sm:grid-cols-2 sm:gap-20 md:grid-cols-2 lg:grid-cols-4">
+        {LocationsData.map(({ address, country, location }, index) => (
+          <div key={index} className="space-y-2">
+            <div className="text-[20px] font-bold uppercase">{country}</div>
+            <div className="text-[15px] text-[#77A3BA]">{location}</div>
+            <div className="ml-4">
+              <ul className="list-disc">
+                <li className="text-[16px]">{address}</li>
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
