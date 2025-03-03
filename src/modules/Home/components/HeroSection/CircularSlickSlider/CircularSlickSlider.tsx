@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import { useBreakpoint } from "../../../../../hooks/useBreakpoint";
 import ArrowIcon from "../../../../../assets/ArrowIcon";
+import "./CircularSlickSlider.css"
 
 interface TabItem {
   id: number;
@@ -123,7 +124,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
     <div className="flex h-full w-full max-w-screen max-md:overflow-hidden max-md:pb-10 md:-translate-y-[40px] md:items-center">
       <div className="relative flex w-full flex-1 flex-col items-center gap-10 md:flex-row md:justify-between">
         {/* Arrow */}
-        <div className="absolute top-[20px] left-[50%] z-[60] flex -translate-x-[50%] cursor-pointer gap-8 md:top-[50%] md:left-5 md:-translate-y-[50%] md:flex-col">
+        <div className="absolute top-[20px] left-[50%] z-[60] flex -translate-x-[50%] cursor-pointer gap-8 md:top-[50%] md:left-7 2xl:left-[2%] md:-translate-y-[50%] md:flex-col">
           <ArrowIcon
             className="hover:scale-125 max-md:-rotate-90"
             onClick={() => handlePrev()}
@@ -290,7 +291,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
 
         {/* Right section */}
         <div
-          className={`relative flex h-[40vh] flex-1 rounded-[15px] transition-opacity duration-300 max-md:pl-8 md:h-[60vh] md:max-w-[40vw] ${
+          className={`right-image-section relative flex h-[40vh] flex-1 rounded-[15px] transition-opacity duration-300 max-md:pl-8 md:h-[60vh] md:max-w-[40vw] ${
             fade ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -304,7 +305,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({ tabs }) => {
           </div>
 
           {/* Right - Two Stacked Smaller Images */}
-          <div className="relative flex w-[40%] -translate-x-[20%] flex-col justify-center gap-14 py-10 md:-translate-x-[50px]">
+          <div className="relative flex w-[40%] -translate-x-[20%] flex-col justify-center gap-9 md:gap-14 py-10 md:-translate-x-[50px]">
             <img
               src={newTabs[activeIndex].images[1]}
               className="h-[40%] w-full rounded-[15px] object-cover md:w-fit"
