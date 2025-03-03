@@ -70,7 +70,6 @@ const useContactUsForm = () => {
 
     if (validateForm()) {
       // Form submission logic would go here
-      console.log("Form submitted:", formData);
       alert("Form submitted successfully!");
 
       // Reset form

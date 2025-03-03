@@ -1,4 +1,7 @@
-const partners = [
+import clsx from "clsx";
+import { useMemo } from "react";
+
+const firstSectionIcons = [
   { name: "LUMA", logo: "/trustedBy/luma.svg" },
   { name: "TDS", logo: "/trustedBy/tds.svg" },
   { name: "AT&T", logo: "/trustedBy/at&t.svg" },
@@ -24,14 +27,39 @@ const partners = [
   { name: "Brightspeed", logo: "/trustedBy/brightspped.svg" },
 ];
 
-const TrustedBy = () => {
+const secondSectionIcons = [
+  { name: "LUMA", logo: "/trustedBy/luma.svg" },
+  {
+    name: "American Electric Power",
+    logo: "/trustedBy/AEP_logo.svg",
+  },
+  {
+    name: "Southern California Edison",
+    logo: "/trustedBy/edison.svg",
+  },
+];
+
+const TrustedBy = ({ activeTab }: {
+  activeTab: number
+}) => {
+  const partners = useMemo(() => { 
+    if (activeTab === 1) {
+      return firstSectionIcons
+    } else {
+      return secondSectionIcons;
+    }
+   }, [activeTab]);
+
   return (
     <section className="bg-[#F3F7F9] px-4 py-8 md:py-16">
       <h2 className="font-Lato mb-8 text-center text-[24px] font-medium text-[#223354] md:mb-16 md:text-[40px]">
         Trusted by:
       </h2>
 
-      <div className="mx-auto grid w-[90%] max-w-6xl grid-cols-4 gap-4 md:gap-4">
+      <div className={clsx("mx-auto grid w-[90%] max-w-6xl gap-4 md:gap-4",
+        activeTab === 1 && "grid-cols-4",
+        activeTab === 2 && "grid-cols-3",
+      )}>
         {partners.map((partner, index) => (
           <div
             key={index}
