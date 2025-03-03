@@ -22,7 +22,7 @@ const ArrowIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
       <path
         d="M1.42891 7.46025L7.88874 1.00042M7.88874 1.00042L13.8818 6.99344M7.88874 1.00042L7.8892 22.7773"
         stroke="white"
-        stroke-opacity="0.2"
+        strokeOpacity="0.2"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -5,15 +5,24 @@ import Footer from "../../components/Footer/Footer";
 import Testimonial from "./components/Testimonial/Testimonial";
 import HeroSection from "./components/HeroSection/HeroSection";
 import { LinkedInFeed } from "./components/LinkedInFeed";
+import { useState } from "react";
 
 const Home = () => {
+  const [activeTab, setActiveTab] = useState(1)
+
   return (
     <div>
       <Header />
-      <HeroSection />
+      <HeroSection setActiveTab={setActiveTab} />
       <HeatMap />
-      <Testimonial />
-      <TrustedBy />
+      {
+        activeTab === 1 &&
+        <Testimonial />
+      }
+      {
+        (activeTab === 1 || activeTab === 2) &&
+        <TrustedBy activeTab={activeTab} />
+      }
       <LinkedInFeed />
       <Footer />
     </div>

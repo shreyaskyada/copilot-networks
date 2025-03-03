@@ -27,7 +27,7 @@ const Testimonial = () => {
           <div key={`col-${colIndex}`} className="flex flex-1 flex-col gap-4">
             {column.map((testimonial: ITestimonial, index) => (
               <div
-                key={testimonial.id}
+                key={testimonial.id + index}
                 className={`font-Lato relative overflow-hidden rounded-[32px] border border-[#CFE1E8] bg-[#F3F7F9] ${
                   false &&
                   isMobile &&
