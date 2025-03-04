@@ -171,7 +171,7 @@ export default function ContactForm() {
               </label>
               <PhoneInput
                 international
-                defaultCountry="IN"
+                defaultCountry="US"
                 value={formData.phone}
                 onChange={(value) =>
                   setFormData({ ...formData, phone: value as string })

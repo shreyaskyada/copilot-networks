@@ -140,7 +140,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   };
 
   return (
-    <div className="flex h-full w-full max-w-screen max-md:overflow-hidden max-md:pb-10 md:-translate-y-[40px] md:items-center">
+    <div className="flex h-full w-full max-w-screen max-md:overflow-hidden max-md:pb-10 md:items-center">
       <div className="relative flex w-full flex-1 flex-col items-center gap-10 md:flex-row md:justify-between">
         {/* Arrow */}
         <div className="absolute top-[20px] left-[50%] z-[60] flex -translate-x-[50%] cursor-pointer gap-8 md:top-[50%] md:left-7 md:-translate-y-[50%] md:flex-col 2xl:left-[2%]">
@@ -155,7 +155,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
         </div>
 
         {/* Left section */}
-        <div className="relative flex w-screen min-w-96 flex-1 flex-col md:h-[60vh] md:w-[60vh] md:flex-row">
+        <div className="relative flex min-h-[580px] w-screen min-w-[580px] flex-1 flex-col md:h-[60vh] md:w-[60vh] md:flex-row">
           <div
             style={{ height: `${titlePadding}px` }}
             className="md:hidden"
@@ -169,7 +169,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
             }}
           >
             <div
-              className="relative inset-0 size-[120vw] flex-1 -translate-x-[75%] rounded-full border border-[#DDECF4] md:size-[60vh]"
+              className="relative inset-0 size-[120vw] min-h-[580px] min-w-[580px] flex-1 -translate-x-[75%] rounded-full border border-[#DDECF4] md:size-[60vh]"
               ref={divRef}
               style={{
                 transform: `rotate(${rotation}deg)`,
@@ -296,10 +296,10 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               ...(!isMd && { top: `${getTop()}px` }),
             }}
           >
-            <p className="text-left text-[28px] font-bold md:w-[calc(100%+66px)] md:text-[50px]">
+            <p className="text-left text-[28px] font-bold max-md:w-[90vw] max-md:text-center max-md:text-[24px] md:w-[calc(100%+66px)] md:text-[50px]">
               {newTabs[activeIndex].title}
             </p>
-            <p className="text-[16px] max-md:px-[50px] max-md:text-center md:w-[calc(100%+66px)] md:text-[28px]">
+            <p className="text-[16px] max-md:w-[90vw] max-md:px-4 max-md:text-center md:w-[calc(100%+66px)] md:text-[28px]">
               {newTabs[activeIndex].description}
             </p>
           </div>
