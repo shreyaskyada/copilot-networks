@@ -300,7 +300,11 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               {newTabs[activeIndex].title}
             </p>
             <p className="text-[16px] max-md:w-[90vw] max-md:px-4 max-md:text-center md:w-[calc(100%+66px)] md:text-[28px]">
-              {newTabs[activeIndex].description}
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: newTabs[activeIndex].description,
+                }}
+              />
             </p>
           </div>
         </div>
