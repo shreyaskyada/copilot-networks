@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -132,7 +132,7 @@ const Header = () => {
           <div className="flex items-center md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              className="text-white hover:text-blue-600 focus:outline-none"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -145,7 +145,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="border-t border-gray-200 py-4 md:hidden">
+          <div className="border-t border-gray-200 py-4 text-white md:hidden">
             <div className="space-y-1">
               {menuItems.map((item: any) => (
                 <div key={item.name} className="py-2">
@@ -153,7 +153,7 @@ const Header = () => {
                     <div>
                       <button
                         onClick={() => toggleSubmenu(item.name)}
-                        className="flex w-full items-center justify-between font-medium text-gray-700 hover:text-blue-600"
+                        className="flex w-full items-center justify-between font-medium hover:text-blue-600"
                       >
                         {item.name}
                         <ChevronDown
@@ -179,12 +179,12 @@ const Header = () => {
                       )} */}
                     </div>
                   ) : (
-                    <a
-                      href={item.href}
-                      className="block font-medium text-gray-700 hover:text-blue-600"
+                    <Link
+                      to={item.href}
+                      className="block font-medium hover:text-blue-600"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   )}
                 </div>
               ))}
