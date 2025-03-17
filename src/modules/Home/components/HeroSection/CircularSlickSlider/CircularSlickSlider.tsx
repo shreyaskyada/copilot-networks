@@ -155,7 +155,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
         </div>
 
         {/* Left section */}
-        <div className="relative flex min-h-[580px] w-screen min-w-[580px] flex-1 flex-col md:h-[60vh] md:w-[60vh] md:flex-row">
+        <div className="relative flex w-screen flex-1 flex-col md:h-[60vh] md:min-h-[580px] md:w-[60vh] md:min-w-[580px] md:flex-row">
           <div
             style={{ height: `${titlePadding}px` }}
             className="md:hidden"
@@ -169,7 +169,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
             }}
           >
             <div
-              className="relative inset-0 size-[120vw] min-h-[580px] min-w-[580px] flex-1 -translate-x-[75%] rounded-full border border-[#DDECF4] md:size-[60vh]"
+              className="relative inset-0 size-[120vw] flex-1 -translate-x-[75%] rounded-full border border-[#DDECF4] md:size-[60vh] md:min-h-[580px] md:min-w-[580px]"
               ref={divRef}
               style={{
                 transform: `rotate(${rotation}deg)`,
