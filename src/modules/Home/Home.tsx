@@ -8,21 +8,17 @@ import { LinkedInFeed } from "./components/LinkedInFeed";
 import { useState } from "react";
 
 const Home = () => {
-  const [activeTab, setActiveTab] = useState(1)
+  const [activeTab, setActiveTab] = useState(1);
 
   return (
     <div>
       <Header />
       <HeroSection setActiveTab={setActiveTab} />
       <HeatMap />
-      {
-        activeTab === 1 &&
-        <Testimonial />
-      }
-      {
-        (activeTab === 1 || activeTab === 2) &&
+      {activeTab === 1 && <Testimonial />}
+      {(activeTab === 1 || activeTab === 2) && (
         <TrustedBy activeTab={activeTab} />
-      }
+      )}
       <LinkedInFeed />
       <Footer />
     </div>

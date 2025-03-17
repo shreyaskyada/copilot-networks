@@ -20,14 +20,20 @@ const LocationsData = [
     address: "239 Kensington High ST, London W8 6SN",
   },
   {
+    country: "GERMANY",
+    location: "Copilot networks Germnay",
+    address: "Zeltnerstraße 1-3, 90443 Nürnberg",
+  },
+  {
     country: "Ireland",
-    location: "Copilot Europe",
-    address: "239 Kensington High ST, London W8 6SN",
+    location: "Copilot networks Spain",
+    address: "Calle de Mendez Alvaro, 20, Madrid, 28045",
   },
   {
     country: "Caribbean",
     location: "Copilot networks Caribbean",
-    address: "239 Kensington High ST, London W8 6SN",
+    address:
+      "Av. Gustavo Mejía Ricart 81, Santo Domingo 10132, Dominican Republic",
   },
 ];
 
@@ -43,7 +49,7 @@ const Locations = () => {
   };
 
   return (
-    <div className="mx-auto my-20 w-[100%] max-w-6xl overflow-hidden sm:w-[90%]">
+    <div className="mx-auto my-20 w-[100%] max-w-5xl overflow-hidden sm:w-[90%]">
       {/* Show Slider in Mobile View */}
       <div className="block sm:hidden">
         <Slider {...settings}>
@@ -64,7 +70,7 @@ const Locations = () => {
       </div>
 
       {/* Show Grid in Larger Screens */}
-      <div className="hidden grid-cols-1 gap-2 sm:grid sm:grid-cols-2 sm:gap-10 md:grid-cols-2 lg:grid-cols-5">
+      <div className="hidden grid-cols-1 gap-2 sm:grid sm:grid-cols-2 sm:gap-10 md:grid-cols-2 md:gap-x-[120px] md:gap-y-[60px] lg:grid-cols-3">
         {LocationsData.map(({ address, country, location }, index) => (
           <div key={index} className="space-y-2">
             <div className="text-[20px] font-bold uppercase">{country}</div>
