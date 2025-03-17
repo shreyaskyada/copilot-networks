@@ -48,10 +48,19 @@ const tabs = [
   },
 ];
 
-const HeroSection: React.FC<HeroSectionProps> = ({setActiveTab}) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ setActiveTab }) => {
   return (
-    <div className="min-h-[calc(100vh-130px)] bg-white flex w-full md:items-center">
-      <CircularSlickSlider tabs={[...tabs, ...tabs]} setActiveTab={setActiveTab} />
+    <div
+      className="flex min-h-[calc(100vh-130px)] w-full bg-white md:items-center"
+      style={{
+        background:
+          "linear-gradient(315deg, #DEF1FD 12.88%, #FFFFFF 66.22%, rgba(255, 255, 255, 0) 96.1%)",
+      }}
+    >
+      <CircularSlickSlider
+        tabs={[...tabs, ...tabs]}
+        setActiveTab={setActiveTab}
+      />
     </div>
   );
 };
