@@ -14,7 +14,7 @@ const Footer = () => {
           <span className="border-b-2 font-bold">Purchase Orders</span>
         </div>
         <div className="mt-10 flex flex-col items-center">
-          <button className="cursor-pointer rounded-full bg-white p-4 text-black">
+          <button className="h-[56px] w-[198px] cursor-pointer rounded-full bg-white p-4 text-base font-semibold text-black">
             Become a Partner
           </button>
         </div>
@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="relative z-10 mt-4 mb-4 flex items-center justify-start px-10 md:justify-end md:px-0">
             <div className="flex items-center gap-2">
               <span className="mr-2">Follow us</span>
-              <a
+              {/* <a
                 href="#"
                 className="rounded-full p-1 transition-colors hover:bg-gray-800/50"
               >
@@ -37,25 +37,27 @@ const Footer = () => {
                   height={24}
                   width={24}
                 />
-              </a>
+              </a> */}
               <a
-                href="#"
+                href="https://www.facebook.com/people/Copilot-Networks/61556286899890/"
                 className="rounded-full p-1 transition-colors hover:bg-gray-800/50"
+                target="_blank"
               >
                 <img src="/social/facebook.svg" alt="Facebook" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/copilot-net-llc"
                 className="rounded-full p-1 transition-colors hover:bg-gray-800/50"
+                target="_blank"
               >
                 <img src="/social/linkedin.svg" alt="linkedin" />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="rounded-full p-1 transition-colors hover:bg-gray-800/50"
               >
                 <img src="/social/instagram.svg" alt="Instagram" />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -77,7 +79,11 @@ const Footer = () => {
                 <div className="text-sm text-white">
                   <p className="leading-[25px]">
                     Copilot Networks, a Unit of{" "}
-                    <a href="#" className="underline">
+                    <a
+                      href="https://www.copilotnet.com/"
+                      className="underline"
+                      target="_blank"
+                    >
                       The Copilot Group
                     </a>
                   </p>
@@ -92,7 +98,7 @@ const Footer = () => {
                   <ul className="flex flex-col gap-4">
                     <li>
                       <a
-                        href="#"
+                        href="https://www.copilotnet.com/networks/terms-conditions.html"
                         className="text-[13px] transition-colors hover:text-blue-400"
                       >
                         Terms Of Service
@@ -100,25 +106,25 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="https://www.copilotnet.com/networks/privacy-policy.html"
                         className="text-[13px] transition-colors hover:text-blue-400"
                       >
                         Privacy Policy
                       </a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a
                         href="#"
                         className="text-[13px] transition-colors hover:text-blue-400"
                       >
                         Cookie Policy
                       </a>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
 
                 {/* Resources */}
-                <div className="hidden md:block">
+                <div className="hidden">
                   <h3 className="mb-4 text-lg font-medium">Resources</h3>
                   <ul className="flex flex-col gap-4">
                     <li>
@@ -184,7 +190,11 @@ const Footer = () => {
                 <div className="text-sm text-white">
                   <p className="leading-[25px]">
                     Copilot Networks, a Unit of{" "}
-                    <a href="#" className="underline">
+                    <a
+                      href="https://www.copilotnet.com/"
+                      className="underline"
+                      target="_blank"
+                    >
                       The Copilot Group
                     </a>
                   </p>
