@@ -33,11 +33,16 @@ const LinkedInFeed = () => {
 
   return (
     <div className="mx-auto max-w-6xl overflow-hidden md:w-[90%]">
-      <div className="my-10 mt-20 w-full text-center text-[24px] md:text-[40px]">
-        <span className="font-black">LIVE</span> LinkedIn Feed
+      <div className="mt-20 flex w-full items-center justify-center gap-3 text-center text-[24px] md:text-[40px]">
+        <img
+          src="/linkedin_img.png"
+          alt="linked-in"
+          className="h-fit w-[150px] md:w-[200px]"
+        />{" "}
+        Feed
       </div>
       {/* Grid layout for large screens */}
-      <div className="my-20 hidden grid-cols-3 gap-4 md:grid">
+      <div className="my-20 mt-0 hidden grid-cols-3 gap-4 md:grid">
         {images.map(({ image, link }, index) => (
           <a href={link} target="_blank" rel="noreferrer">
             <img
@@ -53,7 +58,7 @@ const LinkedInFeed = () => {
       </div>
 
       {/* Carousel for small screens */}
-      <div className="my-20 w-full md:hidden">
+      <div className="my-20 mt-0 w-full md:hidden">
         <Slider {...settings}>
           {images.map(({ image, link }, index) => (
             <div key={index} className="flex justify-center px-2">

@@ -33,13 +33,26 @@ const Header = () => {
     //   ],
     // },
 
-    { name: "Testimonials", href: "/" },
+    { name: "Testimonials", href: "#testimonials" },
     { name: "Teams", href: "/teams" },
     { name: "Contact Us", href: "/contact" },
   ];
 
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
-    <header className="border-b-[1px] border-b-[#6AA5BD] bg-[#002235] text-white">
+    <header className="sticky top-0 z-[99] bg-[#002235] text-white">
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -61,8 +74,9 @@ const Header = () => {
                   ) : (
                     <NavLink
                       to={item.href}
+                      onClick={(e) => scrollToSection(e, item.href)}
                       className={({ isActive }) =>
-                        `font-medium hover:underline ${isActive ? "font-bold underline" : ""}`
+                        `font-medium hover:underline ${isActive && item.href === "/" ? "font-bold underline" : ""}`
                       }
                     >
                       {item.name}
