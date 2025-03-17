@@ -1,17 +1,15 @@
 const Footer = () => {
   return (
     <div
-      className="font-Lato relative h-[920px] bg-[#002235] bg-cover bg-bottom bg-no-repeat text-white md:h-[780px]"
+      className="font-Lato relative h-[920px] bg-[#002235] bg-cover bg-center bg-no-repeat text-white md:h-[780px]"
       style={{
         backgroundImage:
           "linear-gradient(rgba(0,0,0,0.44),rgba(0,0,0,0.44)),url(footer.png)",
       }}
     >
       <div className="z-50 flex flex-col pt-[60px] lg:pt-[130px]">
-        <div className="font-Lato mx-auto flex w-[90%] max-w-6xl flex-wrap items-center justify-center gap-1 text-[20px] sm:w-[50%] sm:text-[30px] md:w-full md:gap-[12px] md:text-[40px] md:leading-[54px]">
-          We value <span className="border-b-2 font-bold">Partnerships</span>{" "}
-          over
-          <span className="border-b-2 font-bold">Purchase Orders</span>
+        <div className="font-Lato mx-auto flex w-[90%] max-w-6xl flex-wrap items-center justify-center text-[20px] sm:text-[30px] md:w-full md:gap-[12px] md:text-[40px] md:leading-[54px]">
+          Partnership Powering Progress
         </div>
         <div className="mt-10 flex flex-col items-center">
           <button className="h-[56px] w-[198px] cursor-pointer rounded-full bg-white p-4 text-base font-semibold text-black">

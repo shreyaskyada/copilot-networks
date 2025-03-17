@@ -51,7 +51,7 @@ const Locations = () => {
   return (
     <div className="mx-auto my-20 w-[100%] max-w-5xl overflow-hidden sm:w-[90%]">
       {/* Show Slider in Mobile View */}
-      <div className="block sm:hidden">
+      <div className="mb-10 block sm:hidden">
         <Slider {...settings}>
           {LocationsData.map(({ address, country, location }, index) => (
             <div key={index} className="p-4">
