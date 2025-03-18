@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
+      <Header activeTab={activeTab} />
       <HeroSection setActiveTab={setActiveTab} />
       <HeatMap />
       {activeTab === 1 && <Testimonial />}

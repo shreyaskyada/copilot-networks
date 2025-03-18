@@ -10,28 +10,28 @@ const LocationsData = [
   },
   {
     country: "India",
-    location: "Copilot networks India",
+    location: "Copilot Networks India",
     address:
-      "Procapitus Business Park, D-247/4A, Sector 63,Noida, Uttar Pradesh, India -201301",
+      "Procapitus Business Park, D-247/4A, Sector 63, Noida, Uttar Pradesh, India -201301",
   },
   {
     country: "UK",
-    location: "Copilot Europe",
+    location: "Copilot Networks Europe",
     address: "239 Kensington High ST, London W8 6SN",
   },
   {
     country: "GERMANY",
-    location: "Copilot networks Germnay",
+    location: "Copilot Networks Europe",
     address: "Zeltnerstraße 1-3, 90443 Nürnberg",
   },
   {
-    country: "Ireland",
-    location: "Copilot networks Spain",
+    country: "SPAIN",
+    location: "Copilot Networks Spain",
     address: "Calle de Mendez Alvaro, 20, Madrid, 28045",
   },
   {
     country: "Caribbean",
-    location: "Copilot networks Caribbean",
+    location: "Copilot Networks Caribbean",
     address:
       "Av. Gustavo Mejía Ricart 81, Santo Domingo 10132, Dominican Republic",
   },
@@ -59,9 +59,7 @@ const Locations = () => {
                 <div className="text-[20px] font-bold uppercase">{country}</div>
                 <div className="text-[15px] text-[#77A3BA]">{location}</div>
                 <div className="ml-4">
-                  <ul className="list-disc">
-                    <li className="text-[16px]">{address}</li>
-                  </ul>
+                  <span className="text-[16px]">{address}</span>
                 </div>
               </div>
             </div>
@@ -75,10 +73,8 @@ const Locations = () => {
           <div key={index} className="space-y-2">
             <div className="text-[20px] font-bold uppercase">{country}</div>
             <div className="text-[15px] text-[#77A3BA]">{location}</div>
-            <div className="ml-4">
-              <ul className="list-disc">
-                <li className="text-[16px]">{address}</li>
-              </ul>
+            <div className="">
+              <span className="text-[16px]">{address}</span>
             </div>
           </div>
         ))}

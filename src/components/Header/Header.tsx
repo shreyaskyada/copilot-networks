@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, NavLink } from "react-router";
+import { HeaderProps } from "./types";
+import clsx from "clsx";
 
-const Header = () => {
+const Header: React.FC<HeaderProps> = ({ activeTab }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   // const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -52,13 +54,24 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-[99] bg-[#002235] text-white">
+    <header
+      className={clsx(
+        "sticky top-0 z-[99]",
+        activeTab === 1 || activeTab === 2
+          ? "bg-[#002235] text-white"
+          : "border-b-[1px] border-b-[#6AA5BD] bg-white text-[#013D55]",
+      )}
+    >
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <img src="/logo.svg" alt="Logo" className="h-8 w-auto" />
+              {activeTab === 1 || activeTab === 2 ? (
+                <img src="/dark_logo.svg" alt="Logo" className="h-8 w-auto" />
+              ) : (
+                <img src="/white_logo.svg" alt="Logo" className="h-8 w-auto" />
+              )}
             </a>
           </div>
           <div className="flex items-center gap-[60px]">
@@ -132,7 +145,7 @@ const Header = () => {
           <div className="flex items-center md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-blue-600 focus:outline-none"
+              className="hover:text-blue-600 focus:outline-none"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -145,7 +158,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="border-t border-gray-200 py-4 text-white md:hidden">
+          <div className="border-t border-gray-200 py-4 md:hidden">
             <div className="space-y-1">
               {menuItems.map((item: any) => (
                 <div key={item.name} className="py-2">

@@ -136,7 +136,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
     const angle = 360 / newTabs.length;
     const radians = (angle * Math.PI) / 180;
 
-    return radius * Math.sin(radians) - 10;
+    return radius * Math.sin(radians) - 5;
   };
 
   return (
@@ -299,13 +299,13 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
             <p className="text-left text-[28px] font-bold max-md:w-[90vw] max-md:text-center max-md:text-[24px] md:w-[calc(100%+66px)] md:text-[50px]">
               {newTabs[activeIndex].title}
             </p>
-            <p className="text-[16px] max-md:w-[90vw] max-md:px-4 max-md:text-center md:w-[calc(100%+66px)] md:text-[28px]">
+            {/* <div className="text-[16px] max-md:w-[90vw] max-md:px-4 max-md:text-center md:w-[calc(100%+66px)] md:text-[28px]">
               <div
                 dangerouslySetInnerHTML={{
                   __html: newTabs[activeIndex].description,
                 }}
               />
-            </p>
+            </div> */}
           </div>
         </div>
 
