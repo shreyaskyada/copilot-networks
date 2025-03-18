@@ -77,8 +77,8 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
           <div className="flex items-center gap-[60px]">
             {/* Desktop Navigation */}
             <nav className="hidden items-center space-x-[60px] md:flex">
-              {menuItems.map((item: any) => (
-                <div key={item.name} className="group relative">
+              {menuItems.map((item: any, index: number) => (
+                <div key={index} className="group relative">
                   {item?.submenu ? (
                     <button className="flex cursor-pointer items-center font-medium hover:text-blue-600">
                       {item.name}

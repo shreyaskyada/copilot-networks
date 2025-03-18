@@ -44,7 +44,7 @@ const LinkedInFeed = () => {
       {/* Grid layout for large screens */}
       <div className="my-20 mt-0 hidden grid-cols-3 gap-4 md:grid">
         {images.map(({ image, link }, index) => (
-          <a href={link} target="_blank" rel="noreferrer">
+          <a href={link} target="_blank" rel="noreferrer" key={index}>
             <img
               key={index}
               src={image}

@@ -39,6 +39,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
     }
     return [
       ...tabs,
+      tabs[tabLength - 4],
       tabs[tabLength - 3],
       tabs[tabLength - 2],
       tabs[tabLength - 1],
@@ -136,7 +137,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
     const angle = 360 / newTabs.length;
     const radians = (angle * Math.PI) / 180;
 
-    return radius * Math.sin(radians) - 5;
+    return radius * Math.sin(radians) - -18;
   };
 
   return (
@@ -178,7 +179,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               }}
             >
               {newTabs.map((tab, index) => {
-                const { x, y } = getXAndYCordinates(index, isMd ? 0 : -20);
+                const { x, y } = getXAndYCordinates(index, isMd ? 0 : -18);
                 const isActiveIndex = activeIndex === index;
                 const Icon = tab.icon;
 
@@ -296,7 +297,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               ...(!isMd && { top: `${getTop()}px` }),
             }}
           >
-            <p className="text-left text-[28px] font-bold max-md:w-[90vw] max-md:text-center max-md:text-[24px] md:w-[calc(100%+66px)] md:text-[50px]">
+            <p className="text-left text-[28px] font-bold max-md:mt-2 max-md:w-[90vw] max-md:text-center max-md:text-[24px] md:w-[calc(100%+66px)] md:text-[50px]">
               {newTabs[activeIndex].title}
             </p>
             {/* <div className="text-[16px] max-md:w-[90vw] max-md:px-4 max-md:text-center md:w-[calc(100%+66px)] md:text-[28px]">
