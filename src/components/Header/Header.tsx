@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { HeaderProps } from "./types";
 import clsx from "clsx";
 
@@ -8,6 +8,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   // const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -46,10 +47,24 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
   ) => {
     if (href.startsWith("#")) {
       e.preventDefault();
-      const element = document.querySelector(href);
-      console.log("elementelement", element);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+      const currentPath = window.location.pathname;
+
+      if (currentPath !== "/") {
+        // Use React Router's navigate instead of window.location
+        navigate("/", { replace: false });
+        // Add a small delay to allow for navigation before scrolling
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      } else {
+        // If already on home page, just scroll
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
       }
     }
   };
@@ -67,13 +82,13 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center">
+            <NavLink to="/" className="flex items-center">
               {activeTab === 1 || activeTab === 2 ? (
                 <img src="/dark_logo.svg" alt="Logo" className="h-8 w-auto" />
               ) : (
                 <img src="/white_logo.svg" alt="Logo" className="h-8 w-auto" />
               )}
-            </a>
+            </NavLink>
           </div>
           <div className="flex items-center gap-[60px]">
             {/* Desktop Navigation */}

@@ -9,7 +9,7 @@ interface TabItem {
   title: string;
   description: string;
   icon: React.ElementType;
-  images: string[];
+  images: string;
 }
 
 interface CircularSliderProps {
@@ -311,9 +311,10 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
         </div>
 
         {/* Right section - Images without animation */}
-        <div className="right-image-section relative flex h-[40vh] flex-1 rounded-[15px] max-md:pl-8 md:h-[60vh] md:max-w-[40vw]">
-          {/* Left - Primary Large Image */}
-          <div className="w-[70%] flex-1">
+        <div className="right-image-section relative mr-[5%] flex items-center max-md:pl-8 md:h-[60vh] md:max-w-[40vw]">
+          {/* relative mr-[5%] flex h-[40vh] flex-1 rounded-[15px] max-md:pl-8 md:h-[60vh] md:max-w-[40vw]  */}
+          <img src={newTabs[activeIndex].images} className="object-cover" />
+          {/* <div className="w-[70%] flex-1">
             <img
               src={newTabs[activeIndex].images[0]}
               className="h-full w-full rounded-[15px] object-cover md:w-fit"
@@ -321,7 +322,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
             />
           </div>
 
-          {/* Right - Two Stacked Smaller Images */}
+          
           <div className="relative flex w-[40%] -translate-x-[20%] flex-col justify-center gap-9 py-10 md:-translate-x-[50px] md:gap-14">
             <img
               src={newTabs[activeIndex].images[1]}
@@ -333,7 +334,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               className="relative h-[40%] w-full scale-[110%] rounded-[15px] object-cover md:w-fit md:-translate-x-[5%]"
               alt="Tertiary Image"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
