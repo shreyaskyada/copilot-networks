@@ -47,6 +47,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const element = document.querySelector(href);
+      console.log("elementelement", element);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }

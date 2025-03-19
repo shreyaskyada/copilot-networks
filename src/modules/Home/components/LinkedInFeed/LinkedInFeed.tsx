@@ -37,7 +37,7 @@ const LinkedInFeed = () => {
         <img
           src="/linkedin_img.png"
           alt="linked-in"
-          className="h-fit w-[150px] md:w-[200px]"
+          className="size-[150px] h-fit md:size-[200px]"
         />{" "}
         Feed
       </div>

@@ -122,7 +122,7 @@ const Members = () => {
 
                     <p className="mb-6 text-gray-700">{member.description}</p>
                     <div className="hidden w-[200px] md:block">
-                      <a href={member.linkedIn}>
+                      <a href={member.linkedIn} target="_blank">
                         <img
                           src="/linkdin-button.svg"
                           alt="linkedin"
