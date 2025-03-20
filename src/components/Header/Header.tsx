@@ -26,15 +26,33 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
   // };
 
   const menuItems = [
-    // {
-    //   name: "Services",
-    //   submenu: [
-    //     { name: "Web Development", href: "/services/web-development" },
-    //     { name: "Mobile Apps", href: "/services/mobile-apps" },
-    //     { name: "Cloud Solutions", href: "/services/cloud-solutions" },
-    //     { name: "Consulting", href: "/services/consulting" },
-    //   ],
-    // },
+    {
+      name: "Industry",
+      submenu: [
+        { name: "Telecom", href: "/industry/telecom" },
+        { name: "Energy & Utilities", href: "/industry/energy-and-Utilities" },
+        {
+          name: "Enterprise & Retail",
+          href: "/industry/enterprise-and-retail",
+        },
+        { name: "Agrivoltaics", href: "/industry/agrivoltaics" },
+      ],
+    },
+    {
+      name: "Products",
+      submenu: [
+        { name: "Telecom Products", href: "/products/telecom-products" },
+        {
+          name: "Energy & Utilities Products",
+          href: "/products/Energy-and-utilities-products",
+        },
+        {
+          name: "Enterprise & Retail Products",
+          href: "enterprise-and-retail-products",
+        },
+        { name: "Agrivoltaics Products", href: "agrivoltaics-products" },
+      ],
+    },
 
     { name: "Testimonials", href: "#testimonials" },
     { name: "Teams", href: "/teams" },
@@ -96,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
               {menuItems.map((item: any, index: number) => (
                 <div key={index} className="group relative">
                   {item?.submenu ? (
-                    <button className="flex cursor-pointer items-center font-medium hover:text-blue-600">
+                    <button className="flex cursor-pointer items-center font-medium hover:text-[#77A3BA]">
                       {item.name}
                       <ChevronDown className="ml-1 h-4 w-4" />
                     </button>
@@ -112,19 +130,21 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                     </NavLink>
                   )}
 
-                  {/* {item.submenu && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left">
-                      {item.submenu.map((subItem) => (
-                        <a
-                          key={subItem.name}
-                          href={subItem.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                        >
-                          {subItem.name}
-                        </a>
-                      ))}
+                  {item.submenu && (
+                    <div className="invisible absolute left-0 z-10 mt-2 w-48 origin-top-left transform rounded-md bg-white py-2 opacity-0 shadow-lg transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                      {item.submenu.map(
+                        (subItem: { name: string; href: string }) => (
+                          <a
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#77A3BA]"
+                          >
+                            {subItem.name}
+                          </a>
+                        ),
+                      )}
                     </div>
-                  )} */}
+                  )}
                 </div>
               ))}
             </nav>
@@ -193,19 +213,21 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                           }`}
                         />
                       </button>
-                      {/* {activeSubmenu === item.name && (
-                        <div className="mt-2 pl-4 space-y-2 border-l-2 border-gray-200">
-                          {item.submenu.map((subItem) => (
-                            <a
-                              key={subItem.name}
-                              href={subItem.href}
-                              className="block py-2 text-sm text-gray-600 hover:text-blue-600"
-                            >
-                              {subItem.name}
-                            </a>
-                          ))}
+                      {activeSubmenu === item.name && (
+                        <div className="mt-2 space-y-2 border-l-2 border-gray-200 pl-4">
+                          {item.submenu.map(
+                            (subItem: { name: string; href: string }) => (
+                              <a
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block py-2 text-sm text-gray-600 hover:text-blue-600"
+                              >
+                                {subItem.name}
+                              </a>
+                            ),
+                          )}
                         </div>
-                      )} */}
+                      )}
                     </div>
                   ) : (
                     <Link

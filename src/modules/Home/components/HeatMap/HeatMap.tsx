@@ -17,7 +17,7 @@ const HeatMap = () => {
         </h6>
       </div>
       <div className="absolute bottom-[8%] w-full md:bottom-[8%] xl:bottom-[16%]">
-        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-6 sm:flex-row">
+        <div className="mx-auto flex w-[90%] max-w-6xl flex-col justify-between gap-6 sm:flex-row">
           <div className="w-fit">
             <div className="flex w-full flex-row items-center gap-4">
               <div className="text-secondary text-[32px] font-extrabold md:text-[40px]">

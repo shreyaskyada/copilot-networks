@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="absolute bottom-10 w-full overflow-hidden px-0 text-white max-md:mt-[100px]">
-        <div className="mx-auto w-[90%] max-w-7xl">
+        <div className="mx-auto max-w-7xl sm:w-[90%]">
           {/* Background image with network effect */}
           <hr className="block md:hidden"></hr>
           {/* Social media links */}
