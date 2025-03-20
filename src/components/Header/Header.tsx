@@ -127,7 +127,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
         {isMenuOpen && (
           <div className="border-t border-gray-200 py-4 md:hidden">
             <div className="space-y-1">
-              {menuItems.map((item: any) => (
+              {menuItems.map((item) => (
                 <div key={item.name} className="py-2">
                   {item.submenu ? (
                     <div>
@@ -146,27 +146,32 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                       </button>
                       {activeSubmenu === item.name && (
                         <div className="mt-2 space-y-2 border-l-2 border-gray-200 pl-4">
-                          {item.submenu.map(
-                            (subItem: { name: string; href: string }) => (
-                              <a
-                                key={subItem.name}
-                                href={subItem.href}
-                                className="block py-2 text-sm text-gray-600 hover:text-blue-600"
-                              >
-                                {subItem.name}
-                              </a>
-                            ),
-                          )}
+                          {item.submenu.map((subItem, index) => (
+                            <Link
+                              key={subItem.name}
+                              to={subItem.href}
+                              state={{
+                                navActiveTab: index,
+                              }}
+                              className="block py-2 text-sm text-gray-600 hover:text-blue-600"
+                            >
+                              {subItem.name}
+                            </Link>
+                          ))}
                         </div>
                       )}
                     </div>
                   ) : (
-                    <Link
-                      to={item.href}
+                    <NavLink
+                      to={item.href || ""}
                       className="block font-medium hover:text-blue-600"
+                      onClick={(e) => {
+                        scrollToSection(e, item.href || "");
+                        toggleMenu();
+                      }}
                     >
                       {item.name}
-                    </Link>
+                    </NavLink>
                   )}
                 </div>
               ))}

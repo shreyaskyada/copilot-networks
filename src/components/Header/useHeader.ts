@@ -33,16 +33,16 @@ export const useHeader = () => {
     {
       name: "Products",
       submenu: [
-        { name: "Telecom Products", href: "/products/telecom-products" },
+        { name: "Telecom Products", href: "" },
         {
           name: "Energy & Utilities Products",
-          href: "/products/Energy-and-utilities-products",
+          href: "",
         },
         {
           name: "Enterprise & Retail Products",
-          href: "enterprise-and-retail-products",
+          href: "",
         },
-        { name: "Agrivoltaics Products", href: "agrivoltaics-products" },
+        { name: "Agrivoltaics Products", href: "" },
       ],
     },
     { name: "Testimonials", href: "#testimonials" },
