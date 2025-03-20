@@ -1,7 +1,16 @@
-import Teams from "../../modules/Teams/Teams";
+import { useEffect } from "react";
+import Members from "./components/Members/Members";
 
-const TeamsPage = () => {
-  return <Teams />;
+const Teams = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div>
+      <Members />
+    </div>
+  );
 };
 
-export default TeamsPage;
+export default Teams;

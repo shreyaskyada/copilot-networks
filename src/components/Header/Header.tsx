@@ -51,6 +51,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                       onClick={(e) => {
                         scrollToSection(e, item.href || "");
                       }}
+                      // state={{ navActiveTab: 0 }}
                       className={({ isActive }) =>
                         `font-medium hover:underline ${isActive && item.href === "/" ? "font-bold underline" : ""}`
                       }

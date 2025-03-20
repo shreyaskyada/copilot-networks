@@ -58,8 +58,8 @@ export const useHeader = () => {
       e.preventDefault();
       const currentPath = window.location.pathname;
 
+      navigate("/", { replace: false, state: { navActiveTab: 0 } });
       if (currentPath !== "/") {
-        navigate("/", { replace: false });
         setTimeout(() => {
           const element = document.querySelector(href);
           if (element) {
@@ -67,10 +67,12 @@ export const useHeader = () => {
           }
         }, 100);
       } else {
-        const element = document.querySelector(href);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 300);
       }
     }
   };

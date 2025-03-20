@@ -3,13 +3,14 @@ import clsx from "clsx";
 import { useBreakpoint } from "../../../../../hooks/useBreakpoint";
 import ArrowIcon from "../../../../../assets/ArrowIcon";
 import "./CircularSlickSlider.css";
+import { useLocation, useNavigate } from "react-router";
 
 interface TabItem {
   id: number;
   title: string;
   description: string;
   icon: React.ElementType;
-  images: string[];
+  images: string;
 }
 
 interface CircularSliderProps {
@@ -29,8 +30,20 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   const divRef = useRef<HTMLDivElement>(null);
   const circularDivRef = useRef<HTMLDivElement>(null);
   const activeTabDivRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const isMd = useBreakpoint("md");
+  const { state } = location;
+
+  console.log("Stateasda", state);
+
+  useEffect(() => {
+    if (state?.navActiveTab >= 0) {
+      handleTabClick(state.navActiveTab);
+      navigate(location.pathname, { replace: true });
+    }
+  }, [state]);
 
   const newTabs = useMemo(() => {
     const tabLength = tabs.length;
@@ -39,6 +52,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
     }
     return [
       ...tabs,
+      tabs[tabLength - 4],
       tabs[tabLength - 3],
       tabs[tabLength - 2],
       tabs[tabLength - 1],
@@ -136,7 +150,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
     const angle = 360 / newTabs.length;
     const radians = (angle * Math.PI) / 180;
 
-    return radius * Math.sin(radians) - 5;
+    return radius * Math.sin(radians) - -18;
   };
 
   return (
@@ -178,7 +192,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               }}
             >
               {newTabs.map((tab, index) => {
-                const { x, y } = getXAndYCordinates(index, isMd ? 0 : -20);
+                const { x, y } = getXAndYCordinates(index, isMd ? 0 : -18);
                 const isActiveIndex = activeIndex === index;
                 const Icon = tab.icon;
 
@@ -296,7 +310,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               ...(!isMd && { top: `${getTop()}px` }),
             }}
           >
-            <p className="text-left text-[28px] font-bold max-md:w-[90vw] max-md:text-center max-md:text-[24px] md:w-[calc(100%+66px)] md:text-[50px]">
+            <p className="text-left text-[28px] font-bold max-md:mt-2 max-md:w-[90vw] max-md:text-center max-md:text-[24px] md:w-[calc(100%+66px)] md:text-[50px]">
               {newTabs[activeIndex].title}
             </p>
             {/* <div className="text-[16px] max-md:w-[90vw] max-md:px-4 max-md:text-center md:w-[calc(100%+66px)] md:text-[28px]">
@@ -310,9 +324,10 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
         </div>
 
         {/* Right section - Images without animation */}
-        <div className="right-image-section relative flex h-[40vh] flex-1 rounded-[15px] max-md:pl-8 md:h-[60vh] md:max-w-[40vw]">
-          {/* Left - Primary Large Image */}
-          <div className="w-[70%] flex-1">
+        <div className="right-image-section relative mr-[5%] flex items-center max-md:pl-8 md:h-[60vh] md:max-w-[40vw]">
+          {/* relative mr-[5%] flex h-[40vh] flex-1 rounded-[15px] max-md:pl-8 md:h-[60vh] md:max-w-[40vw]  */}
+          <img src={newTabs[activeIndex].images} className="object-cover" />
+          {/* <div className="w-[70%] flex-1">
             <img
               src={newTabs[activeIndex].images[0]}
               className="h-full w-full rounded-[15px] object-cover md:w-fit"
@@ -320,7 +335,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
             />
           </div>
 
-          {/* Right - Two Stacked Smaller Images */}
+          
           <div className="relative flex w-[40%] -translate-x-[20%] flex-col justify-center gap-9 py-10 md:-translate-x-[50px] md:gap-14">
             <img
               src={newTabs[activeIndex].images[1]}
@@ -332,7 +347,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               className="relative h-[40%] w-full scale-[110%] rounded-[15px] object-cover md:w-fit md:-translate-x-[5%]"
               alt="Tertiary Image"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

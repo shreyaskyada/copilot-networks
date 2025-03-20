@@ -18,27 +18,30 @@ const HeatMap = () => {
       </div>
       <div className="absolute bottom-[8%] w-full md:bottom-[8%] xl:bottom-[16%]">
         <div className="mx-auto flex w-[90%] max-w-6xl flex-col justify-between gap-6 sm:flex-row">
-          <div className="w-[180px]">
-            <div className="flex w-full flex-row items-center justify-between gap-4">
+          <div className="w-fit">
+            <div className="flex w-full flex-row items-center gap-4">
               <div className="text-secondary text-[32px] font-extrabold md:text-[40px]">
                 160
               </div>
-              <div className="flex flex-col items-start text-[14px] tracking-[2px]">
+              <div className="flex flex-col text-[14px]">
                 <div>OSP/ISP</div>
                 <div>Engineers</div>
               </div>
             </div>
-            <div className="flex w-full flex-row items-center justify-between">
-              <div className="text-secondary text-right text-[32px] font-extrabold md:text-[40px]">
+            <div className="flex w-full flex-row items-start gap-4">
+              <div className="text-secondary text-[32px] font-extrabold md:text-[40px]">
                 <span className="text-[#002235]">0</span>
                 <span>42</span>
               </div>
-              <div className="flex flex-col items-start text-[14px] tracking-[2px]">
-                <div>OSP/ISP</div>
-                <div>Engineers</div>
+              <div className="relative flex translate-y-[10px] flex-col text-[14px]">
+                <div>OSP/ISP Field</div>
+                <div>
+                  Engineer & <br /> Inspectors
+                </div>
               </div>
             </div>
           </div>
+
           <div className="">
             <div className="flex w-full flex-col items-start justify-between gap-4">
               <h3 className="text-secondary font-Lato text-[20px] tracking-[2px] uppercase">

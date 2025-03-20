@@ -7,6 +7,7 @@ import { LinkedInFeed } from "./components/LinkedInFeed";
 import { HomeProps } from "./types";
 
 const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
+  console.log("activeTabactiveTab", activeTab);
   return (
     <div>
       <HeroSection setActiveTab={setActiveTab} />
