@@ -34,7 +34,7 @@ const HeatMap = () => {
                 <span>42</span>
               </div>
               <div className="relative flex translate-y-[10px] flex-col text-[14px]">
-                <div>OSP/ISP</div>
+                <div>OSP/ISP Field</div>
                 <div>
                   Engineer & <br /> Inspectors
                 </div>

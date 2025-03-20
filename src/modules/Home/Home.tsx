@@ -11,8 +11,8 @@ const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
     <div>
       <HeroSection setActiveTab={setActiveTab} />
       <HeatMap />
-      {activeTab === 1 && <Testimonial />}
-      {(activeTab === 1 || activeTab === 2) && (
+      {activeTab === 0 && <Testimonial />}
+      {(activeTab === 0 || activeTab === 1) && (
         <TrustedBy activeTab={activeTab} />
       )}
       <LinkedInFeed />

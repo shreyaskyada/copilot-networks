@@ -7,7 +7,7 @@ import { useState } from "react";
 import Home from "./modules/Home/Home";
 
 function App() {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <>

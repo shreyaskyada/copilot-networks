@@ -39,16 +39,14 @@ const secondSectionIcons = [
   },
 ];
 
-const TrustedBy = ({ activeTab }: {
-  activeTab: number
-}) => {
-  const partners = useMemo(() => { 
-    if (activeTab === 1) {
-      return firstSectionIcons
+const TrustedBy = ({ activeTab }: { activeTab: number }) => {
+  const partners = useMemo(() => {
+    if (activeTab === 0) {
+      return firstSectionIcons;
     } else {
       return secondSectionIcons;
     }
-   }, [activeTab]);
+  }, [activeTab]);
 
   return (
     <section className="bg-[#F3F7F9] px-4 py-8 md:py-16">
@@ -56,10 +54,13 @@ const TrustedBy = ({ activeTab }: {
         Trusted by:
       </h2>
 
-      <div className={clsx("mx-auto grid w-[90%] max-w-6xl gap-4 md:gap-4",
-        activeTab === 1 && "grid-cols-4",
-        activeTab === 2 && "grid-cols-3",
-      )}>
+      <div
+        className={clsx(
+          "mx-auto grid w-[90%] max-w-6xl gap-4 md:gap-4",
+          activeTab === 0 && "grid-cols-4",
+          activeTab === 1 && "grid-cols-3",
+        )}
+      >
         {partners.map((partner, index) => (
           <div
             key={index}

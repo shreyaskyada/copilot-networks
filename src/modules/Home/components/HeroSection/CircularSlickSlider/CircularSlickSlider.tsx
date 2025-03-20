@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { useBreakpoint } from "../../../../../hooks/useBreakpoint";
 import ArrowIcon from "../../../../../assets/ArrowIcon";
 import "./CircularSlickSlider.css";
+import { useLocation, useNavigate } from "react-router";
 
 interface TabItem {
   id: number;
@@ -29,8 +30,18 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   const divRef = useRef<HTMLDivElement>(null);
   const circularDivRef = useRef<HTMLDivElement>(null);
   const activeTabDivRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const isMd = useBreakpoint("md");
+  const { state } = location;
+
+  useEffect(() => {
+    if (state?.navActiveTab >= 0) {
+      handleTabClick(state.navActiveTab);
+      navigate(location.pathname, { replace: true });
+    }
+  }, [state]);
 
   const newTabs = useMemo(() => {
     const tabLength = tabs.length;

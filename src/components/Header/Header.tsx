@@ -1,91 +1,18 @@
-import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Link, NavLink, useNavigate } from "react-router";
+import { Link, NavLink } from "react-router";
 import { HeaderProps } from "./types";
 import clsx from "clsx";
+import { useHeader } from "./useHeader";
 
 const Header: React.FC<HeaderProps> = ({ activeTab }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
-  // const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    if (isMenuOpen) {
-      setActiveSubmenu(null);
-    }
-  };
-
-  const toggleSubmenu = (submenu: string) => {
-    setActiveSubmenu(activeSubmenu === submenu ? null : submenu);
-  };
-
-  // const toggleSearch = () => {
-  //   setIsSearchOpen(!isSearchOpen);
-  // };
-
-  const menuItems = [
-    {
-      name: "Industry",
-      submenu: [
-        { name: "Telecom", href: "/industry/telecom" },
-        { name: "Energy & Utilities", href: "/industry/energy-and-Utilities" },
-        {
-          name: "Enterprise & Retail",
-          href: "/industry/enterprise-and-retail",
-        },
-        { name: "Agrivoltaics", href: "/industry/agrivoltaics" },
-      ],
-    },
-    {
-      name: "Products",
-      submenu: [
-        { name: "Telecom Products", href: "/products/telecom-products" },
-        {
-          name: "Energy & Utilities Products",
-          href: "/products/Energy-and-utilities-products",
-        },
-        {
-          name: "Enterprise & Retail Products",
-          href: "enterprise-and-retail-products",
-        },
-        { name: "Agrivoltaics Products", href: "agrivoltaics-products" },
-      ],
-    },
-
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Teams", href: "/teams" },
-    { name: "Contact Us", href: "/contact" },
-  ];
-
-  const scrollToSection = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
-  ) => {
-    if (href.startsWith("#")) {
-      e.preventDefault();
-      const currentPath = window.location.pathname;
-
-      if (currentPath !== "/") {
-        // Use React Router's navigate instead of window.location
-        navigate("/", { replace: false });
-        // Add a small delay to allow for navigation before scrolling
-        setTimeout(() => {
-          const element = document.querySelector(href);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-          }
-        }, 100);
-      } else {
-        // If already on home page, just scroll
-        const element = document.querySelector(href);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    }
-  };
+  const {
+    isMenuOpen,
+    activeSubmenu,
+    menuItems,
+    toggleMenu,
+    toggleSubmenu,
+    scrollToSection,
+  } = useHeader();
 
   return (
     <header
@@ -111,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
           <div className="flex items-center gap-[60px]">
             {/* Desktop Navigation */}
             <nav className="hidden items-center space-x-[60px] md:flex">
-              {menuItems.map((item: any, index: number) => (
+              {menuItems.map((item, index: number) => (
                 <div key={index} className="group relative">
                   {item?.submenu ? (
                     <button className="flex cursor-pointer items-center font-medium hover:text-[#77A3BA]">
@@ -120,8 +47,10 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                     </button>
                   ) : (
                     <NavLink
-                      to={item.href}
-                      onClick={(e) => scrollToSection(e, item.href)}
+                      to={item.href || ""}
+                      onClick={(e) => {
+                        scrollToSection(e, item.href || "");
+                      }}
                       className={({ isActive }) =>
                         `font-medium hover:underline ${isActive && item.href === "/" ? "font-bold underline" : ""}`
                       }
@@ -132,17 +61,18 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
 
                   {item.submenu && (
                     <div className="invisible absolute left-0 z-10 mt-2 w-48 origin-top-left transform rounded-md bg-white py-2 opacity-0 shadow-lg transition-all duration-300 group-hover:visible group-hover:opacity-100">
-                      {item.submenu.map(
-                        (subItem: { name: string; href: string }) => (
-                          <a
-                            key={subItem.name}
-                            href={subItem.href}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#77A3BA]"
-                          >
-                            {subItem.name}
-                          </a>
-                        ),
-                      )}
+                      {item.submenu.map((subItem, index) => (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.href}
+                          state={{
+                            navActiveTab: index,
+                          }}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#013D55] hover:text-white"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
                     </div>
                   )}
                 </div>
