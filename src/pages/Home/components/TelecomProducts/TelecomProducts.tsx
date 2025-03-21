@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ProductCard {
   image: string;
   title: string;
