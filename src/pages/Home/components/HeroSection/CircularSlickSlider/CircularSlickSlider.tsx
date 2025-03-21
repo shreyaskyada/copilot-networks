@@ -36,8 +36,6 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   const isMd = useBreakpoint("md");
   const { state } = location;
 
-  console.log("Stateasda", state);
-
   useEffect(() => {
     if (state?.navActiveTab >= 0) {
       handleTabClick(state.navActiveTab);

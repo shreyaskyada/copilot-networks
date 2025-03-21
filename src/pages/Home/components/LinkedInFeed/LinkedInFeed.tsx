@@ -33,11 +33,11 @@ const LinkedInFeed = () => {
 
   return (
     <div className="mx-auto max-w-6xl overflow-hidden md:w-[90%]">
-      <div className="mt-20 flex w-full items-center justify-center gap-3 text-center text-[24px] md:text-[40px]">
+      <div className="mt-5 flex w-full items-center justify-center gap-3 text-center text-[24px] md:mt-20 md:text-[40px]">
         <img
           src="/linkedin_img.png"
           alt="linked-in"
-          className="size-[150px] h-fit md:size-[200px]"
+          className="size-[150px] md:size-[200px]"
         />{" "}
         Feed
       </div>

@@ -51,7 +51,6 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                       onClick={(e) => {
                         scrollToSection(e, item.href || "");
                       }}
-                      // state={{ navActiveTab: 0 }}
                       className={({ isActive }) =>
                         `font-medium hover:underline ${isActive && item.href === "/" ? "font-bold underline" : ""}`
                       }
@@ -153,7 +152,11 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                               state={{
                                 navActiveTab: index,
                               }}
-                              className="block py-2 text-sm text-gray-600 hover:text-blue-600"
+                              className={clsx(
+                                "block py-2 text-sm hover:text-blue-600",
+                                activeTab === index + 1 &&
+                                  "font-bold underline",
+                              )}
                             >
                               {subItem.name}
                             </Link>
