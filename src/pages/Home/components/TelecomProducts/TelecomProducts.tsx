@@ -45,7 +45,7 @@ const TelecomProducts = () => {
               </div>
             ))}
           </div>
-          <button className="flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[#002B3F] transition-colors hover:bg-gray-100">
+          <button className="flex cursor-pointer items-center gap-2 rounded-full bg-white px-6 py-3 text-[#002B3F] transition-colors hover:bg-gray-100">
             View all <span className="text-xl">→</span>
           </button>
         </div>
