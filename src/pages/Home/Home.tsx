@@ -8,6 +8,7 @@ import { HomeProps } from "./types";
 import { Services } from "./components/Services";
 import { TelecomProducts } from "./components/TelecomProducts";
 import { ConstructionSoftware } from "./components/ConstructionSoftware";
+import { UtilityConstruction } from "./components/UtilityConstruction";
 
 const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
   return (
@@ -25,6 +26,7 @@ const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
       {(activeTab === 1 || activeTab === 2) && (
         <TrustedBy activeTab={activeTab} />
       )}
+      <UtilityConstruction />
       <LinkedInFeed />
     </div>
   );

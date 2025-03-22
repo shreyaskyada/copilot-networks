@@ -45,8 +45,8 @@ const TrustedBy = ({ activeTab }: { activeTab: number }) => {
   );
 
   return (
-    <section className="bg-[#F3F7F9] py-8 md:py-16">
-      <h2 className="font-Lato mb-8 text-center text-[24px] font-medium text-[#223354] md:mb-16 md:text-[40px]">
+    <section className="bg-[#F3F7F9] py-10 md:py-16">
+      <h2 className="font-Lato mb-10 text-center text-[24px] font-medium text-[#223354] md:mb-16 md:text-[40px]">
         Trusted by:
       </h2>
 
