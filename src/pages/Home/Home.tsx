@@ -13,7 +13,7 @@ const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
   return (
     <div>
       <HeroSection setActiveTab={setActiveTab} />
-      <HeatMap />
+      <HeatMap activeTab={activeTab} />
       <Services activeTab={activeTab} />
       {activeTab === 1 && (
         <>
