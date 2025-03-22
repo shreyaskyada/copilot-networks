@@ -26,7 +26,7 @@ const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
       {(activeTab === 1 || activeTab === 2) && (
         <TrustedBy activeTab={activeTab} />
       )}
-      <UtilityConstruction />
+      {(activeTab === 2 || activeTab === 4) && <UtilityConstruction />}
       <LinkedInFeed />
     </div>
   );
