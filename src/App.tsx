@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import { lazy, Suspense, useState } from "react";
-import { Layout } from "./components/Layout";
+import { Loader } from "./components/Loader";
 
 // Lazy load components
+const Layout = lazy(() => import("./components/Layout/Layout"));
 const Home = lazy(() => import("./pages/Home/Home"));
 const TeamsPage = lazy(() => import("./pages/Teams/Teams"));
 const Contact = lazy(() => import("./pages/Contact/Contact"));
@@ -14,11 +15,17 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<Layout activeTab={activeTab} />}>
+          <Route
+            element={
+              <Suspense fallback={<Loader />}>
+                <Layout activeTab={activeTab} />
+              </Suspense>
+            }
+          >
             <Route
               path="/"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                   <Home activeTab={activeTab} setActiveTab={setActiveTab} />
                 </Suspense>
               }
@@ -26,7 +33,7 @@ function App() {
             <Route
               path="/teams"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                   <TeamsPage />
                 </Suspense>
               }
@@ -34,7 +41,7 @@ function App() {
             <Route
               path="/contact"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader />}>
                   <Contact />
                 </Suspense>
               }
