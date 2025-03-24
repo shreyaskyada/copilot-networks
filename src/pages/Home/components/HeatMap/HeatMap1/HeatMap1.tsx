@@ -76,6 +76,13 @@ const HeatMap1 = () => {
                     <li>Bentley</li>
                   </div>
                 </ul>
+                <ul className="list-disc">
+                  <div className="flex flex-row gap-8 tracking-[2px]">
+                    <li>Crescent link</li>
+                    <li>Iqgeo</li>
+                    <li>ocalc</li>
+                  </div>
+                </ul>
               </div>
             </div>
           </div>

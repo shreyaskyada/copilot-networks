@@ -84,7 +84,7 @@ const HeatMap2 = () => {
                     <li>Compact Design</li>
                     <li>Eco-Friendly</li>
                     <li>Omni-Directional Design,Silent</li>
-                    <li>Turbine Solution</li>
+                    <li>Silent Turbine Solution</li>
                   </div>
                 </ul>
               </div>
