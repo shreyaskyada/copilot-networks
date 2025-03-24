@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { useMemo } from "react";
 import Marquee from "react-fast-marquee";
 
@@ -36,6 +35,11 @@ const secondSectionIcons = [
   { name: "LUMA", logo: "/trustedBy/luma.svg" },
   { name: "American Electric Power", logo: "/trustedBy/AEP_logo.svg" },
   { name: "Southern California Edison", logo: "/trustedBy/edison.svg" },
+  { name: "DTE", logo: "/trustedBy/DTE.png" },
+  { name: "Next Era Energy", logo: "/trustedBy/NextEraEnergy.png" },
+  { name: "oneAsplundh", logo: "/trustedBy/oneAsplundh.png" },
+  { name: "lecom", logo: "/trustedBy/lecom.png" },
+  { name: "thayer", logo: "/trustedBy/thayer.png" },
 ];
 
 const TrustedBy = ({ activeTab }: { activeTab: number }) => {
@@ -50,52 +54,27 @@ const TrustedBy = ({ activeTab }: { activeTab: number }) => {
         Trusted by:
       </h2>
 
-      {activeTab === 1 ? (
-        <div className="relative h-fit">
-          <Marquee>
-            <div className="flex whitespace-nowrap">
-              {/* First set of partners */}
-              {[...partners, ...partners].map((partner, index) => (
-                <div
-                  key={`first-${index}`}
-                  className="flex items-center justify-center px-6 md:px-8"
-                >
-                  <div className="relative flex h-auto items-center justify-center md:h-[95px]">
-                    <img
-                      src={partner.logo || "/placeholder.svg"}
-                      alt={`${partner.name} logo`}
-                      className="h-[35px] w-auto object-contain md:h-[40px]"
-                    />
-                  </div>
+      <div className="relative h-fit">
+        <Marquee>
+          <div className="flex whitespace-nowrap">
+            {/* First set of partners */}
+            {[...partners, ...partners].map((partner, index) => (
+              <div
+                key={`first-${index}`}
+                className="flex items-center justify-center px-6 md:px-8"
+              >
+                <div className="relative flex h-auto items-center justify-center md:h-[95px]">
+                  <img
+                    src={partner.logo || "/placeholder.svg"}
+                    alt={`${partner.name} logo`}
+                    className="h-[35px] w-auto object-contain md:h-[40px]"
+                  />
                 </div>
-              ))}
-            </div>
-          </Marquee>
-        </div>
-      ) : (
-        <div
-          className={clsx(
-            "mx-auto grid w-[90%] max-w-6xl gap-4 px-4 md:gap-4",
-            activeTab === 2 && "grid-cols-3",
-          )}
-        >
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center p-2 md:p-4"
-            >
-              <div className="relative flex h-10 w-full items-center justify-center md:h-16">
-                <img
-                  src={partner.logo || "/placeholder.svg"}
-                  alt={`${partner.name} logo`}
-                  className="object-contain"
-                  sizes="(max-width: 768px) 25vw, 20vw"
-                />
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        </Marquee>
+      </div>
     </section>
   );
 };
