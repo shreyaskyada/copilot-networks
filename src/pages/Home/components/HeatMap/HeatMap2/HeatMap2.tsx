@@ -2,7 +2,7 @@ const HeatMap2 = () => {
   return (
     <div
       className={
-        "font-Lato md:pb-[20 0px] relative bg-[#E5D6C3] py-[40px] text-[#3D2A12] md:py-[80px]"
+        "font-Lato md:pb-[20 0px] relative bg-[#E8F3EB] py-[40px] text-[#286E3A] md:py-[80px]"
       }
     >
       <div className="flex flex-col items-center">
@@ -19,7 +19,7 @@ const HeatMap2 = () => {
       </div>
       <div className="my-12">
         <img
-          src="/heatMaps/heatMap2.svg"
+          src="/heatMaps/heatMap4.svg"
           alt="Heat Map"
           className="xl-bg-[820px] inset-0 mx-auto w-[90%] object-cover sm:w-[500px] md:w-[600px] lg:w-[620px] xl:w-[820px]"
         />
@@ -33,7 +33,7 @@ const HeatMap2 = () => {
                 <sup className="absolute top-0 left-[20px] text-[10px] font-normal">
                   UPTO
                 </sup>
-                <span className="text-[#E5D6C3]">0</span>
+                <span className="text-[#E8F3EB]">0</span>
                 40%
               </div>
               <div className="flex flex-col text-[14px]">
@@ -47,7 +47,7 @@ const HeatMap2 = () => {
                 <sup className="absolute top-0 left-[20px] text-[10px] font-normal">
                   UPTO
                 </sup>
-                <span className="text-[#E5D6C3]">0</span>
+                <span className="text-[#E8F3EB]">0</span>
                 <span>70%</span>
               </div>
               <div className="relative flex translate-y-[10px] flex-col text-[14px]">
@@ -69,21 +69,20 @@ const HeatMap2 = () => {
             </div>
           </div>
 
-          <div className="">
+          <div className="xl:translate-x-10">
             <div className="flex w-full flex-col items-start justify-between gap-4">
-              <h3 className="font-Lato text-[20px] tracking-[2px] text-[#3D2A12] uppercase">
+              <h3 className="font-Lato text-[20px] tracking-[2px] text-[#286E3A] uppercase">
                 Proficiencies
               </h3>
               <div className="ml-[10px] flex flex-col gap-2 text-[12px]">
                 <ul className="list-disc">
                   <div className="flex flex-col gap-1 tracking-[2px]">
-                    <li>High efficiency</li>
+                    <li>High efficiency power generation</li>
+                    <li>Custom Hybrid solutions Strategy</li>
                     <li>Low Cost Production</li>
-                    <li>Durability</li>
-                    <li>360 sunlight absorption</li>
-                    <li>Compact Design</li>
-                    <li>Eco-Friendly</li>
-                    <li>Omni-Directional Design,Silent</li>
+                    <li>Urban Friendly Solutions</li>
+                    <li>High Sustainably solutions</li>
+                    <li>Omni-Directional Wind turbine</li>
                     <li>Silent Turbine Solution</li>
                   </div>
                 </ul>

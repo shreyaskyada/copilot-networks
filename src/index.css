@@ -31,3 +31,12 @@ body {
   background-color: #77a3ba !important; /* Fill color for active dot */
   border-color: #77a3ba; /* Match border */
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

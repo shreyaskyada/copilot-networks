@@ -1,5 +1,12 @@
+import clsx from "clsx";
 import { useMemo } from "react";
 import Marquee from "react-fast-marquee";
+
+type Partner = {
+  name: string;
+  logo: string;
+  className?: string;
+};
 
 const firstSectionIcons = [
   { name: "LUMA", logo: "/trustedBy/luma.svg" },
@@ -23,6 +30,7 @@ const firstSectionIcons = [
   {
     name: "Southern California Edison",
     logo: "/trustedBy/edison.svg",
+    className: "!h-[80px]",
   },
   { name: "Brightspeed", logo: "/trustedBy/brightspped.svg" },
   { name: "Ziply", logo: "/trustedBy/ziply.svg" },
@@ -43,7 +51,7 @@ const secondSectionIcons = [
 ];
 
 const TrustedBy = ({ activeTab }: { activeTab: number }) => {
-  const partners = useMemo(
+  const partners: Partner[] = useMemo(
     () => (activeTab === 1 ? firstSectionIcons : secondSectionIcons),
     [activeTab],
   );
@@ -67,7 +75,10 @@ const TrustedBy = ({ activeTab }: { activeTab: number }) => {
                   <img
                     src={partner.logo || "/placeholder.svg"}
                     alt={`${partner.name} logo`}
-                    className="h-[35px] w-auto object-contain md:h-[40px]"
+                    className={clsx(
+                      "h-[35px] w-auto object-contain md:h-[40px]",
+                      partner.className,
+                    )}
                   />
                 </div>
               </div>

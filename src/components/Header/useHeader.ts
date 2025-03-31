@@ -23,7 +23,9 @@ export const useHeader = () => {
       name: "Industry",
       submenu: [
         {
-          name: "Telecom", href: "", navActiveTab: 0
+          name: "Telecom",
+          href: "",
+          navActiveTab: 0,
         },
         { name: "Energy & Utilities", href: "" },
         { name: "Enterprise & Retail", href: "" },
@@ -47,12 +49,13 @@ export const useHeader = () => {
     },
     { name: "Testimonials", href: "#testimonials" },
     { name: "Teams", href: "/teams" },
+    { name: "News", href: "#" },
     { name: "Contact Us", href: "/contact" },
   ];
 
   const scrollToSection = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     if (href.startsWith("#")) {
       e.preventDefault();
@@ -85,4 +88,4 @@ export const useHeader = () => {
     toggleSubmenu,
     scrollToSection,
   };
-}; 
+};
