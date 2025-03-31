@@ -25,6 +25,26 @@ const integratedWithLogos = [
     name: "3GIS",
     logo: "/integratedWith/3GIS.png",
   },
+  {
+    name: "crescentLink",
+    logo: "/integratedWith/crescentLink.png",
+  },
+  {
+    name: "iQGeo",
+    logo: "/integratedWith/iQGeo.png",
+  },
+  {
+    name: "smallWorld",
+    logo: "/integratedWith/smallWorld.png",
+  },
+  {
+    name: "autoDeskAutoCAD",
+    logo: "/integratedWith/autoDeskAutoCAD.png",
+  },
+  {
+    name: "fiberPlanIT",
+    logo: "/integratedWith/fiberPlanIT.png",
+  },
 ];
 
 const IntegratedWith = () => {

@@ -10,6 +10,7 @@ const UtilityConstruction = () => {
             <div className="flex flex-col items-center justify-between gap-5 md:flex-row md:gap-10">
               <div className="flex flex-col gap-20 md:w-[60%]">
                 <div>
+                  <h1 className="mb-11 text-[45px]">Software</h1>
                   <img
                     src="/rus2BillLogo.png"
                     alt="rus2bill logo"
@@ -19,13 +20,11 @@ const UtilityConstruction = () => {
                     SOFTWARE AS A SERVICE
                   </p>
                   <p className="mb-6 max-w-[400px] leading-[40px] text-gray-600">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                  RUS2Bill Supports Rapid Invoicing of Construction Projects with improved accuracy by allowing for real-time recording Field Progress.
                   </p>
-                  <button className="mt-4 inline-flex items-center rounded-full bg-[#14A756] px-6 py-2 text-white transition">
+                  <a href="https://rus2bill.com/" target="_blank" className="mt-4 inline-flex items-center rounded-full bg-[#14A756] px-6 py-2 text-white transition">
                     Website →
-                  </button>
+                  </a>
                 </div>
               </div>
               <div className="relative mt-6 md:mt-0 md:w-[60%]">
