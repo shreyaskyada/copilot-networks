@@ -46,7 +46,10 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   const newTabs = useMemo(() => {
     const tabLength = tabs.length;
     if (isMd) {
-      return [...tabs, tabs[tabLength - 2], tabs[tabLength - 3]];
+      return [...tabs, tabs[tabLength - 4],
+      tabs[tabLength - 3],
+      tabs[tabLength - 2],
+      tabs[tabLength - 1]];
     }
     return [
       ...tabs,
