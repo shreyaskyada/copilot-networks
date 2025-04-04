@@ -5,17 +5,17 @@ import "slick-carousel/slick/slick-theme.css";
 const images = [
   {
     image:
-      "https://media.licdn.com/dms/image/v2/D5622AQHYMObPiH73iA/feedshare-shrink_800/feedshare-shrink_800/0/1725143448456?e=1743638400&v=beta&t=fa4OJ_Id9aYI-Urfvx1uS9XnKGmLDptmA0hTCfQRSyk",
+      "https://media.licdn.com/dms/image/v2/D5622AQHYMObPiH73iA/feedshare-shrink_800/feedshare-shrink_800/0/1725143448456?e=1746662400&v=beta&t=N3ds86kpY5lgqV0lsTeuYsE06JPoOrw9Llozv5rLNOA",
     link: "https://www.linkedin.com/posts/copilot-net-llc_copilotnetworks-underground-aerial-activity-7236797265284063232-ZVCB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADZ96UMBRFP28IWkFRVKBFqOCcRYAvXoD7Y",
   },
   {
     image:
-      "https://media.licdn.com/dms/image/v2/D5622AQEUwzZ-RC5Etw/feedshare-shrink_1280/feedshare-shrink_1280/0/1732563007704?e=1743638400&v=beta&t=J9CjoPQ_iaxi9q9kuS66xNtHguLscnb4ZHjafirr4Gc",
+      "https://media.licdn.com/dms/image/v2/D5622AQEUwzZ-RC5Etw/feedshare-shrink_1280/feedshare-shrink_1280/0/1732563007704?e=1746662400&v=beta&t=846L0I60wRwrEbKRI-DSIV8SpZc865U6qx83zegJSvk",
     link: "https://www.linkedin.com/posts/copilot-net-llc_engineering-osp-quality-activity-7266897423480823809-IkKI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ96UMBRFP28IWkFRVKBFqOCcRYAvXoD7Y",
   },
   {
     image:
-      "https://media.licdn.com/dms/image/v2/D5622AQGxWcV9J3INfw/feedshare-shrink_1280/feedshare-shrink_1280/0/1726079085144?e=1743638400&v=beta&t=OeDzOHQimrfK8LDxK0EX_op0baeuM6akyigcZkknY60",
+      "https://media.licdn.com/dms/image/v2/D5622AQGxWcV9J3INfw/feedshare-shrink_800/feedshare-shrink_800/0/1726079085305?e=1746662400&v=beta&t=p2pMYtWvgoKTMliUxg294G8vnAKjAQoKj9Fg_WxJGqI",
     link: "https://www.linkedin.com/posts/copilot-net-llc_broadband-survey-copilotnetworks-activity-7239700417847115777-mnw7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ96UMBRFP28IWkFRVKBFqOCcRYAvXoD7Y",
   },
 ];
