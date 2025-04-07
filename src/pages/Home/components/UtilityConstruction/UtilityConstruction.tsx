@@ -1,9 +1,9 @@
 const UtilityConstruction = () => {
   return (
     <section>
-      <h1 className="mx-auto max-w-6xl px-10 py-[50px] text-3xl font-bold md:px-0">
+      {/* <h1 className="mx-auto max-w-6xl px-10 py-[50px] text-3xl font-bold md:px-0">
         Softwares For Utility Construction.
-      </h1>
+      </h1> */}
       <section className="bg-[#edf2e9]">
         <section className="relative overflow-hidden px-[30px] py-[30px] md:py-20 lg:px-24">
           <div className="mx-auto w-[90%] max-w-6xl p-4 px-0 py-8">
@@ -29,7 +29,7 @@ const UtilityConstruction = () => {
               </div>
               <div className="relative mt-6 md:mt-0 md:w-[60%]">
                 <img
-                  src="/rus2Bill.png"
+                  src="/constructoin_softwares/rus2bill.jpeg"
                   alt="Utility Construction"
                   className="h-auto w-full rounded-[20px]"
                 />
