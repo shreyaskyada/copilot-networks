@@ -20,7 +20,7 @@ const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
     <div>
       <HeroSection setActiveTab={setActiveTab} />
       <HeatMap activeTab={activeTab} />
-      {activeTab === 2 && <WhatWeDo />}
+      {(activeTab === 2 || activeTab === 3) && <WhatWeDo activeTab={activeTab} />}
       <Services activeTab={activeTab} />
       {activeTab === 3 && <OurMission />}
       {activeTab === 3 && <EnterpriseSoftwares />}
