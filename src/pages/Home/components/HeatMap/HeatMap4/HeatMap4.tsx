@@ -25,11 +25,53 @@ const HeatMap4 = () => {
         />
       </div>
       {/* <div className="absolute md:bottom-[18%]"> */}
-      <div className="w-full max-md:px-5 md:bottom-[0%] xl:absolute xl:bottom-[20%]">
+      <div className="w-full max-md:px-5 md:bottom-[0%] xl:absolute xl:bottom-[5%]">
         <div className="mx-auto flex w-[90%] max-w-6xl flex-col justify-between gap-6 sm:flex-row">
-          <div className="flex w-fit flex-col gap-[20px]"></div>
+          <div className="flex w-fit flex-col gap-[20px]">
+            <div className="flex w-full flex-row items-center gap-4 uppercase">
+              <div className="relative text-[32px] font-extrabold md:text-[35px]">
+                <sup className="absolute top-0 left-[20px] text-[10px] font-normal">
+                  UPTO
+                </sup>
+                <span className="text-[#E8F3EB]">0</span>
+                60%
+              </div>
+              <div className="flex flex-col text-[14px]">
+                <div>
+                  Land Use <br /> Efficiency
+                </div>
+              </div>
+            </div>
+            <div className="relative flex w-full flex-row items-start gap-4 uppercase">
+              <div className="text-[32px] font-extrabold md:text-[35px]">
+                <sup className="absolute top-0 left-[20px] text-[10px] font-normal">
+                  UPTO
+                </sup>
+                <span className="text-[#E8F3EB]">0</span>
+                <span>70%</span>
+              </div>
+              <div className="relative flex translate-y-[10px] flex-col text-[14px]">
+                <div>
+                  Sun <br />
+                  Radiation
+                </div>
+              </div>
+            </div>
+            <div className="relative flex w-full flex-row items-start gap-4 uppercase">
+              <sup className="absolute top-0 text-[10px] font-normal">UPTO</sup>
+              <div className="text-[32px] font-extrabold md:text-[35px]">
+                <span>100%</span>
+              </div>
+              <div className="relative flex translate-y-[5px] flex-col text-[14px]">
+                <div>
+                  Water <br />
+                  Saving
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <div className="">
+          <div className="xl:translate-x-10">
             <div className="flex w-full flex-col items-start justify-between gap-4">
               <h3 className="font-Lato text-[20px] tracking-[2px] text-[#286E3A] uppercase">
                 Proficiencies
@@ -38,6 +80,9 @@ const HeatMap4 = () => {
                 <ul className="list-disc">
                   <div className="flex flex-col gap-1 tracking-[2px]">
                     <li>Benefits Of Agrovaltics</li>
+                    <li>Crop and Livestock Shading Solutions</li>
+                    <li>Weather Protection</li>
+                    <li>Soil and Water Protection</li>
                   </div>
                 </ul>
               </div>

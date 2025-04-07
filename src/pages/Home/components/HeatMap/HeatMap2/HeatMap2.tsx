@@ -77,8 +77,8 @@ const HeatMap2 = () => {
               <div className="ml-[10px] flex flex-col gap-2 text-[12px]">
                 <ul className="list-disc">
                   <div className="flex flex-col gap-1 tracking-[2px]">
-                    <li>High efficiency power generation</li>
-                    <li>Custom Hybrid solutions Strategy</li>
+                    <li>High Efficiency Power Generation</li>
+                    <li>Custom Hybrid Solutions Strategy</li>
                     <li>Low Cost Production</li>
                     <li>Urban Friendly Solutions</li>
                     <li>High Sustainably solutions</li>

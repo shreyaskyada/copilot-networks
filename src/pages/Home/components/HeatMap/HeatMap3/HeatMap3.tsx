@@ -27,7 +27,48 @@ const HeatMap3 = () => {
       {/* <div className="absolute md:bottom-[18%]"> */}
       <div className="w-full max-md:px-5 md:bottom-[0%] xl:absolute xl:bottom-[8%]">
         <div className="mx-auto flex w-[90%] max-w-6xl flex-col justify-between gap-6 sm:flex-row">
-          <div className="flex w-fit flex-col gap-[20px]"></div>
+        <div className="flex w-fit flex-col gap-[20px]">
+            <div className="flex w-full flex-row items-center gap-4 uppercase">
+              <div className="relative text-[32px] font-extrabold md:text-[35px]">
+                <sup className="absolute top-0 left-[43px] text-[10px] font-normal">
+                  UPTO
+                </sup>
+                <span className="text-[#E8F3EB] invisible">00</span>
+                70%
+              </div>
+              <div className="flex flex-col text-[14px]">
+                <div>
+                Cost <br/>
+                Reduction
+                </div>
+              </div>
+            </div>
+            <div className="relative flex w-full flex-row items-start gap-4 uppercase">
+              <div className="text-[32px] font-extrabold md:text-[35px]">
+                <span>99.99%</span>
+              </div>
+              <div className="relative flex translate-y-[10px] flex-col text-[14px]">
+                <div>
+                Uptime
+                </div>
+              </div>
+            </div>
+            <div className="relative flex w-full flex-row items-start gap-4 uppercase">
+            <div className="relative text-[32px] font-extrabold md:text-[35px]">
+                <sup className="absolute top-0 left-[43px] text-[10px] font-normal">
+                  UPTO
+                </sup>
+                <span className="text-[#E8F3EB] invisible">00</span>
+                60%
+              </div>
+              <div className="relative flex translate-y-[5px] flex-col text-[14px]">
+                <div>
+                  Water <br />
+                  Saving
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="">
             <div className="flex w-full flex-col items-start justify-between gap-4">
@@ -37,10 +78,9 @@ const HeatMap3 = () => {
               <div className="ml-[10px] flex flex-col gap-2 text-[12px]">
                 <ul className="list-disc">
                   <div className="flex flex-col gap-1 tracking-[2px]">
-                    <li>Cost Saving</li>
-                    <li>Hybrid Solutions</li>
-                    <li>Renewable</li>
-                    <li>Private Networks</li>
+                    <li>Reliability</li>
+                    <li>Control</li>
+                    <li>Security</li>
                   </div>
                 </ul>
               </div>
