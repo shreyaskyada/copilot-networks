@@ -10,7 +10,7 @@ const ConstructionSoftware = () => {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <Card
-            imageSrc="/constructoin_softwares/rus2bill.jpeg"
+            imageSrc="/constructoin_softwares/rus2bill.png"
             altText="Construction workers using RUS2BILL software"
             buttonClassName="self-start !bg-[#14A756]"
           />
@@ -18,7 +18,8 @@ const ConstructionSoftware = () => {
           <Card
             imageSrc="/constructoin_softwares/fiber_oss.png"
             altText="Fiber OSS Dashboard"
-            buttonClassName="self-start"
+            // buttonClassName="self-start"
+            isButtonVisible={false}
           />
 
           <Card

@@ -27,7 +27,7 @@ const TelecomProducts = () => {
     <section className="relative overflow-hidden bg-[#002B3F] text-white md:py-20 lg:px-24">
       <div className="p-4 px-0 py-8">
         <div className="mx-auto w-[90%] max-w-6xl">
-          <h2 className="mb-8 text-4xl">Telecom Products</h2>
+          <h2 className="mb-8 text-4xl">Products</h2>
           <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {productCards.map((card, index) => (
               <div

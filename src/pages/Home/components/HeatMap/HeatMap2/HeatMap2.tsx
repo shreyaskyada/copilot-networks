@@ -81,7 +81,7 @@ const HeatMap2 = () => {
                     <li>Custom Hybrid Solutions Strategy</li>
                     <li>Low Cost Production</li>
                     <li>Urban Friendly Solutions</li>
-                    <li>High Sustainably solutions</li>
+                    <li>High Sustainably Solutions</li>
                     <li>Omni-Directional Wind turbine</li>
                     <li>Silent Turbine Solution</li>
                   </div>

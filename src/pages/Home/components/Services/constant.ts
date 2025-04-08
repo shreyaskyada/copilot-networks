@@ -8,26 +8,68 @@ export const telecomServices = {
           id: 1,
           title: "Consulting & Grant Application",
           iconPath: "/dashboard/services/consulting_n_grant_application.svg",
+          points: [
+            "Public and Private Grant",
+            "Broadband Business Planning",
+            "Architecture Assessment",
+            "Professional Field Survey",
+            "Safety and Quality Inspection",
+          ],
         },
         {
           id: 2,
-          title: "Engineering & GIS Design",
+          title: "GIS Engineering Design",
           iconPath: "/dashboard/services/engineering_n_gis_design.svg",
+          points: [
+            "Network Planning & Design",
+            "High Level Design",
+            "Structural Design",
+            {
+              title: "Construction Design Package",
+              subTitle:
+                "(PDF Design, Bill of Materials, Bill of Quantities, Shapefiles)",
+            },
+          ],
         },
         {
           id: 3,
           title: "Construction",
           iconPath: "/dashboard/services/construction.svg",
+          points: [
+            "Shapefiles",
+            "Wireless Network Deployment",
+            "Make-Ready Analysis",
+            "Pole Loading and Structural Analysis",
+            "Traffic Control Plans",
+          ],
         },
         {
           id: 4,
-          title: "Product Procurement & Logistics",
+          title: "Procurement & Logistics",
           iconPath: "/dashboard/services/product_procurement_n_logistics.svg",
+          points: ["SPL Fibre", "Conduit Solutions", "Vaults and Chambers"],
         },
         {
           id: 5,
           title: "Software",
           iconPath: "/dashboard/services/software.svg",
+          points: [
+            "Rus2bill",
+            "FiberOSS",
+            "Project Tracking",
+            "Ticketing System",
+          ],
+        },
+        {
+          id: 6,
+          title: "Network Maintenance & Operations",
+          iconPath: "/dashboard/services/network_maintence.svg",
+          points: [
+            "Network Monitoring",
+            "Preventive Maintenance",
+            "Performance and Reporting",
+            "Products and Software Updates",
+          ],
         },
       ],
     },
@@ -36,20 +78,54 @@ export const telecomServices = {
       items: [
         {
           id: 1,
-          title: "Consulting & Grant Application",
-          iconPath:
-            "/dashboard/services/mobility_consulting_n_grant_application.svg",
+          title: "Wireless Services",
+          iconPath: "/dashboard/services/wireless_services.svg",
+          points: [
+            "Microwave Network Design",
+            "Microwave Node Configuration and Optimization",
+            "Mobile Backhaul Design",
+            "For 4G/5G Access Networks",
+            "Site Acquisition",
+            "Wireless Network Deployment",
+            "Tower Architectural Engineering Design",
+          ],
         },
         {
           id: 2,
-          title: "Architectural Engineering & RF Design",
+          title: "Consulting & Grant Application",
           iconPath:
-            "/dashboard/services/architectural_engineering_n_RF_design.svg",
+            "/dashboard/services/mobility_consulting_n_grant_application.svg",
+          points: [
+            "Public and Private Grant",
+            "Broadband Business Planning",
+            "Architecture Assessment",
+            "Professional Field Survey",
+            "Safety and Quality Inspection",
+          ],
         },
         {
           id: 3,
+          title: "Architectural Engineering & RF Design",
+          iconPath:
+            "/dashboard/services/architectural_engineering_n_RF_design.svg",
+          points: [
+            "Site Surveys",
+            "Structural Designs",
+            "Construction Design Package",
+            "Test and Optimization",
+            "Cell Site Designs",
+          ],
+        },
+        {
+          id: 4,
           title: "Site Acquisition",
           iconPath: "/dashboard/services/site_acquisition.svg",
+          points: [
+            "Cell Site Audit",
+            "Permit Drawing and Applications",
+            "Traffic Control Plans",
+            "Easement and Site Acquisition",
+          ],
         },
       ],
     },
@@ -57,14 +133,14 @@ export const telecomServices = {
 };
 
 export const energyUtilitiesServices = {
-  page: "Energy & Utilities Services",
+  page: "Services",
   sections: {
     networkServices: {
       title: "Network Services",
       items: [
         {
           id: 1,
-          title: "Engineering & GIS Design",
+          title: "GIS Engineering Design",
           iconPath: "/dashboard/services/engineering_n_gis_design.svg",
         },
         {
@@ -74,13 +150,18 @@ export const energyUtilitiesServices = {
         },
         {
           id: 3,
-          title: "Product Procurement & Logistics",
+          title: "Products & Logistics",
           iconPath: "/dashboard/services/product_procurement_n_logistics.svg",
         },
         {
           id: 4,
           title: "Software",
           iconPath: "/dashboard/services/software.svg",
+        },
+        {
+          id: 5,
+          title: "Network Maintenance & Operations",
+          iconPath: "/dashboard/services/network_maintence.svg",
         },
       ],
     },
@@ -108,10 +189,10 @@ export const energyUtilitiesServices = {
 };
 
 export const enterpriseRetail = {
-  page: "Enterprise & Retail",
+  page: "Services",
   sections: {
     privateNetworking: {
-      title: "Private Networking",
+      title: "",
       items: [
         {
           id: 1,
@@ -119,9 +200,29 @@ export const enterpriseRetail = {
           iconPath: "/dashboard/services/software.svg",
         },
         {
-          id: 1,
+          id: 2,
           title: "Professional Services",
           iconPath: "/dashboard/services/professional_services.svg",
+        },
+        {
+          id: 3,
+          title: "Private Networking",
+          iconPath: "/dashboard/services/private_networking.svg",
+        },
+        {
+          id: 4,
+          title: "Network Planning & Business Case",
+          iconPath: "/dashboard/services/software.svg",
+        },
+        {
+          id: 5,
+          title: "Network Design & Build",
+          iconPath: "/dashboard/services/network_design_build.svg",
+        },
+        {
+          id: 6,
+          title: "Network Maintenance & Operations",
+          iconPath: "/dashboard/services/network_maintence.svg",
         },
       ],
     },
@@ -129,10 +230,10 @@ export const enterpriseRetail = {
 };
 
 export const agrivoltaics = {
-  page: "Agrivoltaics",
+  page: "Services",
   sections: {
     renewable: {
-      title: "Renewable (Solar & Wind)",
+      title: "",
       items: [
         {
           id: 1,
@@ -154,6 +255,16 @@ export const agrivoltaics = {
           id: 4,
           title: "Product Procurement & Logistics",
           iconPath: "/dashboard/services/product_procurement_n_logistics.svg",
+        },
+        {
+          id: 5,
+          title: "Maintenance",
+          iconPath: "/dashboard/services/professional_services.svg",
+        },
+        {
+          id: 6,
+          title: "Network Maintenance & Operations",
+          iconPath: "/dashboard/services/network_maintenance.svg",
         },
       ],
     },

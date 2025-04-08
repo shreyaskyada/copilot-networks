@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router";
 import { ProductCard } from "./ProductCard";
+import { ProductsProps } from "./types";
 
 const products = [
   {
@@ -87,7 +89,14 @@ const products = [
   },
 ];
 
-const Products = () => {
+const Products: React.FC<ProductsProps> = ({ activeTab }) => {
+  const newProducts = activeTab === 4 ? products.splice(0, 5) : products;
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/contact");
+  };
+
   return (
     <div className="bg-[#F3F7F9]">
       <div className="relative container mx-auto overflow-hidden p-4 px-0 py-8 md:py-20">
@@ -96,10 +105,16 @@ const Products = () => {
             Products
           </h1>
           <div className="no-scrollbar flex gap-6 overflow-x-auto pb-4">
-            {products.map((product) => (
+            {newProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}
           </div>
+          <button
+            className="mx-auto mt-[47px] flex cursor-pointer items-center gap-2 rounded-full bg-[#223354] px-6 py-3 text-white transition-all hover:-translate-y-[8px]"
+            onClick={handleClick}
+          >
+            Contact us <span className="text-xl">→</span>
+          </button>
         </div>
       </div>
     </div>

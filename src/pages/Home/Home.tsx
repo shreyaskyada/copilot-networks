@@ -12,8 +12,8 @@ import { UtilityConstruction } from "./components/UtilityConstruction";
 import { IntegratedWith } from "./components/IntegratedWith";
 import { WhatWeDo } from "./components/WhatWeDo";
 import { Products } from "./components/Products";
-import { OurMission } from "./components/OurMission";
 import { EnterpriseSoftwares } from "./components/EnterpriseSoftwares";
+import { AgrivoltaicsServices } from "./components/AgrivoltaicsServices";
 
 const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
   return (
@@ -21,10 +21,11 @@ const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
       <HeroSection setActiveTab={setActiveTab} />
       <HeatMap activeTab={activeTab} />
       {(activeTab === 2 || activeTab === 3) && <WhatWeDo activeTab={activeTab} />}
+      {activeTab === 4 && <AgrivoltaicsServices />}
       <Services activeTab={activeTab} />
-      {activeTab === 3 && <OurMission />}
+      {/* {activeTab === 3 && <OurMission />} */}
       {activeTab === 3 && <EnterpriseSoftwares />}
-      {(activeTab === 2 || activeTab === 4) && <Products />}
+      {(activeTab === 2 || activeTab === 4) && <Products activeTab={activeTab} />}
       {activeTab === 1 && (
         <>
           <TelecomProducts />

@@ -58,9 +58,12 @@ const HeatMap4 = () => {
               </div>
             </div>
             <div className="relative flex w-full flex-row items-start gap-4 uppercase">
-              <sup className="absolute top-0 text-[10px] font-normal">UPTO</sup>
+              <sup className="absolute top-0 left-[20px] text-[10px] font-normal">
+                UPTO
+              </sup>
               <div className="text-[32px] font-extrabold md:text-[35px]">
-                <span>100%</span>
+                <span className="text-[#E8F3EB]">0</span>
+                <span>30%</span>
               </div>
               <div className="relative flex translate-y-[5px] flex-col text-[14px]">
                 <div>
@@ -79,7 +82,7 @@ const HeatMap4 = () => {
               <div className="ml-[10px] flex flex-col gap-2 text-[12px]">
                 <ul className="list-disc">
                   <div className="flex flex-col gap-1 tracking-[2px]">
-                    <li>Benefits Of Agrovaltics</li>
+                    <li>Crops and Energy Production</li>
                     <li>Crop and Livestock Shading Solutions</li>
                     <li>Weather Protection</li>
                     <li>Soil and Water Protection</li>
