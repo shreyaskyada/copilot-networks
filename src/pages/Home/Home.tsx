@@ -14,18 +14,23 @@ import { WhatWeDo } from "./components/WhatWeDo";
 import { Products } from "./components/Products";
 import { EnterpriseSoftwares } from "./components/EnterpriseSoftwares";
 import { AgrivoltaicsServices } from "./components/AgrivoltaicsServices";
+import { AgroCareOSS } from "./components/AgroCareOSS";
 
 const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
   return (
     <div>
       <HeroSection setActiveTab={setActiveTab} />
       <HeatMap activeTab={activeTab} />
-      {(activeTab === 2 || activeTab === 3) && <WhatWeDo activeTab={activeTab} />}
+      {(activeTab === 2 || activeTab === 3) && (
+        <WhatWeDo activeTab={activeTab} />
+      )}
       {activeTab === 4 && <AgrivoltaicsServices />}
       <Services activeTab={activeTab} />
       {/* {activeTab === 3 && <OurMission />} */}
       {activeTab === 3 && <EnterpriseSoftwares />}
-      {(activeTab === 2 || activeTab === 4) && <Products activeTab={activeTab} />}
+      {(activeTab === 2 || activeTab === 4) && (
+        <Products activeTab={activeTab} />
+      )}
       {activeTab === 1 && (
         <>
           <TelecomProducts />
@@ -37,7 +42,8 @@ const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
       {(activeTab === 1 || activeTab === 2 || activeTab === 4) && (
         <TrustedBy activeTab={activeTab} />
       )}
-      {(activeTab === 2) && <UtilityConstruction />}
+      {activeTab === 2 && <UtilityConstruction />}
+      {activeTab === 4 && <AgroCareOSS />}
       <LinkedInFeed />
     </div>
   );
