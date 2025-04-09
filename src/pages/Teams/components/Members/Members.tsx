@@ -73,15 +73,15 @@ const teamMembers: TeamMember[] = [
     image: "/teams/christer.png",
     linkedIn: "https://www.linkedin.com/company/copilot-net-llc/mycompany",
   },
-  {
-    id: "karlReynold",
-    name: "Karl Reynold",
-    title: "VP ENGINEERING",
-    description:
-      "Karl Reynolds brings to the table engineering growth and efficiency strategies to infrastructure deployments for fiber networks specializing in technical FTTX integrations in cooperation with multiple parties. He brings to Copilot 15+ years of international corporate engineering experience from several large organizations spanning three continents from the UK to Australia and the USA.",
-    image: "/teams/Karl-Reynold.png",
-    linkedIn: "https://www.linkedin.com/in/karl-reynolds-622b7562",
-  },
+  // {
+  //   id: "karlReynold",
+  //   name: "Karl Reynold",
+  //   title: "VP ENGINEERING",
+  //   description:
+  //     "Karl Reynolds brings to the table engineering growth and efficiency strategies to infrastructure deployments for fiber networks specializing in technical FTTX integrations in cooperation with multiple parties. He brings to Copilot 15+ years of international corporate engineering experience from several large organizations spanning three continents from the UK to Australia and the USA.",
+  //   image: "/teams/Karl-Reynold.png",
+  //   linkedIn: "https://www.linkedin.com/in/karl-reynolds-622b7562",
+  // },
 ];
 
 const Members = () => {
