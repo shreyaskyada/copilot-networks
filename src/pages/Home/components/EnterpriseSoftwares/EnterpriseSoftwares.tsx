@@ -7,7 +7,7 @@ const enterpriseSoftwareData = [
       "Make way for the future of Private Networks. MPLS and SD-Wan are out and Graphiant is in. Free up 60% of your annual MPLS and SD-WAN Budget NOW!",
   },
   {
-    title: "Cyber Security",
+    title: "Tempered Airwall",
     description:
       "Secure is never Secure enough. Tempered Airwall is a key bolt on security solution for any major business. Cut off threats from accessing critical infrastructure within your business.",
   },

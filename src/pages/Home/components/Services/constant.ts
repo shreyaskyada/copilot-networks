@@ -78,16 +78,13 @@ export const telecomServices = {
       items: [
         {
           id: 1,
-          title: "Wireless Services",
-          iconPath: "/dashboard/services/wireless_services.svg",
+          title: "Site Acquisition",
+          iconPath: "/dashboard/services/site_acquisition.svg",
           points: [
-            "Microwave Network Design",
-            "Microwave Node Configuration and Optimization",
-            "Mobile Backhaul Design",
-            "For 4G/5G Access Networks",
-            "Site Acquisition",
-            "Wireless Network Deployment",
-            "Tower Architectural Engineering Design",
+            "Cell Site Audit",
+            "Permit Drawing and Applications",
+            "Traffic Control Plans",
+            "Easement and Site Acquisition",
           ],
         },
         {
@@ -116,15 +113,29 @@ export const telecomServices = {
             "Cell Site Designs",
           ],
         },
+      ],
+    },
+    wirelessServices: {
+      title: "Wireless Services",
+      items: [
         {
-          id: 4,
-          title: "Site Acquisition",
-          iconPath: "/dashboard/services/site_acquisition.svg",
+          id: 1,
+          title: "Network and Design",
+          iconPath: "/dashboard/services/wireless_services.svg",
           points: [
-            "Cell Site Audit",
-            "Permit Drawing and Applications",
-            "Traffic Control Plans",
-            "Easement and Site Acquisition",
+            "Microwave Network Design",
+            "Mobile Backhaul Design For 4G/5G Access Networks",
+            "Tower Architectural Engineering Design",
+          ],
+        },
+        {
+          id: 2,
+          title: "Deployment and Optimization",
+          iconPath: "/dashboard/services/deployment_optimization.svg",
+          points: [
+            "Microwave Node Configuration and Optimization",
+            "Site Acquisition",
+            "Wireless Network Deployment",
           ],
         },
       ],
@@ -212,7 +223,7 @@ export const enterpriseRetail = {
         {
           id: 4,
           title: "Network Planning & Business Case",
-          iconPath: "/dashboard/services/software.svg",
+          iconPath: "/dashboard/services/network_planning.svg",
         },
         {
           id: 5,

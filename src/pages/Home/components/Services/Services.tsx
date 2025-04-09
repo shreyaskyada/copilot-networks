@@ -38,9 +38,7 @@ const Services: React.FC<ServicesProps> = ({ activeTab }) => {
               <div className="mt-[30px] md:mt-[42px]" key={index}>
                 <h1
                   className={clsx(
-                    "text-[20px] font-bold md:text-[24px]",
-                    index === 0 && "mb-[20px]",
-                    index === 1 && "mb-[10px]",
+                    "mb-[20px] text-[20px] font-bold md:text-[24px]",
                   )}
                 >
                   {section.title}
