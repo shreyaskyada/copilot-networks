@@ -43,8 +43,8 @@ const AgrivoltaicsServices = () => {
         </p>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {agrivoltaicsData.map((agrivoltaic) => {
-            return <AgrivoltaicCard {...agrivoltaic} />;
+          {agrivoltaicsData.map((agrivoltaic, index) => {
+            return <AgrivoltaicCard key={index} {...agrivoltaic} />;
           })}
         </div>
       </div>

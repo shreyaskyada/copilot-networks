@@ -12,27 +12,17 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
     toggleMenu,
     toggleSubmenu,
     scrollToSection,
+    handleMenuClose,
   } = useHeader();
 
   return (
-    <header
-      className={clsx(
-        "sticky top-0 z-[99]",
-        activeTab === 1 || activeTab === 2
-          ? "bg-[#002235] text-white"
-          : "border-b-[1px] border-b-[#6AA5BD] bg-white text-[#013D55]",
-      )}
-    >
+    <header className="sticky top-0 z-[99] bg-[#002235] text-white">
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <NavLink to="/" className="flex items-center">
-              {activeTab === 1 || activeTab === 2 ? (
-                <img src="/dark_logo.svg" alt="Logo" className="h-8 w-auto" />
-              ) : (
-                <img src="/white_logo.svg" alt="Logo" className="h-8 w-auto" />
-              )}
+              <img src="/dark_logo.svg" alt="Logo" className="h-8 w-auto" />
             </NavLink>
           </div>
           <div className="flex items-center gap-[60px]">
@@ -65,6 +55,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                         <Link
                           key={subItem.name}
                           to={subItem.href}
+                          onClick={handleMenuClose}
                           state={{
                             navActiveTab: index,
                           }}
@@ -149,6 +140,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                             <Link
                               key={subItem.name}
                               to={subItem.href}
+                              onClick={handleMenuClose}
                               state={{
                                 navActiveTab: index,
                               }}

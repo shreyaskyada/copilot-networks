@@ -20,30 +20,12 @@ const teamMembers: TeamMember[] = [
     linkedIn: "https://www.linkedin.com/in/aasim-ahmad-84947a4a/",
   },
   {
-    id: "shakti",
-    name: "Shakti Dash",
-    title: "HEAD OF OFFSHORE OPERATIONS",
+    id: "christer",
+    name: "Christer Karlsson",
+    title: "MANAGING PARTNER AND CHAIRMAN",
     description:
-      'Shakti Dash is the Head of Offshore Operations, responsible for all service delivery, engineering, and deployment support activities. With over 25 years of experience in various global telcos, Shakti brings his expertise in building teams, driving projects, delivering engineering services, and, importantly, driving process improvements through automation and digitization. Shakti and his team consistently outperform customer expectations by following: "Do your best, do a little better than you are."',
-    image: "/teams/shakti-img.png",
-    linkedIn: "https://www.linkedin.com/in/shakti-dash-10a08825/",
-  },
-  {
-    id: "yadveer",
-    name: "Yadveer Singh",
-    title: "VICE PRESIDENT OF GIS",
-    description:
-      "Yadveer Singh leads Copilot's GIS team successfully adapting to any number of software and schema used by our customers. He brings more than 15 years of experience in some of the most reputed organizations that deliver outside plant design services in the USA and the Middle East.",
-    image: "/teams/yadveer-img.png",
-    linkedIn: "https://www.linkedin.com/in/yadveer-singh-a98b3822/",
-  },
-  {
-    id: "patrick",
-    name: "Patrick Siddle",
-    title: "HEAD OF DOMESTIC FIELD OPERATIONS",
-    description:
-      "Patrick Siddle, a proud US Army Veteran, has a lifetime of experience building, managing, and maintaining Copper and Optical Networks. He has spliced, drilled, and managed projects all over the nation. Pat has led teams in Fortune 500 companies like Ericsson and has worked on projects for Google Fiber, ATT, Verizon, Lumen, and TDS Telecom. Today, Pat's team specializes in making efficient and accurate network design decisions in the field. His team has helped reduce the cost and time to build our customers' projects.",
-    image: "/teams/patrick-img.png",
+      "As Managing Partner and Chairman, Christer Karlsson brings over 30 years of experience in the Nordic and European markets. A prominent leader in the FTTx revolution since the early 2000s, he specializes in transforming service production and adopting new technologies. Christer’s expertise will be instrumental in advancing our mission to innovate and enhance FTTx network deployment and operations.",
+    image: "/teams/christer.png",
     linkedIn: "https://www.linkedin.com/company/copilot-net-llc/mycompany",
   },
   {
@@ -56,6 +38,15 @@ const teamMembers: TeamMember[] = [
     linkedIn: "https://www.linkedin.com/in/shaynerouse/",
   },
   {
+    id: "patrick",
+    name: "Patrick Siddle",
+    title: "HEAD OF DOMESTIC FIELD OPERATIONS",
+    description:
+      "Patrick Siddle, a proud US Army Veteran, has a lifetime of experience building, managing, and maintaining Copper and Optical Networks. He has spliced, drilled, and managed projects all over the nation. Pat has led teams in Fortune 500 companies like Ericsson and has worked on projects for Google Fiber, ATT, Verizon, Lumen, and TDS Telecom. Today, Pat’s team specializes in making efficient and accurate network design decisions in the field. His team has helped reduce the cost and time to build our customers’ projects.",
+    image: "/teams/patrick-img.jpeg",
+    linkedIn: "https://www.linkedin.com/company/copilot-net-llc/mycompany",
+  },
+  {
     id: "travis",
     name: "Travis Heidle",
     title: "VICE PRESIDENT OF FIELD OPERATIONS",
@@ -64,15 +55,7 @@ const teamMembers: TeamMember[] = [
     image: "/teams/travis.png",
     linkedIn: "https://www.linkedin.com/company/copilot-net-llc/mycompany",
   },
-  {
-    id: "christer",
-    name: "Christer Karlsson",
-    title: "MANAGING PARTNER AND CHAIRMAN",
-    description:
-      "As Managing Partner and Chairman, Christer Karlsson brings over 30 years of experience in the Nordic and European markets. A prominent leader in the FTTx revolution since the early 2000s, he specializes in transforming service production and adopting new technologies. Christer's expertise will be instrumental in advancing our mission to innovate and enhance FTTx network deployment and operations.",
-    image: "/teams/christer.png",
-    linkedIn: "https://www.linkedin.com/company/copilot-net-llc/mycompany",
-  },
+
   // {
   //   id: "karlReynold",
   //   name: "Karl Reynold",
@@ -106,7 +89,7 @@ const Members = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover object-top"
                     />
                     <div className="w-[200px] md:hidden">
                       <a href={member.linkedIn}>

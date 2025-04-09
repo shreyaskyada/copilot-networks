@@ -46,10 +46,13 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   const newTabs = useMemo(() => {
     const tabLength = tabs.length;
     if (isMd) {
-      return [...tabs, tabs[tabLength - 4],
-      tabs[tabLength - 3],
-      tabs[tabLength - 2],
-      tabs[tabLength - 1]];
+      return [
+        ...tabs,
+        tabs[tabLength - 4],
+        tabs[tabLength - 3],
+        tabs[tabLength - 2],
+        tabs[tabLength - 1],
+      ];
     }
     return [
       ...tabs,
@@ -234,9 +237,9 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                       key={index}
                       onClick={() => handleTabClick(index)}
                       className={clsx(
-                        "absolute h-[12px] w-[12px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#77A3BA] transition-all duration-300",
+                        "absolute h-[12px] w-[12px] origin-top -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#77A3BA] transition-all duration-300",
                         activeIndex === index &&
-                          "h-[32px] w-[32px] scale-110 border border-[#DDECF4] bg-white",
+                          "h-[32px] w-[32px] scale-110 border border-[#DDECF4] bg-white max-md:-translate-x-[16px]",
                       )}
                     >
                       {isActiveIndex && (

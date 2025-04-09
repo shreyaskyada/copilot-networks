@@ -5,7 +5,7 @@ const AgroCareOSS = () => {
         Software
       </h1>
       <section
-        className="relative bg-cover bg-center bg-no-repeat pt-7 max-lg:pl-6 lg:pt-[61px] lg:pl-[6%] xl:pl-[10%]"
+        className="relative bg-cover bg-center bg-no-repeat pt-7 lg:pt-[61px] lg:pl-[6%] xl:pl-[10%]"
         style={{
           backgroundImage: "url('/agrivoltaic/solarBackground.png')", // Ensure this image exists
           backgroundPosition: "top",
@@ -13,7 +13,7 @@ const AgroCareOSS = () => {
       >
         <div className="relative z-10 mx-auto flex flex-col justify-between gap-30 md:flex-row md:gap-20">
           {/* Left Text Content */}
-          <div className="lg:w-[60%] xl:w-[40%] 2xl:mt-[50px]">
+          <div className="max-lg:px-6 lg:w-[60%] xl:w-[40%] 2xl:mt-[50px]">
             <h2 className="mb-2 text-[30px] font-extrabold lg:text-[35px] xl:mb-6 xl:text-[56px]">
               AgroCare OSS
             </h2>

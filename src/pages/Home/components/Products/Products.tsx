@@ -90,7 +90,7 @@ const products = [
 ];
 
 const Products: React.FC<ProductsProps> = ({ activeTab }) => {
-  const newProducts = activeTab === 4 ? products.splice(0, 5) : products;
+  const newProducts = activeTab === 4 ? products.slice(0, 5) : products;
   const navigate = useNavigate();
 
   const handleClick = () => {

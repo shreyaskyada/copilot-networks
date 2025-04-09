@@ -80,6 +80,10 @@ export const useHeader = () => {
     }
   };
 
+  const handleMenuClose = () => {
+    setIsMenuOpen(false);
+  };
+
   return {
     isMenuOpen,
     activeSubmenu,
@@ -87,5 +91,6 @@ export const useHeader = () => {
     toggleMenu,
     toggleSubmenu,
     scrollToSection,
+    handleMenuClose,
   };
 };
