@@ -29,7 +29,7 @@ const ConstructionSoftware = () => {
             buttonClassName=""
           />
 
-          <div className="flex items-center justify-center rounded-2xl  p-8">
+          <div className="flex items-center justify-center rounded-2xl p-8">
             {/* <p className="text-xl font-medium text-sky-600">
               + More Upcoming Softwares
             </p> */}

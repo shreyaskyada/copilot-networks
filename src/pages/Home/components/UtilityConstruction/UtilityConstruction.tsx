@@ -24,13 +24,13 @@ const UtilityConstruction = () => {
                     with improved accuracy by allowing for real-time recording
                     Field Progress.
                   </p>
-                  {/* <a
+                  <a
                     href="https://rus2bill.com/"
                     target="_blank"
-                    className="mt-4 inline-flex items-center rounded-full bg-[#14A756] px-6 py-2 text-white transition"
+                    className="mt-4 inline-flex items-center rounded-full bg-[#14A756] px-6 py-2.5 text-white transition"
                   >
                     Website →
-                  </a> */}
+                  </a>
                 </div>
               </div>
               <div className="relative mt-6 md:mt-0 md:w-[60%]">
