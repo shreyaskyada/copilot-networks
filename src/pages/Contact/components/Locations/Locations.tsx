@@ -15,21 +15,6 @@ const LocationsData = [
       "Procapitus Business Park, D-247/4A, Sector 63, Noida, Uttar Pradesh, India -201301",
   },
   {
-    country: "UK",
-    location: "Copilot Networks Europe",
-    address: "239 Kensington High ST, London W8 6SN",
-  },
-  {
-    country: "GERMANY",
-    location: "Copilot Networks Europe",
-    address: "Zeltnerstraße 1-3, 90443 Nürnberg",
-  },
-  {
-    country: "SPAIN",
-    location: "Copilot Networks Spain",
-    address: "Calle de Mendez Alvaro, 20, Madrid, 28045",
-  },
-  {
     country: "Caribbean",
     location: "Copilot Networks Caribbean",
     address:
