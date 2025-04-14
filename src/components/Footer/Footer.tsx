@@ -158,8 +158,8 @@ const Footer = () => {
                   <ul className="flex flex-col gap-4 text-[13px]">
                     <li>
                       <span>Call Us - </span>
-                      <a href="tel:4694226200" className="hover:underline">
-                        (469) 4226200
+                      <a href="tel:4409046993" className="hover:underline">
+                        (440) 904 6993
                       </a>
                     </li>
                     <li>

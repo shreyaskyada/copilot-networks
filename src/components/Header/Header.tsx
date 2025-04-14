@@ -68,6 +68,9 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                   )}
                 </div>
               ))}
+              <a href="https://www.copilotnet.com/" target="_blank">
+                <img src="/copilot_hub.png" className="h-[32px]" />
+              </a>
             </nav>
 
             {/* Search Icon */}
@@ -170,6 +173,9 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                   )}
                 </div>
               ))}
+              <a href="https://www.copilotnet.com/" target="_blank">
+                <img src="/copilot_hub.png" className="h-[32px]" />
+              </a>
               {/* TODO: Search bar */}
               {/* <div className="pt-4 pb-2">
                 <div className="flex items-center">
