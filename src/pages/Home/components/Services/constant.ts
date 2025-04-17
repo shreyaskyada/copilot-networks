@@ -12,8 +12,7 @@ export const telecomServices = {
             "Public and Private Grant",
             "Broadband Business Planning",
             "Architecture Assessment",
-            "Professional Field Survey",
-            "Safety and Quality Inspection",
+            "Permits",
           ],
         },
         {
@@ -21,7 +20,6 @@ export const telecomServices = {
           title: "GIS Engineering Design",
           iconPath: "/dashboard/services/engineering_n_gis_design.svg",
           points: [
-            "Network Planning & Design",
             "High Level Design",
             "Structural Design",
             {
@@ -29,6 +27,7 @@ export const telecomServices = {
               subTitle:
                 "(PDF Design, Bill of Materials, Bill of Quantities, Shapefiles)",
             },
+            "Permit Drawing & applications",
           ],
         },
         {
@@ -36,29 +35,24 @@ export const telecomServices = {
           title: "Construction",
           iconPath: "/dashboard/services/construction.svg",
           points: [
-            "Shapefiles",
             "Wireless Network Deployment",
-            "Make-Ready Analysis",
             "Pole Loading and Structural Analysis",
             "Traffic Control Plans",
+            "Professional Field Survey",
+            "Safety and Quality Inspection (OSHA30)",
           ],
         },
         {
           id: 4,
           title: "Procurement & Logistics",
           iconPath: "/dashboard/services/product_procurement_n_logistics.svg",
-          points: ["SPL Fibre", "Conduit Solutions", "Vaults and Chambers"],
+          points: ["STL Fibre", "Conduit Solutions", "Vaults and Chambers"],
         },
         {
           id: 5,
           title: "Software",
           iconPath: "/dashboard/services/software.svg",
-          points: [
-            "Rus2bill",
-            "FiberOSS",
-            "Project Tracking",
-            "Ticketing System",
-          ],
+          points: ["Rus2bill", "FiberOSS"],
         },
         {
           id: 6,
@@ -95,9 +89,8 @@ export const telecomServices = {
           points: [
             "Public and Private Grant",
             "Broadband Business Planning",
+            "Network Planning & Design",
             "Architecture Assessment",
-            "Professional Field Survey",
-            "Safety and Quality Inspection",
           ],
         },
         {
