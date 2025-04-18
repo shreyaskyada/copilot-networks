@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
             </nav>
 
             {/* Search Icon */}
-            <div className="relative hidden items-center md:flex">
+            <div className="relative hidden items-center">
               {/* <button
                 className="text-gray-700 hover:text-blue-600 cursor-pointer"
                 onClick={toggleSearch}

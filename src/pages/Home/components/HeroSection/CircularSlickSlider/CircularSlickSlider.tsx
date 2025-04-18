@@ -4,13 +4,17 @@ import { useBreakpoint } from "../../../../../hooks/useBreakpoint";
 import ArrowIcon from "../../../../../assets/ArrowIcon";
 import "./CircularSlickSlider.css";
 import { useLocation, useNavigate } from "react-router";
+import AlertSVG from "../../../../../assets/AlertSVG";
+import { UnderConstructionCard } from "./UnderConstructionCard";
 
 interface TabItem {
   id: number;
   title: string;
   description: string;
   icon: React.ElementType;
-  images: string;
+  combinedImage: string;
+  otherImages: string[];
+  isUnderConstruction: boolean;
 }
 
 interface CircularSliderProps {
@@ -23,7 +27,6 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   setActiveTab,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [titlePadding, setTitlePadding] = useState(0);
   const [radius, setRadius] = useState(0);
   const [rotation, setRotation] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -46,20 +49,15 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   const newTabs = useMemo(() => {
     const tabLength = tabs.length;
     if (isMd) {
-      return [
-        ...tabs,
-        tabs[tabLength - 4],
-        tabs[tabLength - 3],
-        tabs[tabLength - 2],
-        tabs[tabLength - 1],
-      ];
+      return [...tabs, tabs[tabLength - 3], tabs[tabLength - 2]];
     }
     return [
       ...tabs,
+      ...tabs,
+      tabs[tabLength - 5],
       tabs[tabLength - 4],
       tabs[tabLength - 3],
       tabs[tabLength - 2],
-      tabs[tabLength - 1],
     ];
   }, [tabs, isMd]);
 
@@ -68,20 +66,6 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
       if (divRef.current) {
         const height = divRef.current.offsetHeight;
         setRadius(height / 2);
-      }
-    };
-
-    calculateRadius(); // Initial calculation
-    window.addEventListener("resize", calculateRadius);
-
-    return () => window.removeEventListener("resize", calculateRadius);
-  }, []);
-
-  useEffect(() => {
-    const calculateRadius = () => {
-      if (circularDivRef.current) {
-        const height = circularDivRef.current.offsetHeight;
-        setTitlePadding(height / 2 + 10);
       }
     };
 
@@ -141,7 +125,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   };
 
   const getXAndYCordinates = (index: number, angleOffset = 0) => {
-    const angle = (index * 360) / newTabs.length + angleOffset;
+    const angle = (index * 360) / newTabs.length + angleOffset + 90;
     const radians = (angle * Math.PI) / 180;
 
     const x = radius * Math.cos(radians);
@@ -154,40 +138,36 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
     const angle = 360 / newTabs.length;
     const radians = (angle * Math.PI) / 180;
 
-    return radius * Math.sin(radians) - -18;
+    return radius * Math.sin(radians) - 0;
   };
 
   return (
-    <div className="flex h-full w-full max-w-screen max-md:overflow-hidden max-md:pb-10 md:items-center">
-      <div className="relative flex w-full flex-1 flex-col items-center gap-10 md:flex-row md:justify-between">
+    <div className="flex h-fit w-full">
+      <div className="mx-auto w-full">
         {/* Arrow */}
-        <div className="absolute top-[20px] left-[50%] z-[60] flex -translate-x-[50%] cursor-pointer gap-8 md:top-[50%] md:left-7 md:-translate-y-[50%] md:flex-col 2xl:left-[2%]">
-          <ArrowIcon
-            className={`transition-transform duration-300 hover:scale-125 max-md:-rotate-90 ${isAnimating ? "pointer-events-none opacity-70" : ""}`}
-            onClick={() => handlePrev()}
-          />
-          <ArrowIcon
-            className={`rotate-90 transition-transform duration-300 hover:scale-125 md:rotate-180 ${isAnimating ? "pointer-events-none opacity-70" : ""}`}
-            onClick={() => handleNext()}
-          />
-        </div>
 
-        {/* Left section */}
-        <div className="relative flex w-screen flex-1 flex-col md:h-[60vh] md:min-h-[580px] md:w-[60vh] md:min-w-[580px] md:flex-row">
+        {/* Top section */}
+        <div className="relative">
           <div
-            style={{ height: `${titlePadding}px` }}
-            className="md:hidden"
-          ></div>
-
-          <div
-            className="max-w-md:overflow-hidden absolute left-0 z-50 w-[100vw] max-md:rotate-90 md:relative"
-            ref={circularDivRef}
+            className="relative overflow-hidden"
             style={{
-              ...(!isMd && { width: `${radius}px` }),
+              height: isMd
+                ? `${radius * 0.4 + 80}px`
+                : `${radius * 0.2 + 110}px`,
             }}
           >
+            <div className="absolute top-[13%] left-[50%] z-[60] flex -translate-x-[50%] cursor-pointer gap-8 md:top-[20%]">
+              <ArrowIcon
+                className={`-rotate-90 transition-transform duration-300 hover:scale-125 md:size-[30px] ${isAnimating ? "pointer-events-none opacity-70" : ""}`}
+                onClick={() => handlePrev()}
+              />
+              <ArrowIcon
+                className={`rotate-90 transition-transform duration-300 hover:scale-125 md:size-[30px] ${isAnimating ? "pointer-events-none opacity-70" : ""}`}
+                onClick={() => handleNext()}
+              />
+            </div>
             <div
-              className="relative inset-0 size-[120vw] flex-1 -translate-x-[75%] rounded-full border border-[#DDECF4] md:size-[60vh] md:min-h-[580px] md:min-w-[580px]"
+              className="absolute inset-0 top-0 left-1/2 min-h-[120vw] min-w-[120vw] -translate-x-1/2 -translate-y-[80%] rounded-full border border-[#DDECF4] md:-translate-y-[90%]"
               ref={divRef}
               style={{
                 transform: `rotate(${rotation}deg)`,
@@ -196,11 +176,11 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               }}
             >
               {newTabs.map((tab, index) => {
-                const { x, y } = getXAndYCordinates(index, isMd ? 0 : -18);
+                const { x, y } = getXAndYCordinates(index, 0);
                 const isActiveIndex = activeIndex === index;
                 const Icon = tab.icon;
 
-                let isVisible = false;
+                let isVisible = true;
 
                 if (isMd) {
                   isVisible =
@@ -210,19 +190,19 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                     index === (activeIndex + 1) % newTabs.length; // Next tab
                 } else {
                   isVisible =
-                    (index >= activeIndex - 1 && index <= activeIndex + 2) ||
+                    (index >= activeIndex - 2 && index <= activeIndex + 2) ||
                     (activeIndex < 2 &&
-                      (index < 2 ||
-                        index >= newTabs.length - (1 - activeIndex))) ||
+                      (index <= 4 ||
+                        index >= newTabs.length - (2 - activeIndex))) ||
                     (activeIndex > newTabs.length - 3 &&
-                      (index > newTabs.length - 3 ||
+                      (index >= newTabs.length - 5 ||
                         index <= (activeIndex + 2) % newTabs.length));
                 }
 
                 return (
                   <div
                     className={clsx(
-                      "relative size-[0] -translate-x-1/2 -translate-y-1/2 transition-none duration-300",
+                      "relative size-[0] transition-none duration-300",
                     )}
                     key={index}
                     style={{
@@ -251,21 +231,17 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                         role="button"
                         onClick={() => handleTabClick(index)}
                         className={clsx(
-                          "bottom-0 flex w-[80px] translate-x-[10px] -translate-y-[50%] cursor-pointer items-center transition-all duration-300 max-md:-rotate-90 max-md:justify-center md:w-[190px] md:translate-x-[30px]",
-                          isActiveIndex && "md:translate-x-[40px]",
-                          tab.id === 2 &&
-                            isActiveIndex &&
-                            "md:translate-x-[55px]",
-                          tab.id === 3 &&
-                            isActiveIndex &&
-                            "md:translate-x-[55px]",
+                          "top-0 flex w-[80px] -translate-x-[50%] translate-y-[30%] cursor-pointer items-center justify-center transition-all duration-300 md:w-[190px]",
+                          isActiveIndex &&
+                            "translate-y-[30px] md:translate-y-[50px]",
                         )}
                       >
                         <div className="flex items-center gap-0 md:gap-6">
-                          <div className="flex items-center gap-0 max-md:flex-col md:gap-2">
+                          <div className="flex flex-col items-center gap-0 md:gap-2">
                             <Icon
                               className={clsx(
                                 "transition-all duration-300",
+                                !isActiveIndex && "scale-[70%] md:scale-[100%]",
                                 !isMd &&
                                   tab.id === 1 &&
                                   isActiveIndex &&
@@ -282,14 +258,17 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                                   tab.id === 4 &&
                                   isActiveIndex &&
                                   "scale-[150%]",
-                                !isActiveIndex && "scale-[70%] md:scale-[100%]",
+                                !isMd &&
+                                  tab.id === 5 &&
+                                  isActiveIndex &&
+                                  "scale-[150%]",
                                 isActiveIndex && "w-fit text-[#002235]",
                               )}
                             />
                             {!isActiveIndex && (
                               <p
                                 className={clsx(
-                                  "text-center text-nowrap text-[#77A3BA]",
+                                  "text-center text-nowrap text-[#77A3BA] select-none",
                                   !isActiveIndex &&
                                     "text-[14px] text-wrap md:text-[16px] lg:text-[18px]",
                                 )}
@@ -306,52 +285,46 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               })}
             </div>
           </div>
-
           {/* Title and Description Section - No animation */}
-          <div
-            className="relative flex h-fit w-fit flex-col max-md:mx-auto max-md:-translate-y-[10px] max-md:items-center xl:-translate-x-[30px]"
-            style={{
-              ...(!isMd && { top: `${getTop()}px` }),
-            }}
-          >
-            <p className="text-left text-[28px] font-bold max-md:mt-2 max-md:w-[90vw] max-md:text-center max-md:text-[24px] md:w-[calc(100%+66px)] md:text-[50px]">
+          <div className="relative flex h-fit w-full flex-col items-center justify-center text-center max-md:mx-auto">
+            <p className="text-left text-[28px] font-bold max-md:mt-2 max-md:w-[90vw] max-md:text-center max-md:text-[24px] md:text-[50px]">
               {newTabs[activeIndex].title}
             </p>
-            {/* <div className="text-[16px] max-md:w-[90vw] max-md:px-4 max-md:text-center md:w-[calc(100%+66px)] md:text-[28px]">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: newTabs[activeIndex].description,
-                }}
-              />
-            </div> */}
           </div>
         </div>
 
-        {/* Right section - Images without animation */}
-        <div className="right-image-section relative mr-[5%] flex items-center max-md:pl-8 md:h-[60vh] md:max-w-[40vw]">
-          {/* relative mr-[5%] flex h-[40vh] flex-1 rounded-[15px] max-md:pl-8 md:h-[60vh] md:max-w-[40vw]  */}
-          <img src={newTabs[activeIndex].images} className="object-cover" />
-          {/* <div className="w-[70%] flex-1">
-            <img
-              src={newTabs[activeIndex].images[0]}
-              className="h-full w-full rounded-[15px] object-cover md:w-fit"
-              alt="Primary Image"
-            />
-          </div>
-
-          
-          <div className="relative flex w-[40%] -translate-x-[20%] flex-col justify-center gap-9 py-10 md:-translate-x-[50px] md:gap-14">
-            <img
-              src={newTabs[activeIndex].images[1]}
-              className="h-[40%] w-full rounded-[15px] object-cover md:w-fit"
-              alt="Secondary Image"
-            />
-            <img
-              src={newTabs[activeIndex].images[2]}
-              className="relative h-[40%] w-full scale-[110%] rounded-[15px] object-cover md:w-fit md:-translate-x-[5%]"
-              alt="Tertiary Image"
-            />
-          </div> */}
+        <div className="relative mt-[85px] p-5">
+          {newTabs[activeIndex].isUnderConstruction && (
+            <div className="absolute left-1/2 -translate-x-1/2 -translate-y-[65%]">
+              <UnderConstructionCard />
+            </div>
+          )}
+          {isMd ? (
+            <div className="">
+              <img
+                src={newTabs[activeIndex].combinedImage}
+                className="h-fit w-auto object-cover"
+              />
+            </div>
+          ) : (
+            <div className="grid grid-cols-3 gap-4">
+              <img
+                src={newTabs[activeIndex].otherImages[0]}
+                className="h-fit w-full rounded-md object-cover shadow"
+                alt="Image 1"
+              />
+              <img
+                src={newTabs[activeIndex].otherImages[1]}
+                className="h-fit w-full rounded-md object-cover shadow"
+                alt="Image 2"
+              />
+              <img
+                src={newTabs[activeIndex].otherImages[2]}
+                className="h-fit w-full rounded-md object-cover shadow"
+                alt="Image 3"
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
