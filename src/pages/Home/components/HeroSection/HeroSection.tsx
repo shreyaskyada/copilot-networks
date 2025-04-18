@@ -9,19 +9,6 @@ import RealEstateDevelopmentSVG from "../../../../assets/RealEstateDevelopmentSV
 
 const tabs = [
   {
-    id: 5,
-    title: "Real Estate & Development",
-    description: "",
-    icon: RealEstateDevelopmentSVG,
-    isUnderConstruction: true,
-    combinedImage: "/dashboard/telecom/telecom_combined.png",
-    otherImages: [
-      "/dashboard/realEstateDevelopment/image1.png",
-      "/dashboard/realEstateDevelopment/image2.png",
-      "/dashboard/realEstateDevelopment/image3.png",
-    ],
-  },
-  {
     id: 1,
     title: "Telecom",
     description: "",
@@ -29,8 +16,8 @@ const tabs = [
     isUnderConstruction: false,
     combinedImage: "/dashboard/telecom/telecom_combined.png",
     otherImages: [
-      "/dashboard/telecom/image1.jpg",
-      "/dashboard/telecom/image2.jpg",
+      "/dashboard/telecom/image1.png",
+      "/dashboard/telecom/image2.png",
       "/dashboard/telecom/image3.png",
     ],
   },
@@ -72,6 +59,19 @@ const tabs = [
       "/dashboard/agrivoltaics/image1.png",
       "/dashboard/agrivoltaics/image2.png",
       "/dashboard/agrivoltaics/image3.png",
+    ],
+  },
+  {
+    id: 5,
+    title: "Real Estate & Development",
+    description: "",
+    icon: RealEstateDevelopmentSVG,
+    isUnderConstruction: true,
+    combinedImage: "/dashboard/telecom/telecom_combined.png",
+    otherImages: [
+      "/dashboard/realEstateDevelopment/image1.png",
+      "/dashboard/realEstateDevelopment/image2.png",
+      "/dashboard/realEstateDevelopment/image3.png",
     ],
   },
 ];

@@ -30,6 +30,7 @@ export const useHeader = () => {
         { name: "Energy & Utilities", href: "" },
         { name: "Enterprise & Retail", href: "" },
         { name: "Agrivoltaics", href: "" },
+        { name: "Real Estate & Development", href: "" },
       ],
     },
     {
