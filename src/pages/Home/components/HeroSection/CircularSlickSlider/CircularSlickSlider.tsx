@@ -4,7 +4,6 @@ import { useBreakpoint } from "../../../../../hooks/useBreakpoint";
 import ArrowIcon from "../../../../../assets/ArrowIcon";
 import "./CircularSlickSlider.css";
 import { useLocation, useNavigate } from "react-router";
-import AlertSVG from "../../../../../assets/AlertSVG";
 import { UnderConstructionCard } from "./UnderConstructionCard";
 
 interface TabItem {
@@ -31,7 +30,6 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   const [rotation, setRotation] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
-  const circularDivRef = useRef<HTMLDivElement>(null);
   const activeTabDivRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
@@ -134,12 +132,12 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
     return { x, y };
   };
 
-  const getTop = () => {
-    const angle = 360 / newTabs.length;
-    const radians = (angle * Math.PI) / 180;
+  // const getTop = () => {
+  //   const angle = 360 / newTabs.length;
+  //   const radians = (angle * Math.PI) / 180;
 
-    return radius * Math.sin(radians) - 0;
-  };
+  //   return radius * Math.sin(radians) - 0;
+  // };
 
   return (
     <div className="flex h-fit w-full">
