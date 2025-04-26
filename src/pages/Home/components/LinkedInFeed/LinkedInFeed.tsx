@@ -5,18 +5,18 @@ import "slick-carousel/slick/slick-theme.css";
 const images = [
   {
     image:
-      "https://media.licdn.com/dms/image/v2/D5622AQHYMObPiH73iA/feedshare-shrink_800/feedshare-shrink_800/0/1725143448456?e=1746662400&v=beta&t=N3ds86kpY5lgqV0lsTeuYsE06JPoOrw9Llozv5rLNOA",
-    link: "https://www.linkedin.com/posts/copilot-net-llc_copilotnetworks-underground-aerial-activity-7236797265284063232-ZVCB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADZ96UMBRFP28IWkFRVKBFqOCcRYAvXoD7Y",
-  },
-  {
-    image:
       "https://media.licdn.com/dms/image/v2/D5622AQEUwzZ-RC5Etw/feedshare-shrink_1280/feedshare-shrink_1280/0/1732563007704?e=1746662400&v=beta&t=846L0I60wRwrEbKRI-DSIV8SpZc865U6qx83zegJSvk",
     link: "https://www.linkedin.com/posts/copilot-net-llc_engineering-osp-quality-activity-7266897423480823809-IkKI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ96UMBRFP28IWkFRVKBFqOCcRYAvXoD7Y",
   },
   {
     image:
-      "https://media.licdn.com/dms/image/v2/D5622AQGxWcV9J3INfw/feedshare-shrink_800/feedshare-shrink_800/0/1726079085305?e=1746662400&v=beta&t=p2pMYtWvgoKTMliUxg294G8vnAKjAQoKj9Fg_WxJGqI",
-    link: "https://www.linkedin.com/posts/copilot-net-llc_broadband-survey-copilotnetworks-activity-7239700417847115777-mnw7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ96UMBRFP28IWkFRVKBFqOCcRYAvXoD7Y",
+      "https://media.licdn.com/dms/image/v2/D5622AQEh_WOnW2ZFZA/feedshare-shrink_800/B56ZW0jv3eHoAg-/0/1742491025494?e=1748476800&v=beta&t=BR_e-rP7mWe67FEY1MMjfx4t7Q83Kjk6SBLEDnJKnZ4",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7308537081213947905/",
+  },
+  {
+    image:
+      "https://media.licdn.com/dms/image/v2/D5622AQHYMObPiH73iA/feedshare-shrink_800/feedshare-shrink_800/0/1725143448456?e=1746662400&v=beta&t=N3ds86kpY5lgqV0lsTeuYsE06JPoOrw9Llozv5rLNOA",
+    link: "https://www.linkedin.com/posts/copilot-net-llc_copilotnetworks-underground-aerial-activity-7236797265284063232-ZVCB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADZ96UMBRFP28IWkFRVKBFqOCcRYAvXoD7Y",
   },
 ];
 

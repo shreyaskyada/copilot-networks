@@ -17,9 +17,10 @@ export const telecomServices = {
         },
         {
           id: 2,
-          title: "GIS Engineering Design",
+          title: "Engineering Design",
           iconPath: "/dashboard/services/engineering_n_gis_design.svg",
           points: [
+            "GIS and CAD",
             "High Level Design",
             "Structural Design",
             {

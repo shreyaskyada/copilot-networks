@@ -29,9 +29,9 @@ const teamMembers: TeamMember[] = [
     linkedIn: "https://www.linkedin.com/company/copilot-net-llc/mycompany",
   },
   {
-    id: "Nathaniel Parsons",
-    name: "Nathaniel Parsons",
-    title: "Business Development Director",
+    id: "Nat Parsons",
+    name: "Nat Parsons",
+    title: "Business Development Director Real Estate",
     description:
       "Nat Parsons brings over 15 years of experience in telecom and banking, having held senior positions at Goodman Networks, Ericsson, and JP Morgan. His expertise spans telecom network deployment, real estate, and finance—offering a unique combination of technical acumen and financial strategy. Nat has a proven track record of developing and monetizing both real estate and infrastructure assets, consistently driving value and performance.",
     image: "/teams/nathaniel.jpeg",
