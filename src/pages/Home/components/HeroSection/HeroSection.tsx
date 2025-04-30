@@ -3,11 +3,13 @@ import AgrivoltaicsSVG from "../../../../assets/AgrivoltaicsSVG";
 import EnergyUtilitiesSVG from "../../../../assets/EnergyUtilitiesSVG";
 import EnterpriseRetailSVG from "../../../../assets/EnterpriseRetailSVG";
 import TelecomSVG from "../../../../assets/TelecomSVG";
-import CircularSlickSlider from "./CircularSlickSlider/CircularSlickSlider";
+import CircularSlickSlider, {
+  TabItem,
+} from "./CircularSlickSlider/CircularSlickSlider";
 import { HeroSectionProps } from "./types";
 import RealEstateDevelopmentSVG from "../../../../assets/RealEstateDevelopmentSVG";
 
-const tabs = [
+const tabs: TabItem[] = [
   {
     id: 1,
     title: "Telecom",
@@ -30,8 +32,8 @@ const tabs = [
     combinedImage: "/dashboard/energy_utilities/energy_combined.png",
     otherImages: [
       "/dashboard/energy_utilities/image1.png",
-      "/dashboard/energy_utilities/image2.png",
       "/dashboard/energy_utilities/image3.png",
+      "/dashboard/energy_utilities/image2.png",
     ],
   },
   {
@@ -39,7 +41,7 @@ const tabs = [
     title: "Enterprise & Retail",
     description: "",
     icon: EnterpriseRetailSVG,
-    isUnderConstruction: true,
+    isUnderConstruction: false,
     combinedImage:
       "/dashboard/enterprise_retail/enterprise_retail_combined.png",
     otherImages: [
@@ -53,7 +55,7 @@ const tabs = [
     title: "Agrivoltaics",
     description: "",
     icon: AgrivoltaicsSVG,
-    isUnderConstruction: true,
+    isUnderConstruction: false,
     combinedImage: "dashboard/agrivoltaics/agrivoltaics_combined.png",
     otherImages: [
       "/dashboard/agrivoltaics/image1.png",

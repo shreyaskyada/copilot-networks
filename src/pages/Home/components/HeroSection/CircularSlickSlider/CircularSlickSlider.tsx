@@ -6,7 +6,7 @@ import "./CircularSlickSlider.css";
 import { useLocation, useNavigate } from "react-router";
 import { UnderConstructionCard } from "./UnderConstructionCard";
 
-interface TabItem {
+export interface TabItem {
   id: number;
   title: string;
   description: string;
