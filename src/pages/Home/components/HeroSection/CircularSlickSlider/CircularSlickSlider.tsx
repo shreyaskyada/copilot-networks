@@ -313,23 +313,76 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               />
             </div>
           ) : (
-            <div className="grid grid-cols-3 gap-4">
-              <img
-                src={newTabs[activeIndex].otherImages[0]}
-                className="h-[400px] w-full rounded-md object-cover shadow"
-                alt="Image 1"
-              />
-              <img
-                src={newTabs[activeIndex].otherImages[1]}
-                className="h-[400px] w-full rounded-md object-cover shadow"
-                alt="Image 2"
-              />
-              <img
-                src={newTabs[activeIndex].otherImages[2]}
-                className="h-[400px] w-full rounded-md object-cover shadow"
-                alt="Image 3"
-              />
-            </div>
+            <>
+              {newTabs[activeIndex].otherImages.length === 7 ? (
+                <div className="grid grid-cols-3 gap-1.5">
+                  <div className="grid grid-cols-3 gap-1">
+                    {/* Left tall image */}
+                    <img
+                      src={newTabs[activeIndex].otherImages[0]}
+                      className="h-full object-cover shadow"
+                      alt="Image 1"
+                    />
+
+                    {/* Middle top: Office blur + dashboard */}
+                    <img
+                      src={newTabs[activeIndex].otherImages[1]}
+                      className="col-span-2 h-full w-full object-cover shadow"
+                      alt="Image 2"
+                    />
+                  </div>
+
+                  <div>
+                    <img
+                      src={newTabs[activeIndex].otherImages[2]}
+                      className="h-full w-full object-cover shadow"
+                      alt="Image 2"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 grid-rows-2 gap-1">
+                    <img
+                      src={newTabs[activeIndex].otherImages[3]}
+                      className="h-full w-full object-cover shadow"
+                      alt="Image 3"
+                    />
+                    <img
+                      src={newTabs[activeIndex].otherImages[4]}
+                      className="h-full w-full object-cover shadow"
+                      alt="Image 4"
+                    />
+                    <img
+                      src={newTabs[activeIndex].otherImages[5]}
+                      className="h-full w-full object-cover shadow"
+                      alt="Image 5"
+                    />
+                    <img
+                      src={newTabs[activeIndex].otherImages[6]}
+                      className="h-full w-full object-cover shadow"
+                      alt="Image 6"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-3 gap-4">
+                  <img
+                    src={newTabs[activeIndex].otherImages[0]}
+                    className="h-[400px] w-full rounded-md object-cover shadow"
+                    alt="Image 1"
+                  />
+                  <img
+                    src={newTabs[activeIndex].otherImages[1]}
+                    className="h-[400px] w-full rounded-md object-cover shadow"
+                    alt="Image 2"
+                  />
+                  <img
+                    src={newTabs[activeIndex].otherImages[2]}
+                    className="h-[400px] w-full rounded-md object-cover shadow"
+                    alt="Image 3"
+                  />
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

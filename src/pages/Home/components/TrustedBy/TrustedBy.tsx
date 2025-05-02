@@ -9,7 +9,7 @@ type Partner = {
 };
 
 const firstSectionIcons = [
-  { name: "LUMA", logo: "/trustedBy/luma.svg" },
+  { name: "LUMA", logo: "/trustedBy/luma.svg", className: "!h-[80px]" },
   { name: "TDS", logo: "/trustedBy/tds.svg" },
   { name: "AT&T", logo: "/trustedBy/at&t.svg" },
   { name: "Verizon", logo: "/trustedBy/Verizon_2015.svg" },
@@ -40,7 +40,7 @@ const firstSectionIcons = [
 ];
 
 const secondSectionIcons = [
-  { name: "LUMA", logo: "/trustedBy/luma.svg" },
+  { name: "LUMA", logo: "/trustedBy/luma.svg", className: "!h-[80px]" },
   { name: "American Electric Power", logo: "/trustedBy/AEP_logo.svg" },
   { name: "Southern California Edison", logo: "/trustedBy/edison.svg" },
   { name: "DTE", logo: "/trustedBy/DTE.png" },

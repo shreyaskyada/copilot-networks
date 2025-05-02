@@ -21,6 +21,10 @@ const tabs: TabItem[] = [
       "/dashboard/telecom/image1.png",
       "/dashboard/telecom/image2.png",
       "/dashboard/telecom/image3.png",
+      "/dashboard/telecom/image4.png",
+      "/dashboard/telecom/image5.png",
+      "/dashboard/telecom/image6.png",
+      "/dashboard/telecom/image7.png",
     ],
   },
   {
