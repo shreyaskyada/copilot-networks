@@ -15,8 +15,8 @@ const images = [
   },
   {
     image:
-      "https://media.licdn.com/dms/image/v2/D5622AQHYMObPiH73iA/feedshare-shrink_800/feedshare-shrink_800/0/1725143448456?e=1746662400&v=beta&t=N3ds86kpY5lgqV0lsTeuYsE06JPoOrw9Llozv5rLNOA",
-    link: "https://www.linkedin.com/posts/copilot-net-llc_copilotnetworks-underground-aerial-activity-7236797265284063232-ZVCB?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADZ96UMBRFP28IWkFRVKBFqOCcRYAvXoD7Y",
+      "https://media.licdn.com/dms/image/v2/D4E22AQF-0InxycV6CA/feedshare-shrink_1280/B4EZaIHshtGQAo-/0/1746040442767?e=1749686400&v=beta&t=k5t1fAbDGfRKXLSKcdHO5hnFqafhqSh7u59zqC5r6xM",
+    link: "https://www.linkedin.com/posts/copilot-net-llc_rus2bill-telecom-networkplanning-activity-7323424417428946946-JGrL?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqxc5IBLiJOZLGJUaKla07rJblxG402310",
   },
 ];
 

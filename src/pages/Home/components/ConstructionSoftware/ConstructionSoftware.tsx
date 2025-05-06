@@ -5,7 +5,7 @@ const ConstructionSoftware = () => {
     <section className="relative overflow-hidden md:py-20 lg:px-24">
       <div className="mx-auto w-[90%] max-w-6xl p-4 px-0 py-8">
         <h2 className="text-navy-900 mb-12 text-3xl font-bold md:text-4xl">
-          Construction Softwares
+          Softwares
         </h2>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">

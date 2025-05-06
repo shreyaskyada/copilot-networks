@@ -1,5 +1,5 @@
 export const telecomServices = {
-  page: "Telecom Services",
+  page: "Services",
   sections: {
     broadband: {
       title: "Broadband",
