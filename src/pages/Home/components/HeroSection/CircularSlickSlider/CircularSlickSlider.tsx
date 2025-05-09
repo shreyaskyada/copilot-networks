@@ -343,22 +343,22 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                   <div className="grid grid-cols-2 grid-rows-2 gap-1">
                     <img
                       src={newTabs[activeIndex].otherImages[3]}
-                      className="h-full w-full object-cover shadow"
+                      className="aspect-square h-full w-full object-cover shadow"
                       alt="Image 3"
                     />
                     <img
                       src={newTabs[activeIndex].otherImages[4]}
-                      className="h-full w-full object-cover shadow"
+                      className="aspect-square h-full w-full object-cover shadow"
                       alt="Image 4"
                     />
                     <img
                       src={newTabs[activeIndex].otherImages[5]}
-                      className="h-full w-full object-cover shadow"
+                      className="aspect-square h-full w-full object-cover shadow"
                       alt="Image 5"
                     />
                     <img
                       src={newTabs[activeIndex].otherImages[6]}
-                      className="h-full w-full object-cover shadow"
+                      className="aspect-square h-full w-full object-cover shadow"
                       alt="Image 6"
                     />
                   </div>

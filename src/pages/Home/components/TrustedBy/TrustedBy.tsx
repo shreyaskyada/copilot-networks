@@ -30,7 +30,7 @@ const firstSectionIcons = [
   {
     name: "Southern California Edison",
     logo: "/trustedBy/edison.svg",
-    className: "!h-[80px]",
+    className: "!h-[118px]",
   },
   { name: "Brightspeed", logo: "/trustedBy/brightspped.svg" },
   { name: "Ziply", logo: "/trustedBy/ziply.svg" },
@@ -42,7 +42,11 @@ const firstSectionIcons = [
 const secondSectionIcons = [
   { name: "LUMA", logo: "/trustedBy/luma.svg", className: "!h-[80px]" },
   { name: "American Electric Power", logo: "/trustedBy/AEP_logo.svg" },
-  { name: "Southern California Edison", logo: "/trustedBy/edison.svg" },
+  {
+    name: "Southern California Edison",
+    logo: "/trustedBy/edison.svg",
+    className: "!h-[118px]",
+  },
   { name: "DTE", logo: "/trustedBy/DTE.png" },
   { name: "Next Era Energy", logo: "/trustedBy/NextEraEnergy.png" },
   { name: "oneAsplundh", logo: "/trustedBy/oneAsplundh.png" },
