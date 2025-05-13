@@ -4,18 +4,15 @@ import "slick-carousel/slick/slick-theme.css";
 
 const images = [
   {
-    image:
-      "https://media.licdn.com/dms/image/v2/D5622AQEUwzZ-RC5Etw/feedshare-shrink_1280/feedshare-shrink_1280/0/1732563007704?e=1746662400&v=beta&t=846L0I60wRwrEbKRI-DSIV8SpZc865U6qx83zegJSvk",
+    image: "/social/LinkedinPosts/post1.jpeg",
     link: "https://www.linkedin.com/posts/copilot-net-llc_engineering-osp-quality-activity-7266897423480823809-IkKI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ96UMBRFP28IWkFRVKBFqOCcRYAvXoD7Y",
   },
   {
-    image:
-      "https://media.licdn.com/dms/image/v2/D5622AQEh_WOnW2ZFZA/feedshare-shrink_800/B56ZW0jv3eHoAg-/0/1742491025494?e=1748476800&v=beta&t=BR_e-rP7mWe67FEY1MMjfx4t7Q83Kjk6SBLEDnJKnZ4",
+    image: "/social/LinkedinPosts/post2.png",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7308537081213947905/",
   },
   {
-    image:
-      "https://media.licdn.com/dms/image/v2/D4E22AQF-0InxycV6CA/feedshare-shrink_1280/B4EZaIHshtGQAo-/0/1746040442767?e=1749686400&v=beta&t=k5t1fAbDGfRKXLSKcdHO5hnFqafhqSh7u59zqC5r6xM",
+    image: "/social/LinkedinPosts/post3.png",
     link: "https://www.linkedin.com/posts/copilot-net-llc_rus2bill-telecom-networkplanning-activity-7323424417428946946-JGrL?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqxc5IBLiJOZLGJUaKla07rJblxG402310",
   },
 ];
@@ -49,9 +46,9 @@ const LinkedInFeed = () => {
               key={index}
               src={image}
               alt="LinkedIn Post Preview"
-              width="504"
-              height="818"
-              className="rounded-xl shadow-lg"
+              // width="504"
+              // height="818"
+              className="h-full max-h-[400px] rounded-xl shadow-lg"
             />
           </a>
         ))}
@@ -66,7 +63,7 @@ const LinkedInFeed = () => {
                 <img
                   src={image}
                   alt="LinkedIn Post Preview"
-                  className="w-full max-w-md rounded-xl shadow-lg"
+                  className="h-full max-h-[350px] w-full max-w-md rounded-xl object-cover shadow-lg"
                 />
               </a>
             </div>

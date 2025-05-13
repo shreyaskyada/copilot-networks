@@ -50,12 +50,13 @@ const Footer = () => {
               >
                 <img src="/social/linkedin.svg" alt="linkedin" />
               </a>
-              {/* <a
-                href="#"
+              <a
+                href="https://www.instagram.com/copilot_networks"
                 className="rounded-full p-1 transition-colors hover:bg-gray-800/50"
+                target="_blank"
               >
                 <img src="/social/instagram.svg" alt="Instagram" />
-              </a> */}
+              </a>
             </div>
           </div>
 

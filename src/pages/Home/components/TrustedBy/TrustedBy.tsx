@@ -75,7 +75,7 @@ const TrustedBy = ({ activeTab }: { activeTab: number }) => {
                 key={`first-${index}`}
                 className="flex items-center justify-center px-6 md:px-8"
               >
-                <div className="relative flex h-auto items-center justify-center md:h-[95px]">
+                <div className="relative flex h-auto min-h-fit items-center justify-center md:h-[95px]">
                   <img
                     src={partner.logo || "/placeholder.svg"}
                     alt={`${partner.name} logo`}

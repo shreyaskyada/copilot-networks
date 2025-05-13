@@ -37,11 +37,12 @@ const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
           <ConstructionSoftware />
         </>
       )}
-      {activeTab === 1 && <IntegratedWith />}
+      {activeTab === 1 && <TrustedBy activeTab={activeTab} />}
       {activeTab === 1 && <Testimonial />}
-      {(activeTab === 1 || activeTab === 2 || activeTab === 4) && (
+      {(activeTab === 2 || activeTab === 4) && (
         <TrustedBy activeTab={activeTab} />
       )}
+      {activeTab === 1 && <IntegratedWith />}
       {activeTab === 2 && <UtilityConstruction />}
       {activeTab === 4 && <AgroCareOSS />}
       <LinkedInFeed />
