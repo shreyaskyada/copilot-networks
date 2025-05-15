@@ -12,4 +12,5 @@ export interface SubMenuItem {
   name: string;
   href: string;
   navActiveTab?: number;
+  disabled?: boolean;
 }

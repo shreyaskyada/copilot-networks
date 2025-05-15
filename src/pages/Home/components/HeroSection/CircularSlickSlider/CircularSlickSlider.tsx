@@ -14,6 +14,7 @@ export interface TabItem {
   combinedImage: string;
   otherImages: string[];
   isUnderConstruction: boolean;
+  disabled?: boolean;
 }
 
 interface CircularSliderProps {
@@ -94,19 +95,39 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   };
 
   const handleNext = () => {
-    if (isAnimating) return; // Prevent multiple clicks during animation
+    if (isAnimating) return;
 
-    const newIndex = (activeIndex + 1) % newTabs.length;
-    const newRotation = rotation - 360 / newTabs.length;
-    handleAnimation(newIndex, newRotation);
+    let nextIndex = 0;
+
+    if (newTabs[(activeIndex + 1 + newTabs.length) % newTabs.length].disabled) {
+      ++nextIndex;
+    }
+
+    const targetIndex = (activeIndex + nextIndex + 1) % newTabs.length;
+    const newRotation = rotation - (360 / newTabs.length) * (nextIndex + 1);
+
+    handleAnimation(targetIndex, newRotation);
   };
 
   const handlePrev = () => {
-    if (isAnimating) return; // Prevent multiple clicks during animation
+    if (isAnimating) return;
 
-    const newIndex = (activeIndex - 1 + newTabs.length) % newTabs.length;
-    const newRotation = rotation + 360 / newTabs.length;
-    handleAnimation(newIndex, newRotation);
+    let prevIndexOffset = 0;
+    // (activeIndex - 1 + newTabs.length) % newTabs.length
+
+    if (newTabs[(activeIndex - 1 + newTabs.length) % newTabs.length].disabled) {
+      ++prevIndexOffset;
+    }
+
+    // Calculate new active index
+    const targetIndex =
+      (activeIndex - (prevIndexOffset + 1) + newTabs.length) % newTabs.length;
+
+    // Rotate positively to go counter-clockwise
+    const newRotation =
+      rotation + (360 / newTabs.length) * (prevIndexOffset + 1);
+
+    handleAnimation(targetIndex, newRotation);
   };
 
   const handleTabClick = (index: number) => {
@@ -139,6 +160,8 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
 
   //   return radius * Math.sin(radians) - 0;
   // };
+
+  console.log("otherImages", !newTabs[activeIndex].disabled);
 
   return (
     <div className="flex h-fit w-full">
@@ -216,12 +239,17 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                       top: `calc(50% + ${y}px)`,
                       transform: `rotate(${-rotation}deg)`,
                     }}
-                    onClick={() => handleTabClick(index)}
+                    onClick={() => {
+                      if (!newTabs[index].disabled) handleTabClick(index);
+                    }}
                     ref={isActiveIndex ? activeTabDivRef : null}
                   >
                     <button
                       key={index}
-                      onClick={() => handleTabClick(index)}
+                      onClick={() =>
+                        !newTabs[index].disabled && handleTabClick(index)
+                      }
+                      disabled={newTabs[index].disabled}
                       className={clsx(
                         "absolute h-[12px] w-[12px] origin-top -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#77A3BA] transition-all duration-300",
                         activeIndex === index &&
@@ -235,7 +263,9 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                     {isVisible && (
                       <div
                         role="button"
-                        onClick={() => handleTabClick(index)}
+                        onClick={() =>
+                          !newTabs[index].disabled && handleTabClick(index)
+                        }
                         className={clsx(
                           "top-0 flex w-[80px] -translate-x-[50%] translate-y-[30%] cursor-pointer items-center justify-center transition-all duration-300 md:w-[190px]",
                           isActiveIndex &&
@@ -299,13 +329,20 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
           </div>
         </div>
 
-        <div className="relative mt-[85px] p-5">
+        <div
+          className={clsx(
+            "relative",
+            isMd && newTabs[activeIndex]?.otherImages?.length === 7
+              ? "mt-[45px] p-1"
+              : "mt-[85px] p-5",
+          )}
+        >
           {newTabs[activeIndex].isUnderConstruction && (
             <div className="left-1/2 -translate-y-[40%] md:absolute md:-translate-x-1/2 md:-translate-y-[65%]">
               <UnderConstructionCard />
             </div>
           )}
-          {isMd ? (
+          {isMd && newTabs[activeIndex]?.otherImages?.length !== 7 ? (
             <div className="">
               <img
                 src={newTabs[activeIndex].combinedImage}
@@ -315,8 +352,8 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
           ) : (
             <>
               {newTabs[activeIndex].otherImages.length === 7 ? (
-                <div className="grid grid-cols-3 gap-1.5">
-                  <div className="grid grid-cols-3 gap-1">
+                <div className="grid gap-1.5 md:grid-cols-3">
+                  <div className="grid grid-cols-5 gap-1 md:grid-cols-3">
                     {/* Left tall image */}
                     <img
                       src={newTabs[activeIndex].otherImages[0]}
@@ -330,9 +367,15 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                       className="col-span-2 h-full w-full object-cover shadow"
                       alt="Image 2"
                     />
+
+                    <img
+                      src={newTabs[activeIndex].otherImages[2]}
+                      className="col-span-2 h-full w-full object-cover shadow md:hidden"
+                      alt="Image 2"
+                    />
                   </div>
 
-                  <div>
+                  <div className="max-md:hidden">
                     <img
                       src={newTabs[activeIndex].otherImages[2]}
                       className="h-full w-full object-cover shadow"

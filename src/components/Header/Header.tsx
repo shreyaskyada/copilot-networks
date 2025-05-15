@@ -55,10 +55,16 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          onClick={handleMenuClose}
-                          state={{
-                            navActiveTab: index,
-                          }}
+                          onClick={
+                            subItem.disabled ? undefined : handleMenuClose
+                          }
+                          state={
+                            subItem.disabled
+                              ? undefined
+                              : {
+                                  navActiveTab: index,
+                                }
+                          }
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#013D55] hover:text-white"
                         >
                           {subItem.name}
@@ -143,10 +149,16 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                             <Link
                               key={subItem.name}
                               to={subItem.href}
-                              onClick={handleMenuClose}
-                              state={{
-                                navActiveTab: index,
-                              }}
+                              onClick={
+                                subItem.disabled ? undefined : handleMenuClose
+                              }
+                              state={
+                                subItem.disabled
+                                  ? undefined
+                                  : {
+                                      navActiveTab: index,
+                                    }
+                              }
                               className={clsx(
                                 "block py-2 text-sm hover:text-blue-600",
                                 activeTab === index + 1 &&

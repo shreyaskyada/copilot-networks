@@ -71,6 +71,7 @@ const tabs: TabItem[] = [
     id: 5,
     title: "Real Estate & Development",
     description: "",
+    disabled: true,
     icon: RealEstateDevelopmentSVG,
     isUnderConstruction: true,
     combinedImage: "/dashboard/telecom/telecom_combined.png",
