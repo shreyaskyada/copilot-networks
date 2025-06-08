@@ -356,11 +356,18 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
           </div>
         </div>
 
-        <div className="max-md:my-[30px]">
+        <div className="max-md:my-[30px] md:hidden">
           <Dots activeIndex={activeIndex % 5} onDotClick={handleDotClick} />
         </div>
 
-        <div className={clsx("relative p-1")}>
+        <div
+          className={clsx(
+            "relative p-1",
+            isMd && newTabs[activeIndex]?.otherImages?.length === 7
+              ? "mt-[45px] p-1"
+              : "mt-[85px] p-5",
+          )}
+        >
           {newTabs[activeIndex].isUnderConstruction && (
             <div className="left-1/2 -translate-y-[17%] md:absolute md:-translate-x-1/2 md:-translate-y-[65%]">
               <UnderConstructionCard />
