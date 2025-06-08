@@ -1,4 +1,12 @@
+import { Link, useNavigate } from "react-router";
+
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleBecomPartner = () => {
+    navigate("/contact");
+  };
+
   return (
     <div
       className="font-Lato relative h-[920px] bg-[#002235] bg-cover bg-center bg-no-repeat text-white md:h-[780px]"
@@ -12,7 +20,10 @@ const Footer = () => {
           Partnership Powering Progress
         </div>
         <div className="mt-10 flex flex-col items-center">
-          <button className="h-[56px] w-[198px] cursor-pointer rounded-full bg-white p-4 text-base font-semibold text-black">
+          <button
+            className="h-[56px] w-[198px] cursor-pointer rounded-full bg-white p-4 text-base font-semibold text-black"
+            onClick={handleBecomPartner}
+          >
             Become a Partner
           </button>
         </div>
@@ -68,18 +79,20 @@ const Footer = () => {
               <div className="hidden space-y-4 md:block">
                 <div className="flex items-center">
                   <h2 className="text-2xl font-bold">
-                    <img
-                      src="/logo_white.png"
-                      alt="Logo"
-                      className="h-[44px] w-auto"
-                    />
+                    <a href="https://thecopilotgroup.com/" target="_blank">
+                      <img
+                        src="/logo_white.png"
+                        alt="Logo"
+                        className="h-[44px] w-auto"
+                      />
+                    </a>
                   </h2>
                 </div>
                 <div className="text-sm text-white">
                   <p className="leading-[25px]">
                     Copilot Networks, a Unit of{" "}
                     <a
-                      href="https://www.copilotnet.com/"
+                      href="https://thecopilotgroup.com/"
                       className="underline"
                       target="_blank"
                     >
@@ -96,20 +109,20 @@ const Footer = () => {
                   <h3 className="mb-4 text-lg font-medium">Legal</h3>
                   <ul className="flex flex-col gap-4">
                     <li>
-                      <a
-                        href="https://www.copilotnet.com/networks/terms-conditions.html"
+                      <Link
+                        to={"/terms-conditions"}
                         className="text-[13px] transition-colors hover:text-blue-400"
                       >
                         Terms Of Service
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="https://www.copilotnet.com/networks/privacy-policy.html"
+                      <Link
+                        to="/privacy-policy"
                         className="text-[13px] transition-colors hover:text-blue-400"
                       >
                         Privacy Policy
-                      </a>
+                      </Link>
                     </li>
                     {/* <li>
                       <a
@@ -190,7 +203,7 @@ const Footer = () => {
                   <p className="leading-[25px]">
                     Copilot Networks, a Unit of{" "}
                     <a
-                      href="https://www.copilotnet.com/"
+                      href="https://thecopilotgroup.com/"
                       className="underline"
                       target="_blank"
                     >

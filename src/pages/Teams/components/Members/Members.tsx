@@ -61,7 +61,7 @@ const teamMembers: TeamMember[] = [
     title: "VICE PRESIDENT OF FIELD OPERATIONS",
     description:
       "As Vice President of Field Operations, Travis Heidle brings over 25 years of industry experience. He specializes in inside wiring, OSPC splicing, aerial and buried OSPE, and project management. With a proven record of building thousands of miles of fiber infrastructure across the Southeastern United States, Travis is dedicated to delivering excellence for our team.",
-    image: "/teams/travis.png",
+    image: "/teams/travis.jpg",
     linkedIn: "https://www.linkedin.com/company/copilot-net-llc/mycompany",
   },
 

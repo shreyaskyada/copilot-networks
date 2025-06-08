@@ -22,6 +22,28 @@ interface CircularSliderProps {
   setActiveTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
+const Dots: React.FC<{
+  activeIndex: number;
+  onDotClick: (index: number) => void;
+}> = ({ activeIndex, onDotClick }) => {
+  return (
+    <div className="flex justify-center gap-3 py-4">
+      {[...Array(5)].map((_, index) => (
+        <button
+          key={index}
+          onClick={() => onDotClick(index)}
+          className={clsx(
+            "h-3 w-3 rounded-full border-[#77A3BA] transition-all duration-300",
+            activeIndex === index
+              ? "bg-[#77A3BA]"
+              : "border-1 border-[#77A3BA]",
+          )}
+        />
+      ))}
+    </div>
+  );
+};
+
 const CircularSlider: React.FC<CircularSliderProps> = ({
   tabs,
   setActiveTab,
@@ -162,6 +184,11 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   // };
 
   console.log("otherImages", !newTabs[activeIndex].disabled);
+
+  const handleDotClick = (index: number) => {
+    if (isAnimating) return;
+    handleTabClick(index);
+  };
 
   return (
     <div className="flex h-fit w-full">
@@ -329,16 +356,13 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
           </div>
         </div>
 
-        <div
-          className={clsx(
-            "relative",
-            isMd && newTabs[activeIndex]?.otherImages?.length === 7
-              ? "mt-[45px] p-1"
-              : "mt-[85px] p-5",
-          )}
-        >
+        <div className="max-md:my-[30px]">
+          <Dots activeIndex={activeIndex % 5} onDotClick={handleDotClick} />
+        </div>
+
+        <div className={clsx("relative p-1")}>
           {newTabs[activeIndex].isUnderConstruction && (
-            <div className="left-1/2 -translate-y-[40%] md:absolute md:-translate-x-1/2 md:-translate-y-[65%]">
+            <div className="left-1/2 -translate-y-[17%] md:absolute md:-translate-x-1/2 md:-translate-y-[65%]">
               <UnderConstructionCard />
             </div>
           )}

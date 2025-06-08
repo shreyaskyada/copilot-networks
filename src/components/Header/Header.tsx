@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                   )}
                 </div>
               ))}
-              <a href="https://www.copilotnet.com/" target="_blank">
+              <a href="https://thecopilotgroup.com/" target="_blank">
                 <img src="/copilot_hub.png" className="h-[32px]" />
               </a>
             </nav>

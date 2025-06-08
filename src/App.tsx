@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import { lazy, Suspense, useState } from "react";
 import { Loader } from "./components/Loader";
+import { TermsAndConditions } from "./pages/TermsAndConditions";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 
 // Lazy load components
 const Layout = lazy(() => import("./components/Layout/Layout"));
@@ -43,6 +45,22 @@ function App() {
               element={
                 <Suspense fallback={<Loader />}>
                   <Contact />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/terms-conditions"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <TermsAndConditions />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/privacy-policy"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <PrivacyPolicy />
                 </Suspense>
               }
             />
