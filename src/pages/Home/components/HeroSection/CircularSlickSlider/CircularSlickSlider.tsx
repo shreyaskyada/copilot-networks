@@ -304,6 +304,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                             <Icon
                               className={clsx(
                                 "transition-all duration-300",
+                                newTabs[index].disabled && "opacity-60",
                                 !isActiveIndex && "scale-[70%] md:scale-[100%]",
                                 !isMd &&
                                   tab.id === 1 &&
@@ -329,15 +330,27 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                               )}
                             />
                             {!isActiveIndex && (
-                              <p
-                                className={clsx(
-                                  "text-center text-nowrap text-[#77A3BA] select-none",
-                                  !isActiveIndex &&
-                                    "text-[14px] text-wrap md:text-[16px] lg:text-[18px]",
+                              <div className="relative">
+                                <p
+                                  className={clsx(
+                                    "text-center text-[#77A3BA] select-none",
+                                    !isActiveIndex &&
+                                      "text-[14px] text-wrap md:text-[16px] lg:text-[15px]",
+                                    newTabs[index].disabled && "opacity-60",
+                                  )}
+                                >
+                                  {tab?.title}
+                                  {/* {newTabs[index].disabled && (
+                                  <div>
+                                  </div>
+                                  )} */}
+                                </p>
+                                {newTabs[index].disabled && (
+                                  <div className="absolute top-full left-1/2 -translate-x-1/2 translate-y-2 rounded-[5px] bg-[#E6F3F8] px-[10px] py-[8px] text-[10px] font-black tracking-[1px] whitespace-nowrap text-[#0089CF] uppercase">
+                                    coming soon
+                                  </div>
                                 )}
-                              >
-                                {tab?.title}
-                              </p>
+                              </div>
                             )}
                           </div>
                         </div>

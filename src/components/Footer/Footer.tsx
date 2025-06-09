@@ -89,7 +89,7 @@ const Footer = () => {
                   </h2>
                 </div>
                 <div className="text-sm text-white">
-                  <p className="leading-[25px]">
+                  {/* <p className="leading-[25px]">
                     Copilot Networks, a Unit of{" "}
                     <a
                       href="https://thecopilotgroup.com/"
@@ -98,7 +98,8 @@ const Footer = () => {
                     >
                       The Copilot Group
                     </a>
-                  </p>
+                  </p> */}
+                  <p className="leading-[25px]">Copilot Net LLC</p>
                   <p>955 Garden Park Drive, #220, Allen, Texas, 75013</p>
                 </div>
               </div>
@@ -179,10 +180,10 @@ const Footer = () => {
                     <li>
                       <span>General Enquiries - </span>
                       <a
-                        href="mailto:Sales@Copilotnet.Com"
+                        href="mailto:sales@copilotnet.com"
                         className="hover:underline"
                       >
-                        Sales@Copilotnet.Com
+                        sales@copilotnet.com
                       </a>
                     </li>
                   </ul>
@@ -200,7 +201,7 @@ const Footer = () => {
                   </h2>
                 </div>
                 <div className="text-sm text-white">
-                  <p className="leading-[25px]">
+                  {/* <p className="leading-[25px]">
                     Copilot Networks, a Unit of{" "}
                     <a
                       href="https://thecopilotgroup.com/"
@@ -209,7 +210,8 @@ const Footer = () => {
                     >
                       The Copilot Group
                     </a>
-                  </p>
+                  </p> */}
+                  <p className="leading-[25px]">Copilot Net LLC</p>
                   <p>955 Garden Park Drive, #220, Allen, Texas, 75013</p>
                 </div>
               </div>
@@ -217,8 +219,8 @@ const Footer = () => {
           </div>
           <div className="w-full border-t-[0.5px] border-[#A8A8A8]"></div>
           {/* Copyright */}
-          <div className="relative z-10 mx-auto hidden py-4 text-sm text-white md:block">
-            <p>© {new Date().getFullYear()} Copilot Networks</p>
+          <div className="relative z-10 mx-auto pt-5 text-sm text-white max-md:px-10 md:py-4">
+            <p>© {new Date().getFullYear()} Copilot Net LLC</p>
           </div>
         </div>
       </div>

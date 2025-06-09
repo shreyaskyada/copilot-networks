@@ -13,6 +13,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
     toggleSubmenu,
     scrollToSection,
     handleMenuClose,
+    handleLogoClick,
   } = useHeader();
 
   return (
@@ -21,7 +22,11 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <NavLink to="/" className="flex items-center">
+            <NavLink
+              to="/"
+              className="flex items-center"
+              onClick={handleLogoClick}
+            >
               <img src="/dark_logo.svg" alt="Logo" className="h-8 w-auto" />
             </NavLink>
           </div>
@@ -74,9 +79,9 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                   )}
                 </div>
               ))}
-              <a href="https://thecopilotgroup.com/" target="_blank">
+              {/* <a href="https://thecopilotgroup.com/" target="_blank">
                 <img src="/copilot_hub.png" className="h-[32px]" />
-              </a>
+              </a> */}
             </nav>
 
             {/* Search Icon */}

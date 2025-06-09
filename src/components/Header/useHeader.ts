@@ -85,6 +85,10 @@ export const useHeader = () => {
     setIsMenuOpen(false);
   };
 
+  const handleLogoClick = () => {
+    window.scroll(0, 0);
+  };
+
   return {
     isMenuOpen,
     activeSubmenu,
@@ -93,5 +97,6 @@ export const useHeader = () => {
     toggleSubmenu,
     scrollToSection,
     handleMenuClose,
+    handleLogoClick,
   };
 };

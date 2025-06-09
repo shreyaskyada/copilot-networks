@@ -11,8 +11,9 @@ export const telecomServices = {
           points: [
             "Public and Private Grant",
             "Broadband Business Planning",
+            "Network Planing & Design",
             "Architecture Assessment",
-            "Permits",
+            "Permits Strategy",
           ],
         },
         {
@@ -20,15 +21,11 @@ export const telecomServices = {
           title: "Engineering Design",
           iconPath: "/dashboard/services/engineering_n_gis_design.svg",
           points: [
-            "GIS and CAD",
-            "High Level Design",
-            "Structural Design",
-            {
-              title: "Construction Design Package",
-              subTitle:
-                "(PDF Design, Bill of Materials, Bill of Quantities, Shapefiles)",
-            },
-            "Permit Drawing & applications",
+            "Geospatial Design",
+            "Constructible (PDF)",
+            "Bill of Materials - Bill of Quantities",
+            "Make Ready and Pole Loading Analysis",
+            "Permit Drawings & Applications",
           ],
         },
         {
@@ -36,24 +33,26 @@ export const telecomServices = {
           title: "Construction",
           iconPath: "/dashboard/services/construction.svg",
           points: [
-            "Wireless Network Deployment",
-            "Pole Loading and Structural Analysis",
-            "Traffic Control Plans",
-            "Professional Field Survey",
-            "Safety and Quality Inspection (OSHA30)",
+            "Management and OSHA-30 Inspection",
+            "Construction RFP Management",
+            "Red Line and As Builts",
           ],
         },
         {
           id: 4,
           title: "Procurement & Logistics",
           iconPath: "/dashboard/services/product_procurement_n_logistics.svg",
-          points: ["STL Fibre", "Conduit Solutions", "Vaults and Chambers"],
+          points: [
+            "Sterlite Fiber",
+            "Conduit Solutions",
+            "Vaults and chambers",
+          ],
         },
         {
           id: 5,
-          title: "Software",
+          title: "BI Dashboard",
           iconPath: "/dashboard/services/software.svg",
-          points: ["Rus2bill", "FiberOSS"],
+          points: ["Rus2Bill", "Fiber OSS", "Fiber BSS"],
         },
         {
           id: 6,
@@ -68,47 +67,47 @@ export const telecomServices = {
         },
       ],
     },
-    mobility: {
-      title: "Mobility",
-      items: [
-        {
-          id: 1,
-          title: "Site Acquisition",
-          iconPath: "/dashboard/services/site_acquisition.svg",
-          points: [
-            "Cell Site Audit",
-            "Permit Drawing and Applications",
-            "Traffic Control Plans",
-            "Easement and Site Acquisition",
-          ],
-        },
-        {
-          id: 2,
-          title: "Consulting & Grant Application",
-          iconPath:
-            "/dashboard/services/mobility_consulting_n_grant_application.svg",
-          points: [
-            "Public and Private Grant",
-            "Broadband Business Planning",
-            "Network Planning & Design",
-            "Architecture Assessment",
-          ],
-        },
-        {
-          id: 3,
-          title: "Architectural Engineering & RF Design",
-          iconPath:
-            "/dashboard/services/architectural_engineering_n_RF_design.svg",
-          points: [
-            "Site Surveys",
-            "Structural Designs",
-            "Construction Design Package",
-            "Test and Optimization",
-            "Cell Site Designs",
-          ],
-        },
-      ],
-    },
+    // mobility: {
+    //   title: "Mobility",
+    //   items: [
+    //     {
+    //       id: 1,
+    //       title: "Site Acquisition",
+    //       iconPath: "/dashboard/services/site_acquisition.svg",
+    //       points: [
+    //         "Cell Site Audit",
+    //         "Permit Drawing and Applications",
+    //         "Traffic Control Plans",
+    //         "Easement and Site Acquisition",
+    //       ],
+    //     },
+    //     {
+    //       id: 2,
+    //       title: "Consulting & Grant Application",
+    //       iconPath:
+    //         "/dashboard/services/mobility_consulting_n_grant_application.svg",
+    //       points: [
+    //         "Public and Private Grant",
+    //         "Broadband Business Planning",
+    //         "Network Planning & Design",
+    //         "Architecture Assessment",
+    //       ],
+    //     },
+    //     {
+    //       id: 3,
+    //       title: "Architectural Engineering & RF Design",
+    //       iconPath:
+    //         "/dashboard/services/architectural_engineering_n_RF_design.svg",
+    //       points: [
+    //         "Site Surveys",
+    //         "Structural Designs",
+    //         "Construction Design Package",
+    //         "Test and Optimization",
+    //         "Cell Site Designs",
+    //       ],
+    //     },
+    //   ],
+    // },
     wirelessServices: {
       title: "Wireless Services",
       items: [
@@ -120,18 +119,19 @@ export const telecomServices = {
             "Microwave Network Design",
             "Mobile Backhaul Design For 4G/5G Access Networks",
             "Tower Architectural Engineering Design",
-          ],
-        },
-        {
-          id: 2,
-          title: "Deployment and Optimization",
-          iconPath: "/dashboard/services/deployment_optimization.svg",
-          points: [
-            "Microwave Node Configuration and Optimization",
             "Site Acquisition",
-            "Wireless Network Deployment",
           ],
         },
+        // {
+        //   id: 2,
+        //   title: "Deployment and Optimization",
+        //   iconPath: "/dashboard/services/deployment_optimization.svg",
+        //   points: [
+        //     "Microwave Node Configuration and Optimization",
+        //     "Site Acquisition",
+        //     "Wireless Network Deployment",
+        //   ],
+        // },
       ],
     },
   },
