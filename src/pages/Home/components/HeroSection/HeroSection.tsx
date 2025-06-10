@@ -19,7 +19,6 @@ const tabs: TabItem[] = [
     combinedImage: "/dashboard/telecom/telecom_combined.png",
     otherImages: [
       "/dashboard/telecom/image1.png",
-      "/dashboard/telecom/image2.png",
       "/dashboard/telecom/image3.png",
       "/dashboard/telecom/image4.png",
       "/dashboard/telecom/image5.png",

@@ -376,7 +376,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
         <div
           className={clsx(
             "relative p-1",
-            isMd && newTabs[activeIndex]?.otherImages?.length === 7
+            isMd && newTabs[activeIndex]?.otherImages?.length === 6
               ? "mt-[45px] p-1"
               : "mt-[85px] p-5",
           )}
@@ -386,7 +386,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               <UnderConstructionCard />
             </div>
           )}
-          {isMd && newTabs[activeIndex]?.otherImages?.length !== 7 ? (
+          {isMd && newTabs[activeIndex]?.otherImages?.length !== 6 ? (
             <div className="">
               <img
                 src={newTabs[activeIndex].combinedImage}
@@ -395,59 +395,43 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
             </div>
           ) : (
             <>
-              {newTabs[activeIndex].otherImages.length === 7 ? (
-                <div className="grid gap-1.5 md:grid-cols-3">
-                  <div className="grid grid-cols-5 gap-1 md:grid-cols-3">
-                    {/* Left tall image */}
+              {newTabs[activeIndex].otherImages.length === 6 ? (
+                <div className="grid gap-1.5 md:grid-cols-7">
+                  {/* First Column - Tall Image and Mobile Second Image */}
+                  <div className="grid gap-1 md:col-span-3">
                     <img
                       src={newTabs[activeIndex].otherImages[0]}
-                      className="h-full object-cover shadow"
+                      className="col-span-3 h-full w-fit rounded object-fill shadow md:col-span-2"
                       alt="Image 1"
                     />
-
-                    {/* Middle top: Office blur + dashboard */}
                     <img
                       src={newTabs[activeIndex].otherImages[1]}
-                      className="col-span-2 h-full w-full object-cover shadow"
-                      alt="Image 2"
-                    />
-
-                    <img
-                      src={newTabs[activeIndex].otherImages[2]}
-                      className="col-span-2 h-full w-full object-cover shadow md:hidden"
+                      className="col-span-3 h-full w-full rounded object-cover shadow md:hidden"
                       alt="Image 2"
                     />
                   </div>
 
-                  <div className="max-md:hidden">
+                  {/* Second Column - Desktop Second Image */}
+                  <div className="hidden md:col-span-2 md:grid">
                     <img
-                      src={newTabs[activeIndex].otherImages[2]}
-                      className="h-full w-full object-cover shadow"
+                      src={newTabs[activeIndex].otherImages[1]}
+                      className="h-full w-full rounded object-cover shadow"
                       alt="Image 2"
                     />
                   </div>
 
-                  <div className="grid grid-cols-2 grid-rows-2 gap-1">
-                    <img
-                      src={newTabs[activeIndex].otherImages[3]}
-                      className="aspect-square h-full w-full object-cover shadow"
-                      alt="Image 3"
-                    />
-                    <img
-                      src={newTabs[activeIndex].otherImages[4]}
-                      className="aspect-square h-full w-full object-cover shadow"
-                      alt="Image 4"
-                    />
-                    <img
-                      src={newTabs[activeIndex].otherImages[5]}
-                      className="aspect-square h-full w-full object-cover shadow"
-                      alt="Image 5"
-                    />
-                    <img
-                      src={newTabs[activeIndex].otherImages[6]}
-                      className="aspect-square h-full w-full object-cover shadow"
-                      alt="Image 6"
-                    />
+                  {/* Third & Fourth Columns - 2x2 Image Grid */}
+                  <div className="col-span-2 grid grid-cols-2 gap-1">
+                    {newTabs[activeIndex].otherImages
+                      .slice(2, 6)
+                      .map((img, idx) => (
+                        <img
+                          key={idx}
+                          src={img}
+                          className="aspect-square h-full w-full rounded object-fill shadow"
+                          alt={`Image ${idx + 3}`}
+                        />
+                      ))}
                   </div>
                 </div>
               ) : (
