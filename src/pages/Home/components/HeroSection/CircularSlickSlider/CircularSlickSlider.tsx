@@ -401,7 +401,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                   <div className="grid gap-1 md:col-span-3">
                     <img
                       src={newTabs[activeIndex].otherImages[0]}
-                      className="col-span-3 h-full w-fit rounded object-fill shadow md:col-span-2"
+                      className="col-span-3 h-full w-full rounded object-cover shadow md:col-span-2"
                       alt="Image 1"
                     />
                     <img
@@ -428,7 +428,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                         <img
                           key={idx}
                           src={img}
-                          className="aspect-square h-full w-full rounded object-fill shadow"
+                          className="object-fit aspect-square h-fit w-full rounded shadow"
                           alt={`Image ${idx + 3}`}
                         />
                       ))}
