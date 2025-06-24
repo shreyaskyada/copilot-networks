@@ -81,7 +81,7 @@ export const useHeader = () => {
     }
   };
 
-  const handleMenuClose = (event: any, href: string) => {
+  const handleMenuClose = (href: string) => {
     setIsMenuOpen(false);
     if (href) {
       setTimeout(() => {
