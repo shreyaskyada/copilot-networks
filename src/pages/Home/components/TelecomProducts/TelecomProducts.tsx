@@ -33,7 +33,10 @@ const productCards: ProductCard[] = [
 
 const TelecomProducts = () => {
   return (
-    <section className="relative overflow-hidden bg-[#002B3F] text-white md:py-20 lg:px-24">
+    <section
+      id="telecom_products"
+      className="relative overflow-hidden bg-[#002B3F] text-white md:py-20 lg:px-24"
+    >
       <div className="p-4 px-0 py-8">
         <div className="mx-auto w-[90%] max-w-6xl">
           <h2 className="mb-8 text-4xl">Products</h2>

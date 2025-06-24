@@ -36,16 +36,16 @@ export const useHeader = () => {
     {
       name: "Products",
       submenu: [
-        { name: "Telecom Products", href: "" },
+        { name: "Telecom Products", href: "#telecom_products" },
         {
           name: "Energy & Utilities Products",
-          href: "",
+          href: "#energy_product",
         },
         {
           name: "Enterprise & Retail Products",
           href: "",
         },
-        { name: "Agrivoltaics Products", href: "" },
+        { name: "Agrivoltaics Products", href: "#energy_product" },
       ],
     },
     { name: "Testimonials", href: "#testimonials" },
@@ -76,13 +76,25 @@ export const useHeader = () => {
           if (element) {
             element.scrollIntoView({ behavior: "smooth" });
           }
-        }, 300);
+        }, 200);
       }
     }
   };
 
-  const handleMenuClose = () => {
+  const handleMenuClose = (event: any, href: string) => {
     setIsMenuOpen(false);
+    if (href) {
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500);
+    } else {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 100);
+    }
   };
 
   const handleLogoClick = () => {

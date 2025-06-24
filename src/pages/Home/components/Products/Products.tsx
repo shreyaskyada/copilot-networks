@@ -98,7 +98,7 @@ const Products: React.FC<ProductsProps> = ({ activeTab }) => {
   };
 
   return (
-    <div className="bg-[#F3F7F9]">
+    <div className="bg-[#F3F7F9]" id="energy_product">
       <div className="relative container mx-auto overflow-hidden p-4 px-0 py-8 md:py-20">
         <div className="mx-auto w-[90%] max-w-6xl">
           <h1 className="mb-[20px] text-[28px] font-bold md:text-[32px] lg:text-[40px]">

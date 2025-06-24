@@ -79,7 +79,7 @@ const Footer = () => {
               <div className="hidden space-y-4 md:block">
                 <div className="flex items-center">
                   <h2 className="text-2xl font-bold">
-                    <a href="https://thecopilotgroup.com/" target="_blank">
+                    <a href="https://copilotnet.com" target="_blank">
                       <img
                         src="/logo_white.png"
                         alt="Logo"

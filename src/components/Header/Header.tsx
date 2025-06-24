@@ -60,9 +60,11 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                         <Link
                           key={subItem.name}
                           to={subItem.href}
-                          onClick={
-                            subItem.disabled ? undefined : handleMenuClose
-                          }
+                          onClick={(event) => {
+                            subItem.disabled
+                              ? undefined
+                              : handleMenuClose(event, subItem.href);
+                          }}
                           state={
                             subItem.disabled
                               ? undefined
@@ -154,9 +156,11 @@ const Header: React.FC<HeaderProps> = ({ activeTab }) => {
                             <Link
                               key={subItem.name}
                               to={subItem.href}
-                              onClick={
-                                subItem.disabled ? undefined : handleMenuClose
-                              }
+                              onClick={(event) => {
+                                subItem.disabled
+                                  ? undefined
+                                  : handleMenuClose(event, subItem.href);
+                              }}
                               state={
                                 subItem.disabled
                                   ? undefined

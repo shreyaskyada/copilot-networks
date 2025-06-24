@@ -17,6 +17,10 @@ import { AgrivoltaicsServices } from "./components/AgrivoltaicsServices";
 import { AgroCareOSS } from "./components/AgroCareOSS";
 
 const Home: React.FC<HomeProps> = ({ activeTab, setActiveTab }) => {
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [activeTab]);
+
   return (
     <div>
       <HeroSection setActiveTab={setActiveTab} />

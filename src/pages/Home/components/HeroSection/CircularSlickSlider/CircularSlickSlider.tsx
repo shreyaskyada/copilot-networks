@@ -15,6 +15,7 @@ export interface TabItem {
   otherImages: string[];
   isUnderConstruction: boolean;
   disabled?: boolean;
+  isObjectFit?: boolean;
 }
 
 interface CircularSliderProps {
@@ -395,64 +396,28 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
             </div>
           ) : (
             <>
-              {newTabs[activeIndex].otherImages.length === 6 ? (
-                <div className="grid gap-1.5 md:grid-cols-7">
-                  {/* First Column - Tall Image and Mobile Second Image */}
-                  <div className="grid gap-1 md:col-span-3">
-                    <img
-                      src={newTabs[activeIndex].otherImages[0]}
-                      className="col-span-3 h-full w-full rounded object-cover shadow md:col-span-2"
-                      alt="Image 1"
-                    />
-                    <img
-                      src={newTabs[activeIndex].otherImages[1]}
-                      className="col-span-3 h-full w-full rounded object-cover shadow md:hidden"
-                      alt="Image 2"
-                    />
-                  </div>
-
-                  {/* Second Column - Desktop Second Image */}
-                  <div className="hidden md:col-span-2 md:grid">
-                    <img
-                      src={newTabs[activeIndex].otherImages[1]}
-                      className="h-full w-full rounded object-cover shadow"
-                      alt="Image 2"
-                    />
-                  </div>
-
-                  {/* Third & Fourth Columns - 2x2 Image Grid */}
-                  <div className="col-span-2 grid grid-cols-2 gap-1">
-                    {newTabs[activeIndex].otherImages
-                      .slice(2, 6)
-                      .map((img, idx) => (
-                        <img
-                          key={idx}
-                          src={img}
-                          className="object-fit aspect-square h-fit w-full rounded shadow"
-                          alt={`Image ${idx + 3}`}
-                        />
-                      ))}
-                  </div>
-                </div>
-              ) : (
-                <div className="grid grid-cols-3 gap-4">
-                  <img
-                    src={newTabs[activeIndex].otherImages[0]}
-                    className="h-[400px] w-full rounded-md object-cover shadow"
-                    alt="Image 1"
-                  />
-                  <img
-                    src={newTabs[activeIndex].otherImages[1]}
-                    className="h-[400px] w-full rounded-md object-cover shadow"
-                    alt="Image 2"
-                  />
-                  <img
-                    src={newTabs[activeIndex].otherImages[2]}
-                    className="h-[400px] w-full rounded-md object-cover shadow"
-                    alt="Image 3"
-                  />
-                </div>
-              )}
+              <div className="grid grid-cols-3 gap-4">
+                <img
+                  src={newTabs[activeIndex].otherImages[0]}
+                  className="h-[420px] w-full rounded-md object-cover shadow"
+                  alt="Image 1"
+                />
+                <img
+                  src={newTabs[activeIndex].otherImages[1]}
+                  className="h-[420px] w-full rounded-md object-cover shadow"
+                  alt="Image 2"
+                />
+                <img
+                  src={newTabs[activeIndex].otherImages[2]}
+                  className={clsx(
+                    "h-[420px] w-full rounded-md shadow",
+                    newTabs[activeIndex].isObjectFit
+                      ? "object-fit"
+                      : "object-cover",
+                  )}
+                  alt="Image 3"
+                />
+              </div>
             </>
           )}
         </div>
