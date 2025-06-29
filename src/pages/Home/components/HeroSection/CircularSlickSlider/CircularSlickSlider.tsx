@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
-import { useBreakpoint } from "../../../../../hooks/useBreakpoint";
-import ArrowIcon from "../../../../../assets/ArrowIcon";
-import "./CircularSlickSlider.css";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
+import ArrowIcon from "../../../../../assets/ArrowIcon";
+import { useBreakpoint } from "../../../../../hooks/useBreakpoint";
+import "./CircularSlickSlider.css";
 import { UnderConstructionCard } from "./UnderConstructionCard";
 
 export interface TabItem {
@@ -16,6 +16,7 @@ export interface TabItem {
   isUnderConstruction: boolean;
   disabled?: boolean;
   isObjectFit?: boolean;
+  isDifferentLayout?: boolean;
 }
 
 interface CircularSliderProps {
@@ -184,22 +185,20 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   //   return radius * Math.sin(radians) - 0;
   // };
 
-  console.log("otherImages", !newTabs[activeIndex].disabled);
-
   const handleDotClick = (index: number) => {
     if (isAnimating) return;
     handleTabClick(index);
   };
 
   return (
-    <div className="flex h-fit w-full">
+    <div className="flex h-fit w-full overflow-hidden">
       <div className="mx-auto w-full">
         {/* Arrow */}
 
         {/* Top section */}
         <div className="relative">
           <div
-            className="relative overflow-hidden"
+            className="relative md:overflow-hidden"
             style={{
               height: isMd
                 ? `${radius * 0.4 + 80}px`
@@ -295,7 +294,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                           !newTabs[index].disabled && handleTabClick(index)
                         }
                         className={clsx(
-                          "top-0 flex w-[80px] -translate-x-[50%] translate-y-[30%] cursor-pointer items-center justify-center transition-all duration-300 md:w-[190px]",
+                          "top-0 flex w-[80px] -translate-x-[50%] translate-y-[20%] cursor-pointer items-center justify-center transition-all duration-300 md:w-[190px] md:translate-y-[30%]",
                           isActiveIndex &&
                             "translate-y-[30px] md:translate-y-[50px]",
                         )}
@@ -347,7 +346,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
                                   )} */}
                                 </p>
                                 {newTabs[index].disabled && (
-                                  <div className="absolute top-full left-1/2 -translate-x-1/2 translate-y-2 rounded-[5px] bg-[#E6F3F8] px-[10px] py-[8px] text-[10px] font-black tracking-[1px] whitespace-nowrap text-[#0089CF] uppercase">
+                                  <div className="absolute top-full left-1/2 -translate-x-1/2 translate-y-1 rounded-[3px] bg-[#E6F3F8] px-2 py-1 text-[8px] font-black tracking-[0.5px] whitespace-nowrap text-[#0089CF] uppercase md:translate-y-2 md:rounded-[5px] md:px-[10px] md:py-[8px] md:text-[10px] md:tracking-[1px]">
                                     coming soon
                                   </div>
                                 )}
@@ -377,9 +376,9 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
         <div
           className={clsx(
             "relative p-1",
-            isMd && newTabs[activeIndex]?.otherImages?.length === 6
+            newTabs[activeIndex]?.isDifferentLayout
               ? "mt-[45px] p-1"
-              : "mt-[85px] p-5",
+              : "mt-0 p-5 md:mt-[85px]",
           )}
         >
           {newTabs[activeIndex].isUnderConstruction && (
@@ -387,30 +386,32 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
               <UnderConstructionCard />
             </div>
           )}
-          {isMd && newTabs[activeIndex]?.otherImages?.length !== 6 ? (
+          {isMd && !newTabs[activeIndex]?.isDifferentLayout ? (
             <div className="">
               <img
                 src={newTabs[activeIndex].combinedImage}
-                className="h-fit w-auto object-cover"
+                className="h-auto w-auto object-cover"
               />
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-3 gap-4">
-                <img
-                  src={newTabs[activeIndex].otherImages[0]}
-                  className="h-[420px] w-full rounded-md object-cover shadow"
-                  alt="Image 1"
-                />
-                <img
-                  src={newTabs[activeIndex].otherImages[1]}
-                  className="h-[420px] w-full rounded-md object-cover shadow"
-                  alt="Image 2"
-                />
+              <div className="grid grid-cols-1 gap-1 md:grid-cols-3">
+                <div className="grid grid-cols-2 gap-1">
+                  <img
+                    src={newTabs[activeIndex].otherImages[0]}
+                    className="h-[140px] w-full object-cover shadow"
+                    alt="Image 1"
+                  />
+                  <img
+                    src={newTabs[activeIndex].otherImages[1]}
+                    className="h-[140px] w-full object-cover shadow"
+                    alt="Image 2"
+                  />
+                </div>
                 <img
                   src={newTabs[activeIndex].otherImages[2]}
                   className={clsx(
-                    "h-[420px] w-full rounded-md shadow",
+                    "h-[280px] w-full shadow",
                     newTabs[activeIndex].isObjectFit
                       ? "object-fit"
                       : "object-cover",

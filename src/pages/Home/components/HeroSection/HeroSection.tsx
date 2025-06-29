@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import AgrivoltaicsSVG from "../../../../assets/AgrivoltaicsSVG";
 import EnergyUtilitiesSVG from "../../../../assets/EnergyUtilitiesSVG";
 import EnterpriseRetailSVG from "../../../../assets/EnterpriseRetailSVG";
+import RealEstateDevelopmentSVG from "../../../../assets/RealEstateDevelopmentSVG";
 import TelecomSVG from "../../../../assets/TelecomSVG";
 import CircularSlickSlider, {
   TabItem,
 } from "./CircularSlickSlider/CircularSlickSlider";
 import { HeroSectionProps } from "./types";
-import RealEstateDevelopmentSVG from "../../../../assets/RealEstateDevelopmentSVG";
 
 const tabs: TabItem[] = [
   {
@@ -18,6 +18,7 @@ const tabs: TabItem[] = [
     isUnderConstruction: false,
     combinedImage: "/dashboard/telecom/telecom_combined.png",
     isObjectFit: true,
+    isDifferentLayout: true,
     otherImages: [
       "/dashboard/telecom/image9.png",
       "/dashboard/telecom/image3.png",
