@@ -395,30 +395,59 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 gap-1 md:grid-cols-3">
-                <div className="grid grid-cols-2 gap-1">
-                  <img
-                    src={newTabs[activeIndex].otherImages[0]}
-                    className="h-[140px] w-full object-cover shadow"
-                    alt="Image 1"
-                  />
-                  <img
-                    src={newTabs[activeIndex].otherImages[1]}
-                    className="h-[140px] w-full object-cover shadow"
-                    alt="Image 2"
-                  />
-                </div>
-                <img
-                  src={newTabs[activeIndex].otherImages[2]}
-                  className={clsx(
-                    "h-[280px] w-full shadow",
-                    newTabs[activeIndex].isObjectFit
-                      ? "object-fit"
-                      : "object-cover",
-                  )}
-                  alt="Image 3"
-                />
-              </div>
+              {isMd && newTabs[activeIndex].isDifferentLayout ? (
+                <>
+                  <div className="grid grid-cols-1 gap-1 md:grid-cols-3">
+                    <div className="grid grid-cols-2 gap-1">
+                      <img
+                        src={newTabs[activeIndex].otherImages[0]}
+                        className="h-[140px] w-full object-cover shadow"
+                        alt="Image 1"
+                      />
+                      <img
+                        src={newTabs[activeIndex].otherImages[1]}
+                        className="h-[140px] w-full object-cover shadow"
+                        alt="Image 2"
+                      />
+                    </div>
+                    <img
+                      src={newTabs[activeIndex].otherImages[2]}
+                      className={clsx(
+                        "h-[280px] w-full shadow",
+                        newTabs[activeIndex].isObjectFit
+                          ? "object-fit"
+                          : "object-cover",
+                      )}
+                      alt="Image 3"
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="grid grid-cols-1 gap-1 md:grid-cols-3">
+                    <img
+                      src={newTabs[activeIndex].otherImages[0]}
+                      className="h-[420px] w-full object-cover shadow"
+                      alt="Image 1"
+                    />
+                    <img
+                      src={newTabs[activeIndex].otherImages[1]}
+                      className="h-[420px] w-full object-cover shadow"
+                      alt="Image 2"
+                    />
+                    <img
+                      src={newTabs[activeIndex].otherImages[2]}
+                      className={clsx(
+                        "h-[420px] w-full shadow",
+                        newTabs[activeIndex].isObjectFit
+                          ? "object-fit"
+                          : "object-cover",
+                      )}
+                      alt="Image 3"
+                    />
+                  </div>
+                </>
+              )}
             </>
           )}
         </div>

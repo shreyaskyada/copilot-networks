@@ -17,7 +17,7 @@ const teamMembers: TeamMember[] = [
     description:
       "Aasim Ahmad is a Telecom Executive with over 15 years of experience delivering successful telecom projects. He also has 10 years of experience working for Ericsson and Fujitsu. Aasim understands the continuing needs of Telecom Providers as critical infrastructure and responded by establishing Copilot Networks. He makes himself available to all Copilot clients, truly putting the customer first.",
     image: "/teams/aasim-img.png",
-    linkedIn: "https://www.linkedin.com/in/aasim-ahmad-84947a4a/",
+    linkedIn: "https://www.linkedin.com/in/aasim-a-84947a4a/",
   },
   {
     id: "christer",
@@ -28,15 +28,15 @@ const teamMembers: TeamMember[] = [
     image: "/teams/christer.png",
     linkedIn: "https://www.linkedin.com/company/copilot-net-llc/mycompany",
   },
-  {
-    id: "Nat Parsons",
-    name: "Nat Parsons",
-    title: "Business Development Director Real Estate",
-    description:
-      "Nat Parsons brings over 15 years of experience in telecom and banking, having held senior positions at Goodman Networks, Ericsson, and JP Morgan. His expertise spans telecom network deployment, real estate, and finance—offering a unique combination of technical acumen and financial strategy. Nat has a proven track record of developing and monetizing both real estate and infrastructure assets, consistently driving value and performance.",
-    image: "/teams/nathaniel.jpeg",
-    linkedIn: "https://www.linkedin.com/in/natparsons",
-  },
+  // {
+  //   id: "Nat Parsons",
+  //   name: "Nat Parsons",
+  //   title: "Business Development Director Real Estate",
+  //   description:
+  //     "Nat Parsons brings over 15 years of experience in telecom and banking, having held senior positions at Goodman Networks, Ericsson, and JP Morgan. His expertise spans telecom network deployment, real estate, and finance—offering a unique combination of technical acumen and financial strategy. Nat has a proven track record of developing and monetizing both real estate and infrastructure assets, consistently driving value and performance.",
+  //   image: "/teams/nathaniel.jpeg",
+  //   linkedIn: "https://www.linkedin.com/in/natparsons",
+  // },
   {
     id: "shayne",
     name: "Shayne Rouse",
