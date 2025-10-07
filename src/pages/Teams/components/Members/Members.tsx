@@ -37,15 +37,15 @@ const teamMembers: TeamMember[] = [
   //   image: "/teams/nathaniel.jpeg",
   //   linkedIn: "https://www.linkedin.com/in/natparsons",
   // },
-  {
-    id: "shayne",
-    name: "Shayne Rouse",
-    title: "HEAD OF PERMITTING, RIGHT OF WAY, AND COLOCATION",
-    description:
-      "Shayne Rouse has a decade of experience with engineering and permitting for both Aerial and Underground facilities. He brings to Copilot a vast knowledge of city/county, state, and federal compliance having supported projects in over 33 of the domestic 48 states in the US.",
-    image: "/teams/shayne-img.png",
-    linkedIn: "https://www.linkedin.com/in/shaynerouse/",
-  },
+  // {
+  //   id: "shayne",
+  //   name: "Shayne Rouse",
+  //   title: "HEAD OF PERMITTING, RIGHT OF WAY, AND COLOCATION",
+  //   description:
+  //     "Shayne Rouse has a decade of experience with engineering and permitting for both Aerial and Underground facilities. He brings to Copilot a vast knowledge of city/county, state, and federal compliance having supported projects in over 33 of the domestic 48 states in the US.",
+  //   image: "/teams/shayne-img.png",
+  //   linkedIn: "https://www.linkedin.com/in/shaynerouse/",
+  // },
   {
     id: "patrick",
     name: "Patrick Siddle",
