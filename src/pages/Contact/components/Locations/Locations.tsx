@@ -1,6 +1,6 @@
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 const LocationsData = [
   {
@@ -9,16 +9,22 @@ const LocationsData = [
     address: "955 Garden Park Drive, #220, Allen, Texas, 75013",
   },
   {
+    country: "Caribbean",
+    location: "PMO and Back-office",
+    address:
+      "Av. Gustavo Mejía Ricart 81, Santo Domingo 10132, Dominican Republic",
+  },
+  {
     country: "India",
-    location: "Copilot Networks India",
+    location: "Design Center",
     address:
       "Procapitus Business Park, D-247/4A, Sector 63, Noida, Uttar Pradesh, India -201301",
   },
   {
-    country: "Caribbean",
-    location: "Copilot Networks Caribbean",
+    country: "India",
+    location: "Design Center",
     address:
-      "Av. Gustavo Mejía Ricart 81, Santo Domingo 10132, Dominican Republic",
+      "Copilot Networks 4263, Anjikathu Rd, CSEZ, Chittethukara, Kakkanad, Kochi, Kerala 682037",
   },
 ];
 
@@ -53,7 +59,7 @@ const Locations = () => {
       </div>
 
       {/* Show Grid in Larger Screens */}
-      <div className="hidden grid-cols-1 gap-2 sm:grid sm:grid-cols-2 sm:gap-10 md:grid-cols-2 md:gap-x-[120px] md:gap-y-[60px] lg:grid-cols-3">
+      <div className="hidden grid-cols-1 gap-2 sm:grid sm:grid-cols-2 sm:gap-10 md:grid-cols-2 md:gap-x-[20px] md:gap-y-[60px] lg:grid-cols-4">
         {LocationsData.map(({ address, country, location }, index) => (
           <div key={index} className="space-y-2">
             <div className="text-[20px] font-bold uppercase">{country}</div>

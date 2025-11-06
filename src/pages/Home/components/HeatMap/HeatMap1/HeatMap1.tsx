@@ -30,7 +30,7 @@ const HeatMap1 = () => {
           <div className="w-fit">
             <div className="flex w-full flex-row items-center gap-4">
               <div className="text-secondary text-[32px] font-extrabold md:text-[40px]">
-                160
+                218
               </div>
               <div className="flex flex-col text-[14px]">
                 <div>OSP/ISP</div>
@@ -40,7 +40,7 @@ const HeatMap1 = () => {
             <div className="flex w-full flex-row items-start gap-4">
               <div className="text-secondary text-[32px] font-extrabold md:text-[40px]">
                 <span className="text-[#002235]">0</span>
-                <span>42</span>
+                <span>78</span>
               </div>
               <div className="relative flex translate-y-[10px] flex-col text-[14px]">
                 <div>OSP/ISP Field</div>

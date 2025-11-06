@@ -1,9 +1,9 @@
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import useContactUsForm from "./useContactUsForm";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import useContactUsForm from "./useContactUsForm";
 
 const industries = [
   "Technology",
@@ -31,7 +31,8 @@ const services = [
 
 const sliderImages = [
   { src: "/contact/USOffice.png", alt: "USA Office" },
-  { src: "/contact/INOffice.png", alt: "India Office" },
+  { src: "/contact/DROffice.png", alt: "Dr Office" },
+  { src: "/contact/KeralaOffice.png", alt: "Kerala Office" },
 ];
 
 export default function ContactForm() {
