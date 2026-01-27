@@ -49,7 +49,7 @@ export const useHeader = () => {
       ],
     },
     { name: "Testimonials", href: "#testimonials" },
-    { name: "Teams", href: "/teams" },
+
     { name: "News", href: "#" },
     { name: "Contact Us", href: "/contact" },
   ];

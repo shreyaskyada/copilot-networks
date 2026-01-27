@@ -1,13 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router";
 import { lazy, Suspense, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router";
 import { Loader } from "./components/Loader";
-import { TermsAndConditions } from "./pages/TermsAndConditions";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
+import { TermsAndConditions } from "./pages/TermsAndConditions";
 
 // Lazy load components
 const Layout = lazy(() => import("./components/Layout/Layout"));
 const Home = lazy(() => import("./pages/Home/Home"));
-const TeamsPage = lazy(() => import("./pages/Teams/Teams"));
+
 const Contact = lazy(() => import("./pages/Contact/Contact"));
 
 function App() {
@@ -32,14 +32,7 @@ function App() {
                 </Suspense>
               }
             />
-            <Route
-              path="/teams"
-              element={
-                <Suspense fallback={<Loader />}>
-                  <TeamsPage />
-                </Suspense>
-              }
-            />
+
             <Route
               path="/contact"
               element={
